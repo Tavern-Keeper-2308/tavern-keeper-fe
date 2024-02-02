@@ -9,7 +9,6 @@ _anything else that doesn't fit in the above categories, but is still important 
 
 # Checklist
 - [ ] My PR has an appropriately descriptive and concise title.
-- [ ] My code follows the Turing Style Guides and best practices.
 - [ ] I ran the code locally and verified that there are no visible errors.
 - [ ] feat: My PR clearly describes the feature I'm adding.
 - [ ] test: My PR clearly describes the test(s) I'm adding and why.
