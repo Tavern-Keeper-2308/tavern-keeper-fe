@@ -64,7 +64,7 @@ Kevin Zolman
 <!-- TBD -->
 
 # 📝 Context
-This application was built as the group capstone project of Turing School of Software and Design's Front End Web Development program, Mod 4. We were given 2 weeks, from kick-off, to complete and submit the project for evaluation. This repo houses the FE contribution to the project; the BE repo can be found here: [Tavern Keeper BE][[backend-repo-url]]
+This application was built as the group capstone project of Turing School of Software and Design's Front End Web Development program, Mod 4. We were given 2 weeks, from kick-off, to complete and submit the project for evaluation. This repo houses the FE contribution to the project; the BE repo can be found here: [Tavern Keeper BE][backend-repo-url]
 
 # 🎬 Preview
 <!-- TBD -->
