@@ -7,17 +7,26 @@
 
 
 # 💻 Tech Stack
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
-![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
-![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+### App
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-![Cypress](https://img.shields.io/badge/Cypress-17202C?logo=cypress&logoColor=fff&style=for-the-badge)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![GraphQL](https://img.shields.io/badge/GraphQl-E10098?style=for-the-badge&logo=graphql&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+
+### Testing
+![Cypress](https://img.shields.io/badge/Cypress-17202C?logo=cypress&logoColor=fff&style=for-the-badge)
+![Mocha](https://img.shields.io/badge/mocha.js-323330?style=for-the-badge&logo=mocha&logoColor=Brown)
+![Chai](https://img.shields.io/badge/chai.js-323330?style=for-the-badge&logo=chai&logoColor=red)
+
+### Planning, Design, Organization
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+
+
 
 
 # 🧠 Contributors
@@ -99,16 +108,16 @@ After completing installation of the app...
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Tavern-Keeper-2308/tavern_keeper_be.svg?style=for-the-badge
-[contributors-url]: https://github.com/Tavern-Keeper-2308/tavern_keeper_be/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Tavern-Keeper-2308/tavern_keeper_be.svg?style=for-the-badge
-[forks-url]: https://github.com/Tavern-Keeper-2308/tavern_keeper_be/network/members
-[stars-shield]: https://img.shields.io/github/stars/Tavern-Keeper-2308/tavern_keeper_be.svg?style=for-the-badge
-[stars-url]: https://github.com/Tavern-Keeper-2308/tavern_keeper_be/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Tavern-Keeper-2308/tavern_keeper_be.svg?style=for-the-badge
-[issues-url]: https://github.com/Tavern-Keeper-2308/tavern_keeper_be/issues
-[license-shield]: https://img.shields.io/github/license/Tavern-Keeper-2308/tavern_keeper_be.svg?style=for-the-badge
-[license-url]: https://github.com/Tavern-Keeper-2308/tavern_keeper_be/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/Tavern-Keeper-2308/tavern-keeper-fe.svg?style=for-the-badge
+[contributors-url]: https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Tavern-Keeper-2308/tavern-keeper-fe.svg?style=for-the-badge
+[forks-url]: https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/network/members
+[stars-shield]: https://img.shields.io/github/stars/Tavern-Keeper-2308/tavern-keeper-fe.svg?style=for-the-badge
+[stars-url]: https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Tavern-Keeper-2308/tavern-keeper-fe.svg?style=for-the-badge
+[issues-url]: https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/issues
+[license-shield]: https://img.shields.io/github/license/Tavern-Keeper-2308/tavern-keeper-fe.svg?style=for-the-badge
+[license-url]: https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/blob/master/LICENSE.txt
 [product-screenshot]: images/screenshot.png
 
 <!-- BUILD WITH SHIELDS -->
