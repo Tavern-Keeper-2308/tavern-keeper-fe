@@ -72,16 +72,29 @@ This application was built as the group capstone project of Turing School of Sof
 # 🔧 Installation Instructions
 1. Clone this client repository to your local machine
 2. Navigate (`cd`) to your local directory containing the repository
-3. Run `npm install` to install the dependencies
-4. Run `npm start` to start the server
+3. To install the dependencies
+    ```
+    npm install
+    ```
+
+4. To start the server
+    ```
+    npm start
+    ```
 5. On your web browser, navigate to http://localhost:3000/
 
 # 🕵️ Testing Instructions
 After completing installation of the app...
 
 1. Navigate (`cd`) into your local directory containing the repository
-2. Run `npm install cypress` to install Cypress dependencies
-3. Run `npx cypress open` to launch Cypress
+2. To install Cypress dependencies
+    ```
+    npm install cypress
+    ```
+3. To launch Cypress
+    ```
+    npx cypress open
+    ```
 4. When Cypress opens, click the `E2E Testing` box and choose a browser (if you are currently using the Chrome browser, using Electron is recommended to avoid issues)
 5. Click the `Start E2E Testing in <chosen browser>` button
 6. Select a test and see the magic!
