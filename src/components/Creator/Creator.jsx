@@ -3,6 +3,6 @@ import './Creator.css';
 
 export default function Creator() {
   return (
-    placeholder
+    <p>placeholder</p>
   )
 }

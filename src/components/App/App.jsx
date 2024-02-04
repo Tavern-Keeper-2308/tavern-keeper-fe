@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from '../Header/Header.jsx'
 import Home from '../Home/Home.jsx'
 import Creator from '../Creator/Creator.jsx'
+import Details from '../Details/Details.jsx'
 
 function App() {
 

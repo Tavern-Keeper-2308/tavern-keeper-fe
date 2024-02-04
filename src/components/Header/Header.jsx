@@ -3,6 +3,6 @@ import './Header.css';
 
 export default function Header() {
   return (
-    placeholder
+    <p>placeholder</p>
   )
 }
