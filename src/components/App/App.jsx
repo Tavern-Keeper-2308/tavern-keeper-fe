@@ -1,9 +1,10 @@
 import './App.css';
 import React from 'react';
 import PropTypes from 'prop-types';
-import Home from '../Home/Home.jsx'
-import Navigation from '../Navigation/Navigation.jsx'
 import { Routes, Route, Link } from 'react-router-dom';
+import Home from '../Home/Home.jsx';
+import Navigation from '../Navigation/Navigation.jsx';
+import EncounterBuilder from '../EncounterBuilder/EncounterBuilder.jsx';
 
 export default function App() {
   return (
@@ -16,9 +17,9 @@ export default function App() {
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/login" element={<Login />}/>
-        <Route path="/:id" element={<EncounterDetails />}/>
-        <Route path="/builder" element={<EncounterBuilder />}/> */}
+        {/* <Route path="/login" element={<Login />}/> */}
+        {/* <Route path="/:id" element={<EncounterDetails />}/> */}
+        <Route path="/encounterbuilder" element={<EncounterBuilder />}/>
       </Routes>
     </div>
   );

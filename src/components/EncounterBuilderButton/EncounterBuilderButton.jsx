@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './EncounterBuilderButton.css';
+import EncounterBuilder from '../EncounterBuilder/EncounterBuilder';
 
 const EncounterBuilderButton = () => {
   return (
-    <button className='EncounterBuilderButton'>
-      Build New Encounter
-    </button>
+    <NavLink to={"/encounterbuilder"}>
+      <button className='EncounterBuilderButton'>
+        Build New Encounter
+      </button>
+    </NavLink>
   );
 };
 

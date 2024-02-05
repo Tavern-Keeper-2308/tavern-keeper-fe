@@ -4,9 +4,11 @@ import './LogoutButton.css';
 
 const LogoutButton = () => {
   return (
-    <button className='LogoutButton'>
-      Logout
-    </button>
+    <NavLink>
+      <button className='LogoutButton'>
+        Logout
+      </button>
+    </NavLink>
   );
 };
 
