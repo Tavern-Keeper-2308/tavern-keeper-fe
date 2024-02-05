@@ -3,13 +3,13 @@ import './EncounterDetails.css';
 
 export default function EncounterDetails({ name, party_size, party_level, summary, description, treasure, encounter_monsters }) {
   const selectedMonsters = encounter_monsters.map((monster) => (
-    <article>
-      <h3>{monster.name}</h3>
+    <details>
+      <summary>{monster.name}</summary>
       <p>{monster.size}</p>
       <p>{monster.type}</p>
       <p>{monster.alignment}</p>
       <p>{monster.challenge_rating}</p>
-    </article>
+    </details>
   ));
 
   return (
