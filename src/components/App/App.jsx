@@ -19,9 +19,9 @@ export default function App() {
         {/* <Navigation /> */}
       </header>
       <Routes>
-        <Route path="/" element={<Home encounters={encounters} enemies={enemies}/>}/>
+        <Route path="/" element={<Home encounters={encounters}/>}/>
         {/* <Route path="/login" element={<Login />}/>
-        <Route path="/builder" element={<EncounterBuilder />}/> */}
+        <Route path="/builder" element={<EncounterBuilder enemies={enemies}/>}/> */}
         <Route path="/:id" element={<EncounterDetails />}/>
       </Routes>
     </div>

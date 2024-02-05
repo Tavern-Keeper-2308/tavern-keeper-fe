@@ -2,7 +2,15 @@ import PropTypes from 'prop-types';
 import './EncounterDetails.css';
 
 export default function EncounterDetails({ name, party_size, party_level, summary, description, treasure, encounter_monsters }) {
-  
+  const selectedMonsters = encounter_monsters.map((monster) => (
+    <article>
+      <h3>{monster.name}</h3>
+      <p>{monster.size}</p>
+      <p>{monster.type}</p>
+      <p>{monster.alignment}</p>
+      <p>{monster.challenge_rating}</p>
+    </article>
+  ));
 
   return (
     <section className='details'>
@@ -19,6 +27,14 @@ export default function EncounterDetails({ name, party_size, party_level, summar
         <h2>Encounter Description</h2>
         <h3>Short Summary:</h3>
         <p>{summary}</p>
+        <h3>Encounter Description:</h3>
+        <p>{description}</p>
+        <h3>Treasure and Rewards:</h3>
+        <p>{treasure}</p>
+      </section>
+      <section>
+        <h2>Your Critters</h2>
+        {selectedMonsters}
       </section>
     </section>
   )

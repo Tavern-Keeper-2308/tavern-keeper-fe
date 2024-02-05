@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import './EncounterPreviewContainer.css';
 import EncounterPreviewCard from '../EncounterPreviewCard/EncounterPreviewCard';
 
-export default function EncounterPreviewContainer({encounters, enemies}) {
+export default function EncounterPreviewContainer({encounters}) {
   const allEncounters = encounters.map((encounter) => (
     <EncounterPreviewCard
       key={encounter.id}

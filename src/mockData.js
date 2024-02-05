@@ -147,15 +147,38 @@ export const encounterData = {
               "description": "You're about to fight 3 beholders, feel free to cry",
               "treasure": "50GP, Longbow",
               "encounter_monsters": [
-                  {
-                      "monster_name": "Beholder"
-                  },
-                  {
-                      "monster_name": "Beholder"
-                  },
-                  {
-                      "monster_name": "Beholder"
-                  }
+                {
+                  "index": "adult-gold-dragon",
+                  "name": "Adult Gold Dragon",
+                  "size": "HUGE",
+                  "type": "DRAGON",
+                  "alignment": "lawful good",
+                  "challenge_rating": 17
+                },
+                {
+                  "index": "ancient-brass-dragon",
+                  "name": "Ancient Brass Dragon",
+                  "size": "GARGANTUAN",
+                  "type": "DRAGON",
+                  "alignment": "chaotic good",
+                  "challenge_rating": 20
+                },
+                {
+                  "index": "aboleth",
+                  "name": "Aboleth",
+                  "size": "LARGE",
+                  "type": "ABERRATION",
+                  "alignment": "lawful evil",
+                  "challenge_rating": 10
+                },
+                {
+                  "index": "ghoul",
+                  "name": "Ghoul",
+                  "size": "MEDIUM",
+                  "type": "UNDEAD",
+                  "alignment": "chaotic evil",
+                  "challenge_rating": 1
+                }
               ]
           }
       ]
