@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { monsters, singleMonster, userData, encounterData } from '../../mockData.js'
+import { monsters, singleMonster, userData, encounterData } from '../../mockDataset.js'
 import Home from '../Home/Home.jsx'
 import EncounterDetails from '../EncounterDetails/EncounterDetails.jsx';
 // import Navigation from '../Navigation/Navigation.jsx'
