@@ -1,15 +1,36 @@
 .EncounterPreviewCard {
   background-color: #131316;
   color: #BCBEF0;
+  /* font-family: 'Crimson Text', serif; */
+  font-family: 'Arsenal', sans-serif;
   box-sizing: border-box;
   border: 1px solid #BCBEF0;
+  padding: 5%;
 }
 
 .preview-encounter-name {
   color: #EF81E5;
+  font-family: 'Merienda', cursive;
+}
+
+.preview-section-title {
+  color: #4AA3FC;
+  /* font-family: 'Merienda', cursive; */
+  /* font-family: 'Crimson Text', serif; */
+  font-family: 'Arsenal', sans-serif;
 }
 
 .preview-monster-list {
   list-style: none;
   padding-left: 0;
+  color: #4AA3FC;
+}
+
+.preview-monster-name {
+  color: #BCBEF0
+}
+
+.preview-small-stat {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }

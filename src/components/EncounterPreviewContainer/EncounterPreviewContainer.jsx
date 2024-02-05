@@ -8,6 +8,15 @@ const EncounterPreviewContainer = () => {
       <EncounterPreviewCard />
       <EncounterPreviewCard />
       <EncounterPreviewCard />
+      <EncounterPreviewCard />
+      <EncounterPreviewCard />
+      <EncounterPreviewCard />
+      <EncounterPreviewCard />
+      <EncounterPreviewCard />
+      <EncounterPreviewCard />
+      <EncounterPreviewCard />
+      <EncounterPreviewCard />
+      <EncounterPreviewCard />
     </div>
   );
 };
