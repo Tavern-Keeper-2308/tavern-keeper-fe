@@ -1,0 +1,47 @@
+details, .main-details, .base-box, .party-stats {
+  display: flex;
+}
+
+.main-details, .base-box {
+  flex-direction: column;
+  min-width: 50em;
+}
+
+.main-details {
+  background-color: #BCBEF0;
+  align-items: center;
+  margin: 5em;
+}
+
+.party-stats {
+  justify-content: center;
+}
+
+.base-box {
+  background-color: #131316;
+  color: #4AA3FC;
+  margin-top: 1em;
+  /* align-items: flex-start; */
+}
+
+summary {
+  color: #EF81E5;
+}
+
+p {
+  background-color: #BCBEF0;
+  color: #3D157A;
+  margin: 1em;
+  min-width: 5em;
+  min-height: 1.5em;
+  padding: 0.5em;
+}
+
+h3 {
+  align-self: flex-start;
+  margin-left: 1em;
+}
+
+details {
+  text-align: left;
+}
