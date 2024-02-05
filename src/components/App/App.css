@@ -4,6 +4,7 @@
 
 header {
   display: flex;
+  justify-content: space-between;
   background-color: #BCBEF0;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -11,6 +12,7 @@ header {
 
 .home-button {
   text-decoration: none;
-  padding-left: 10%;
+  padding-left: 100px;
+  padding-right: 100px;
   align-self: flex-start;
 }
