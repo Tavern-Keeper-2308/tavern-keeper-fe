@@ -1,4 +1,4 @@
-export default const monsters = {
+export const monsters = {
   "data": {
       "queryMonsters": [
           {
@@ -37,7 +37,7 @@ export default const monsters = {
   }
 }
 
-export default const singleMonster = {
+export const singleMonster = {
   "data": {
       "queryMonster": {
           "index": "aboleth",
@@ -115,7 +115,7 @@ export default const singleMonster = {
   }
 }
 
-export default const userData = {
+export const userData = {
   "data": {
       "queryUsers": [
           {
@@ -128,6 +128,33 @@ export default const userData = {
                   },
                   {
                       "encounter_id": 5
+                  }
+              ]
+          }
+      ]
+  }
+}
+
+export const encounterData = {
+  "data": {
+      "queryEncounters": [
+          {
+              "id": 55,
+              "encounter_name": "Party Wipe",
+              "party_size": "4",
+              "party_level": "3",
+              "summary": "Pretty spicy",
+              "description": "You're about to fight 3 beholders, feel free to cry",
+              "treasure": "50GP, Longbow",
+              "encounter_monsters": [
+                  {
+                      "monster_name": "Beholder"
+                  },
+                  {
+                      "monster_name": "Beholder"
+                  },
+                  {
+                      "monster_name": "Beholder"
                   }
               ]
           }
