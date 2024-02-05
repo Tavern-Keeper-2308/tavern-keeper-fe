@@ -15,7 +15,7 @@ export default function App() {
         <Route path="/" element={<Home />}/>
         <Route path="/login" element={<Login />}/>
         <Route path="/:id" element={<EncounterDetails />}/>
-        <Route path="/new" element={<EncounterBuilder />}/>
+        <Route path="/builder" element={<EncounterBuilder />}/>
       </Routes>
     </div>
   );
