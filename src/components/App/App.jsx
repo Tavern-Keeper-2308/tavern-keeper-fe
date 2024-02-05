@@ -8,14 +8,14 @@ export default function App() {
   return (
     <div className="App">
       <header>
-        <Link to={'/'}><h1>Tavern Keeper</h1></Link>
-        <Navigation />
+        {/* <Link to={'/'}><h1>Tavern Keeper</h1></Link> */}
+        {/* <Navigation /> */}
       </header>
       <Routes>
-        <Route path="/" element={<Home />}/>
+        {/* <Route path="/" element={<Home />}/>
         <Route path="/login" element={<Login />}/>
         <Route path="/:id" element={<EncounterDetails />}/>
-        <Route path="/builder" element={<EncounterBuilder />}/>
+        <Route path="/builder" element={<EncounterBuilder />}/> */}
       </Routes>
     </div>
   );
