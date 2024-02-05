@@ -1,4 +1,4 @@
-details, .main-details, .base-box, .party-stats {
+details, .main-details, .foe-stats, .foe-physical, .foe-speeds, .base-box, .party-stats {
   display: flex;
 }
 
@@ -21,6 +21,7 @@ details, .main-details, .base-box, .party-stats {
   background-color: #131316;
   color: #4AA3FC;
   margin-top: 1em;
+  max-width: 6em;
   /* align-items: flex-start; */
 }
 

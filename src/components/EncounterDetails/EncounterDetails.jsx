@@ -5,14 +5,39 @@ export default function EncounterDetails({ id, name, party_size, party_level, su
   const selectedMonsters = encounter_monsters.map((monster) => (
     <details>
       <summary>{monster.name}</summary>
-      <h3>Size:</h3>
-      <p>{monster.size}</p>
-      <h3>Type:</h3>
-      <p>{monster.type}</p>
-      <h3>Alignment:</h3>
-      <p>{monster.alignment}</p>
-      <h3>Challenge Rating:</h3>
-      <p>{monster.challenge_rating}</p>
+      <div className='foe-physical'>
+        <h3>Size:</h3>
+        <p>{monster.size}</p>
+        <h3>Armor Class:</h3>
+        <p>{monster.armor_class.value}</p>
+        <h3>Hit Points:</h3>
+        <p>{monster.hit_points}</p>
+      </div>
+      <div className='foe-stats'>
+        <h3>Strength</h3>
+        <p></p>
+        <h3>Dexterity</h3>
+        <p></p>
+        <h3>Constitution</h3>
+        <p></p>
+        <h3>Intelligence</h3>
+        <p></p>
+        <h3>Wisdom</h3>
+        <p></p>
+        <h3>Charisma</h3>
+        <p></p>
+      </div>
+      <div className='foe-speeds'>
+        <h3>Walk Speed:</h3>
+        <p>{monster.speed.walk}</p>
+        <h3>Swim Speed:</h3>
+        <p>{monster.speed.swim}</p>
+        <h3>Fly Speed:</h3>
+        <p>{monster.speed.fly}</p>
+        <h3>Burrow Speed:</h3>
+        <p>{monster.speed.burrow}</p>
+      </div>
+      
     </details>
   ));
 
