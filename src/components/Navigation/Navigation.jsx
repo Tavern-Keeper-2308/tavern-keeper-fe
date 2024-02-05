@@ -7,8 +7,8 @@ import LogoutButton from '../LogoutButton/LogoutButton';
 const Navigation = () => {
   return (
     <div className='Navigation'>
-      <LogoutButton />
       <EncounterBuilderButton />
+      <LogoutButton />
     </div>
   );
 };

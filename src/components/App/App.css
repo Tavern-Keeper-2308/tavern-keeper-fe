@@ -1,18 +1,49 @@
+/* MOBILE-FIRST VIEW */
 .App {
   text-align: center;
 }
 
 header {
+  font-family: 'MedievalSharp', cursive;
+  font-size: x-large;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  background-color: #BCBEF0;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  background-color: #131316;
+  padding-bottom: 20px;
 }
 
 .home-button {
   text-decoration: none;
-  padding-left: 100px;
-  padding-right: 50px;
-  align-self: flex-start;
+  color: #EF81E5;
+}
+
+.home-button:hover {
+  text-shadow:
+    0 0 5px #3D157A,
+    0 0 20px #EF81E5,
+    0 0 35px #3D157A,
+    0 0 40px #4AA3FC,
+    0 0 50px #4AA3FC;
+}
+
+/* TABLET VIEW */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  header {
+    padding-bottom: 0;
+  }
+}
+
+/* DESKTOP VIEW */
+@media only screen and (min-width: 1024px) {
+  header {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 5px;
+  }
+
+  .home-button {
+    flex: 1;
+    padding-left: 40px;
+  }
 }
