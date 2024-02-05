@@ -1,4 +1,11 @@
 .Navigation {
   display: flex;
   flex-direction: column;
+  row-gap: 25%;
+  margin-left: 50px;
+}
+
+.EncounterBuilderButton,
+.LogoutButton {
+  margin-right: 100px;
 }
