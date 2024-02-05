@@ -1,4 +1,6 @@
 import './App.css';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function App() {
   return (
@@ -9,3 +11,6 @@ function App() {
 }
 
 export default App;
+
+App.propTypes = {
+};
