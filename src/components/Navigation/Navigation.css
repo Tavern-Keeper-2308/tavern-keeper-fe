@@ -10,6 +10,7 @@
 .LogoutButton {
   font-family: 'Arsenal', sans-serif;
   font-size: large;
+  font-weight: 700;
   cursor: pointer;
   background-color: #3D157A;
   color: #4AA3FC;
