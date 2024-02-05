@@ -4,7 +4,7 @@ import './LogoutButton.css';
 
 const LogoutButton = () => {
   return (
-    <NavLink>
+    <NavLink to={'/login'}>
       <button className='LogoutButton'>
         Logout
       </button>
