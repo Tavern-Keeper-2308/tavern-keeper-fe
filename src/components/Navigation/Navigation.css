@@ -1,0 +1,57 @@
+/* MOBILE-FIRST VIEW */
+.Navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.EncounterBuilderButton,
+.LogoutButton {
+  font-family: 'Arsenal', sans-serif;
+  font-size: large;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #3D157A;
+  color: #4AA3FC;
+  padding: 5px 15px 5px 15px;
+  width: 80%;
+  max-width: 300px;
+}
+
+.EncounterBuilderButton:hover,
+.LogoutButton:hover {
+  background-color: #4AA3FC;
+  color: #3D157A;
+}
+
+/* TABLET VIEW */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .Navigation {
+    flex-direction: row;
+    margin-bottom: 15px;
+  }
+
+  .EncounterBuilderButton,
+  .LogoutButton {
+    width: 100%;
+    min-width: 300px;
+  }
+}
+
+/* DESKTOP VIEW */
+@media only screen and (min-width: 1024px) {
+  .Navigation {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: 2;
+    padding-right: 20px;
+  }
+
+  .EncounterBuilderButton,
+  .LogoutButton {
+    width: 100%;
+    min-width: 300px;
+  }
+}
