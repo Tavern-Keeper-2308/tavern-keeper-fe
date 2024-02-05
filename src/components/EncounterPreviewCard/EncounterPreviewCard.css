@@ -1,0 +1,15 @@
+.EncounterPreviewCard {
+  background-color: #131316;
+  color: #BCBEF0;
+  box-sizing: border-box;
+  border: 1px solid #BCBEF0;
+}
+
+.preview-encounter-name {
+  color: #EF81E5;
+}
+
+.preview-monster-list {
+  list-style: none;
+  padding-left: 0;
+}
