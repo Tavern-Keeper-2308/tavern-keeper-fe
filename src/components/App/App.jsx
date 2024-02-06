@@ -24,7 +24,7 @@ export default function App() {
       </Routes>
     </div>
   );
-}
+};
 
 App.propTypes = {
 };
