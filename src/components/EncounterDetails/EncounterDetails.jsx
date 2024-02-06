@@ -122,23 +122,25 @@ export default function EncounterDetails({encounters}) {
 
   return (
     <section className='main-details'>
-      <section className='base-box encounter-header'>
-        <h2 className='encounter-name'>{name}</h2>
-        <div className='party-stats'>
-          <h3>Party Size:</h3>
-          <p>{party_size}</p>
-          <h3>Party Level:</h3>
-          <p>{party_level}</p>
-        </div>
-      </section>
-      <section className='base-box encounter-desc'>
-        <h2>Encounter Description</h2>
-        <h3>Short Summary:</h3>
-        <p>{summary}</p>
-        <h3>Encounter Description:</h3>
-        <p>{description}</p>
-        <h3>Treasure and Rewards:</h3>
-        <p>{treasure}</p>
+      <section className='non-monster'>
+        <section className='base-box encounter-header'>
+          <h2 className='encounter-name'>{name}</h2>
+          <div className='party-stats'>
+            <h3>Party Size:</h3>
+            <p>{party_size}</p>
+            <h3>Party Level:</h3>
+            <p>{party_level}</p>
+          </div>
+        </section>
+        <section className='base-box encounter-desc'>
+          <h2>Encounter Description</h2>
+          <h3>Short Summary:</h3>
+          <p>{summary}</p>
+          <h3>Encounter Description:</h3>
+          <p>{description}</p>
+          <h3>Treasure and Rewards:</h3>
+          <p>{treasure}</p>
+        </section>
       </section>
       <section className='base-box encounter-foes'>
         <h2>Your Enemies</h2>
