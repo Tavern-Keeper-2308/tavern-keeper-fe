@@ -1,4 +1,4 @@
-details, .main-details, .foe-stats, .foe-physical, .foe-speeds, .base-box, .party-stats {
+details, .damage-mods, .senses, .main-details, .foe-stats, .foe-physical, .foe-speeds, .base-box, .party-stats, .foe-proficiencies, .proficiencies {
   display: flex;
 }
 
@@ -26,7 +26,11 @@ details, .main-details, .foe-stats, .foe-physical, .foe-speeds, .base-box, .part
 }
 
 summary {
-  color: #EF81E5;
+  color: #3D157A;
+  font-size: large;
+  font-weight: 600;
+  background-color: #EF81E5;
+  padding-left: 10px;
 }
 
 p {
@@ -43,6 +47,23 @@ h3 {
   margin-left: 1em;
 }
 
-details {
+details, p {
   text-align: left;
+}
+
+details {
+  background-color: #EF81E5;
+}
+
+.purple {
+  background-color: #3D157A;
+  margin: .5em;
+}
+
+.foe-proficiencies > h3 {
+  max-width: 5em;
+}
+
+.proficiencies {
+  flex-wrap: wrap;
 }

@@ -234,17 +234,17 @@ export const encounterData = {
                 }
               }
             ],
-          "damage_vulnerabilities": [],
-          "damage_resistances": [],
-          "damage_immunities": [
-            "fire"
-          ],
-          "senses": {
-            "blindsight": "60 ft.",
-            "darkvision": "120 ft.",
-            "passive_perception": 24
-          },
-          "proficiency_bonus": 6,
+            "damage_vulnerabilities": [],
+            "damage_resistances": [],
+            "damage_immunities": [
+              "fire"
+            ],
+            "senses": {
+              "blindsight": "60 ft.",
+              "darkvision": "120 ft.",
+              "passive_perception": 24
+            },
+            "proficiency_bonus": 6,
             "special_abilities": [
               {
                 "name": "Amphibious",
