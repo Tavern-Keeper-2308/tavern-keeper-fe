@@ -1,10 +1,10 @@
 import './App.css';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { monsters, singleMonster, userData, encounterData } from '../../mockDataset.js'
-import Home from '../Home/Home.jsx'
+import { monsters, singleMonster, userData, encounterData } from '../../mockDataset.js';
+import Home from '../Home/Home.jsx';
 import EncounterDetails from '../EncounterDetails/EncounterDetails.jsx';
-// import Navigation from '../Navigation/Navigation.jsx'
+// import Navigation from '../Navigation/Navigation.jsx';
 import { Routes, Route, Link } from 'react-router-dom';
 
 export default function App() {
@@ -19,10 +19,11 @@ export default function App() {
         {/* <Navigation /> */}
       </header>
       <Routes>
-        <Route path="/" element={<Home encounters={encounters}/>}/>
+        {/* <Route path="/" element={<Home encounters={encounters}/>}/> */}
+        <Route path="/" element={<EncounterDetails encounters={encounters}/>}/>
         {/* <Route path="/login" element={<Login />}/>
         <Route path="/builder" element={<EncounterBuilder enemies={enemies}/>}/> */}
-        <Route path="/:id" element={<EncounterDetails />}/>
+        {/* <Route path="/:id" element={<EncounterDetails encounters={encounters}/>}/> */}
       </Routes>
     </div>
   );

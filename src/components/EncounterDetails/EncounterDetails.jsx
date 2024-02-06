@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
 import './EncounterDetails.css';
 
-export default function EncounterDetails({ id, name, party_size, party_level, summary, description, treasure, encounter_monsters }) {
+export default function EncounterDetails({encounters}) {
 
+  const { id, name, party_size, party_level, summary, description, treasure, encounter_monsters } = encounters[0]
   const selectedMonsters = encounter_monsters.map((monster) => {
+    
     const proficienciesArray = monster.proficiencies.map((prof) => {
       return (
         <div className='purple foe-proficiencies'>

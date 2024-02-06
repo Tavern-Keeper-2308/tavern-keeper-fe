@@ -125,10 +125,359 @@ export const userData = {
         "password": "password123",
         "encounters": [
           {
-            "encounter_id": 3
-          },
-          {
-            "encounter_id": 5
+            "id": 55,
+            "encounter_name": "Party Wipe",
+            "party_size": "4",
+            "party_level": "3",
+            "summary": "Pretty spicy",
+            "description": "You're about to fight 3 beholders, feel free to cry",
+            "treasure": "50GP, Longbow",
+            "encounter_monsters": [
+              {
+                "index": "adult-gold-dragon",
+                "name": "Adult Gold Dragon",
+                "size": "Huge",
+                "armor_class":
+                  {
+                    "value": 19
+                  },
+                "hit_points": 256,
+                "speed": {
+                  "walk": "40 ft.",
+                  "fly": "80 ft.",
+                  "swim": "40 ft."
+                },
+                "strength": 27,
+                "dexterity": 14,
+                "constitution": 25,
+                "intelligence": 16,
+                "wisdom": 15,
+                "charisma": 24,
+                "proficiencies": [
+                  {
+                    "value": 8,
+                    "proficiency": {
+                      "index": "saving-throw-dex",
+                      "name": "Saving Throw: DEX",
+                      "url": "/api/proficiencies/saving-throw-dex"
+                    }
+                  },
+                  {
+                    "value": 13,
+                    "proficiency": {
+                      "index": "saving-throw-con",
+                      "name": "Saving Throw: CON",
+                      "url": "/api/proficiencies/saving-throw-con"
+                    }
+                  },
+                  {
+                    "value": 8,
+                    "proficiency": {
+                      "index": "saving-throw-wis",
+                      "name": "Saving Throw: WIS",
+                      "url": "/api/proficiencies/saving-throw-wis"
+                    }
+                  },
+                  {
+                    "value": 13,
+                    "proficiency": {
+                      "index": "saving-throw-cha",
+                      "name": "Saving Throw: CHA",
+                      "url": "/api/proficiencies/saving-throw-cha"
+                    }
+                  },
+                  {
+                    "value": 8,
+                    "proficiency": {
+                      "index": "skill-insight",
+                      "name": "Skill: Insight",
+                      "url": "/api/proficiencies/skill-insight"
+                    }
+                  },
+                  {
+                    "value": 14,
+                    "proficiency": {
+                      "index": "skill-perception",
+                      "name": "Skill: Perception",
+                      "url": "/api/proficiencies/skill-perception"
+                    }
+                  },
+                  {
+                    "value": 13,
+                    "proficiency": {
+                      "index": "skill-persuasion",
+                      "name": "Skill: Persuasion",
+                      "url": "/api/proficiencies/skill-persuasion"
+                    }
+                  },
+                  {
+                    "value": 8,
+                    "proficiency": {
+                      "index": "skill-stealth",
+                      "name": "Skill: Stealth",
+                      "url": "/api/proficiencies/skill-stealth"
+                    }
+                  }
+                ],
+                "damage_vulnerabilities": [],
+                "damage_resistances": [],
+                "damage_immunities": [
+                  "fire"
+                ],
+                "senses": {
+                  "blindsight": "60 ft.",
+                  "darkvision": "120 ft.",
+                  "passive_perception": 24
+                },
+                "proficiency_bonus": 6,
+                "special_abilities": [
+                  {
+                    "name": "Amphibious",
+                    "desc": "The dragon can breathe air and water."
+                  },
+                  {
+                    "name": "Legendary Resistance",
+                    "desc": "If the dragon fails a saving throw, it can choose to succeed instead."
+                  }
+                ],
+                "actions": [
+                  {
+                    "name": "Multiattack",
+                    "desc": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws."
+                  },
+                  {
+                    "name": "Bite",
+                    "desc": "Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 19 (2d10 + 8) piercing damage."
+                  },
+                  {
+                    "name": "Claw",
+                    "desc": "Melee Weapon Attack: +14 to hit, reach 5 ft., one target. Hit: 15 (2d6 + 8) slashing damage."
+                  },
+                  {
+                    "name": "Tail",
+                    "desc": "Melee Weapon Attack: +14 to hit, reach 15 ft., one target. Hit: 17 (2d8 + 8) bludgeoning damage."
+                  },
+                  {
+                    "name": "Frightful Presence",
+                    "desc": "Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 21 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours."
+                  },
+                  {
+                    "name": "Breath Weapons",
+                    "desc": "The dragon uses one of the following breath weapons.\nFire Breath. The dragon exhales fire in a 60-foot cone. Each creature in that area must make a DC 21 Dexterity saving throw, taking 66 (12d10) fire damage on a failed save, or half as much damage on a successful one.\nWeakening Breath. The dragon exhales gas in a 60-foot cone. Each creature in that area must succeed on a DC 21 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+                  }
+                ],
+                "legendary_actions": [
+                  {
+                    "name": "Detect",
+                    "desc": "The dragon makes a Wisdom (Perception) check."
+                  },
+                  {
+                    "name": "Tail Attack",
+                    "desc": "The dragon makes a tail attack."
+                  },
+                  {
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "desc": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed."
+                  }
+                ],
+                "url": "/api/monsters/adult-gold-dragon"
+              },
+              {
+                "index": "ancient-brass-dragon",
+                "name": "Ancient Brass Dragon",
+                "size": "Gargantuan",
+                "armor_class": [
+                  {
+                    "value": 20
+                  }
+                ],
+                "hit_points": 297,
+                "speed": {
+                  "walk": "40 ft.",
+                  "burrow": "40 ft.",
+                  "fly": "80 ft."
+                },
+                "strength": 27,
+                "dexterity": 10,
+                "constitution": 25,
+                "intelligence": 16,
+                "wisdom": 15,
+                "charisma": 19,
+                "proficiencies": [
+                  {
+                    "value": 6,
+                    "proficiency": {
+                      "index": "saving-throw-dex",
+                      "name": "Saving Throw: DEX",
+                      "url": "/api/proficiencies/saving-throw-dex"
+                    }
+                  },
+                  {
+                    "value": 13,
+                    "proficiency": {
+                      "index": "saving-throw-con",
+                      "name": "Saving Throw: CON",
+                      "url": "/api/proficiencies/saving-throw-con"
+                    }
+                  },
+                  {
+                    "value": 8,
+                    "proficiency": {
+                      "index": "saving-throw-wis",
+                      "name": "Saving Throw: WIS",
+                      "url": "/api/proficiencies/saving-throw-wis"
+                    }
+                  },
+                  {
+                    "value": 10,
+                    "proficiency": {
+                      "index": "saving-throw-cha",
+                      "name": "Saving Throw: CHA",
+                      "url": "/api/proficiencies/saving-throw-cha"
+                    }
+                  },
+                  {
+                    "value": 9,
+                    "proficiency": {
+                      "index": "skill-history",
+                      "name": "Skill: History",
+                      "url": "/api/proficiencies/skill-history"
+                    }
+                  },
+                  {
+                    "value": 14,
+                    "proficiency": {
+                      "index": "skill-perception",
+                      "name": "Skill: Perception",
+                      "url": "/api/proficiencies/skill-perception"
+                    }
+                  },
+                  {
+                    "value": 10,
+                    "proficiency": {
+                      "index": "skill-persuasion",
+                      "name": "Skill: Persuasion",
+                      "url": "/api/proficiencies/skill-persuasion"
+                    }
+                  },
+                  {
+                    "value": 6,
+                    "proficiency": {
+                      "index": "skill-stealth",
+                      "name": "Skill: Stealth",
+                      "url": "/api/proficiencies/skill-stealth"
+                    }
+                  }
+                ],
+                "damage_vulnerabilities": [],
+                "damage_resistances": [],
+                "damage_immunities": [
+                  "fire"
+                ],
+                "senses": {
+                  "blindsight": "60 ft.",
+                  "darkvision": "120 ft.",
+                  "passive_perception": 24
+                },
+                "proficiency_bonus": 6,
+                "special_abilities": [
+                  {
+                    "name": "Legendary Resistance",
+                    "desc": "If the dragon fails a saving throw, it can choose to succeed instead."
+                  }
+                ],
+                "actions": [
+                  {
+                    "name": "Multiattack",
+                    "multiattack_type": "actions",
+                    "desc": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws."
+                  },
+                  {
+                    "name": "Bite",
+                    "desc": "Melee Weapon Attack: +14 to hit, reach 15 ft., one target. Hit: 19 (2d10 + 8) piercing damage."
+                  },
+                  {
+                    "name": "Claw",
+                    "desc": "Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 15 (2d6 + 8) slashing damage."
+                  },
+                  {
+                    "name": "Tail",
+                    "desc": "Melee Weapon Attack: +14 to hit, reach 20 ft., one target. Hit: 17 (2d8 + 8) bludgeoning damage."
+                  },
+                  {
+                    "name": "Frightful Presence",
+                    "desc": "Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 18 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours."
+                  },
+                  {
+                    "name": "Breath Weapons",
+                    "desc": "The dragon uses one of the following breath weapons:\nFire Breath. The dragon exhales fire in an 90-foot line that is 10 feet wide. Each creature in that line must make a DC 21 Dexterity saving throw, taking 56 (16d6) fire damage on a failed save, or half as much damage on a successful one.\nSleep Breath. The dragon exhales sleep gas in a 90-foot cone. Each creature in that area must succeed on a DC 21 Constitution saving throw or fall unconscious for 10 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it."
+                  },
+                  {
+                    "name": "Change Shape",
+                    "desc": "The dragon magically polymorphs into a humanoid or beast that has a challenge rating no higher than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed or borne by the new form (the dragon's choice).\nIn a new form, the dragon retains its alignment, hit points, Hit Dice, ability to speak, proficiencies, Legendary Resistance, lair actions, and Intelligence, Wisdom, and Charisma scores, as well as this action. Its statistics and capabilities are otherwise replaced by those of the new form, except any class features or legendary actions of that form."
+                  }
+                ],
+                "legendary_actions": [
+                  {
+                    "name": "Detect",
+                    "desc": "The dragon makes a Wisdom (Perception) check."
+                  },
+                  {
+                    "name": "Tail Attack",
+                    "desc": "The dragon makes a tail attack."
+                  },
+                  {
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "desc": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed."
+                  }
+                ],
+                "url": "/api/monsters/ancient-brass-dragon"
+              },
+              {
+                "index": "ghoul",
+                "name": "Ghoul",
+                "size": "Medium",
+                "armor_class": [
+                  {
+                    "value": 12
+                  }
+                ],
+                "hit_points": 22,
+                "speed": {
+                  "walk": "30 ft."
+                },
+                "strength": 13,
+                "dexterity": 15,
+                "constitution": 10,
+                "intelligence": 7,
+                "wisdom": 10,
+                "charisma": 6,
+                "proficiencies": [],
+                "damage_vulnerabilities": [],
+                "damage_resistances": [],
+                "damage_immunities": [
+                  "poison"
+                ],
+                "senses": {
+                  "darkvision": "60 ft.",
+                  "passive_perception": 10
+                },
+                "proficiency_bonus": 2,
+                "actions": [
+                  {
+                    "name": "Bite",
+                    "desc": "Melee Weapon Attack: +2 to hit, reach 5 ft., one creature. Hit: 9 (2d6 + 2) piercing damage."
+                  },
+                  {
+                    "name": "Claws",
+                    "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) slashing damage. If the target is a creature other than an elf or undead, it must succeed on a DC 10 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+                  }
+                ],
+                "url": "/api/monsters/ghoul",
+                "legendary_actions": [],
+                "special_abilities": []
+              }          
+            ]
           }
         ]
       }
