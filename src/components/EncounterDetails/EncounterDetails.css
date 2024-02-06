@@ -67,3 +67,23 @@ details {
 .proficiencies {
   flex-wrap: wrap;
 }
+
+@media screen and (max-width: 1000px) {
+  
+}
+
+@media screen and (max-width: 500px) {
+  .base-box {
+    max-width: 75vw;
+  }
+  .main-details, .base-box {
+    flex-direction: column;
+    min-width: 24em;
+    margin: .5em;
+    flex-wrap: wrap;
+    max-width: 24em;
+  }
+  .purple {
+    flex-wrap: wrap;
+  }
+}
