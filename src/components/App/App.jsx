@@ -9,7 +9,11 @@ import Login from '../Login/Login.jsx';
 import { encounterPreviewData } from '../../mockDataset.js';
 
 export default function App() {
-  const [encounters, setEncounters] = useState(encounterPreviewData.data.encounter[0]);
+  const [encounters, setEncounters] = useState([]);
+
+  useEffect(() => {
+    setEncounters(encounterPreviewData.data.encounter[0]);
+  }, []);
 
   return (
     <div className="App">

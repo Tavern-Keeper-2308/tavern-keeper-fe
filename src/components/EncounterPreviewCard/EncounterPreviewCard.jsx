@@ -17,7 +17,7 @@ const EncounterPreviewCard = ({ encounters }) => {
       <p className='preview-encounter-summary'>{encounterSummary}</p>
       <h3 className='preview-section-title'>Monster(s)</h3>
       <ul className='preview-monster-list'>
-        {encounterMonsters.map(monster => (
+        {encounterMonsters && encounterMonsters.map(monster => (
           <li className='preview-monster-name' key={uuid()}>{monster.monster_name}</li>
         ))}
       </ul>
