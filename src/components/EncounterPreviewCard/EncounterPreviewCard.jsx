@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types';
 import { useParams, Link } from 'react-router-dom';
+import { v4 as uuid } from 'uuid';
 import './EncounterPreviewCard.css';
 
-const EncounterPreviewCard = ({ encounterPreviewData }) => {
-  const encounterName = encounterPreviewData.data.encounter[0].encounter_name;
-  const encounterSummary = encounterPreviewData.data.encounter[0].summary;
-  const encounterMonster1 = encounterPreviewData.data.encounter[0].encounter_monsters[0].monster_name;
-  const encounterMonster2 = encounterPreviewData.data.encounter[0].encounter_monsters[1].monster_name;
-  const encounterMonster3 = encounterPreviewData.data.encounter[0].encounter_monsters[2].monster_name;
-  const encounterPartySize = encounterPreviewData.data.encounter[0].party_size;
-  const encounterPartyLevel = encounterPreviewData.data.encounter[0].party_level;
+const EncounterPreviewCard = ({ encounters }) => {
+  const encounterName = encounters.encounter_name;
+  const encounterSummary = encounters.summary;
+  const encounterMonsters = encounters.encounter_monsters;
+  const encounterPartySize = encounters.party_size;
+  const encounterPartyLevel = encounters.party_level;
 
   return (
     <div className='EncounterPreviewCard'>
@@ -18,9 +17,9 @@ const EncounterPreviewCard = ({ encounterPreviewData }) => {
       <p className='preview-encounter-summary'>{encounterSummary}</p>
       <h3 className='preview-section-title'>Monster(s)</h3>
       <ul className='preview-monster-list'>
-        <li className='preview-monster-name'>{encounterMonster1}</li>
-        <li className='preview-monster-name'>{encounterMonster2}</li>
-        <li className='preview-monster-name'>{encounterMonster3}</li>
+        {encounterMonsters.map(monster => (
+          <li className='preview-monster-name' key={uuid()}>{monster.monster_name}</li>
+        ))}
       </ul>
       <div className='preview-small-stat'>
         <div className='preview-party-size'>

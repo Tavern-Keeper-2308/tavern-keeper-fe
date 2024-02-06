@@ -1,13 +1,12 @@
 import PropTypes from 'prop-types';
 import './EncounterPreviewContainer.css';
 import EncounterPreviewCard from '../EncounterPreviewCard/EncounterPreviewCard';
-import { encounterPreviewData } from '../../mockDataset';
 
-const EncounterPreviewContainer = () => {
+const EncounterPreviewContainer = ({ encounters }) => {
 
   return (
     <div className='EncounterPreviewContainer'>
-      <EncounterPreviewCard encounterPreviewData={encounterPreviewData} />
+      <EncounterPreviewCard encounters={encounters} />
     </div>
   );
 };
