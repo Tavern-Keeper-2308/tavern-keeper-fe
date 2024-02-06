@@ -6,13 +6,13 @@ import Home from '../Home/Home.jsx';
 import Navigation from '../Navigation/Navigation.jsx';
 import EncounterBuilder from '../EncounterBuilder/EncounterBuilder.jsx';
 import Login from '../Login/Login.jsx';
-import { encounterPreviewData } from '../../mockDataset.js';
+import { allEncountersForUser } from '../../mockDataset.js';
 
 export default function App() {
   const [encounters, setEncounters] = useState([]);
 
   useEffect(() => {
-    setEncounters(encounterPreviewData.data.encounter[0]);
+    setEncounters(allEncountersForUser.data.queryUsers[0].encounters);
   }, []);
 
   return (

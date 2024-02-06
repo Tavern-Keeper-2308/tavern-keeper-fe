@@ -500,30 +500,90 @@ export const encounterData = {
 
 export const encounterPreviewData = {
   "data": {
-      "encounter": [
+    "encounter": [
+      {
+        "id": 55,
+        "encounter_name": "Party Wipe",
+        "party_size": "4",
+        "party_level": "3",
+        "summary": "Pretty spicy",
+        "description": "You're about to fight 3 beholders, feel free to cry",
+        "treasure": "50GP, Longbow",
+        "encounter_monsters": [
           {
-              "id": 55,
-              "encounter_name": "Party Wipe",
-              "party_size": "4",
-              "party_level": "3",
-              "summary": "Pretty spicy",
-              "description": "You're about to fight 3 beholders, feel free to cry",
-              "treasure": "50GP, Longbow",
-              "encounter_monsters": [
-                  {
-                      "index": "beholder",
-                      "monster_name": "Beholder"
-                  },
-                  {
-                      "index": "beholder",
-                      "monster_name": "Beholder"
-                  },
-                  {
-                      "index": "aboleth",
-                      "monster_name": "Aboleth"
-                  }
-              ]
+            "index": "beholder",
+            "monster_name": "Beholder"
+          },
+          {
+            "index": "beholder",
+            "monster_name": "Beholder"
+          },
+          {
+            "index": "aboleth",
+            "monster_name": "Aboleth"
           }
-      ]
+        ]
+      }
+    ]
+  }
+}
+
+export const allEncountersForUser = {
+  "data": {
+    "queryUsers": [
+      {
+        "id": 55,
+        "username": "Shrek",
+        "password": "password123",
+        "encounters": [
+          {
+            "encounter_id": 3,
+            "encounter_name": "Party Wipe",
+            "party_size": "4",
+            "party_level": "3",
+            "summary": "Pretty spicy",
+            "description": "You're about to fight 3 beholders, feel free to cry",
+            "treasure": "50GP, Longbow",
+            "encounter_monsters": [
+              {
+                "index": "beholder",
+                "monster_name": "Beholder"
+              },
+              {
+                "index": "beholder",
+                "monster_name": "Beholder"
+              },
+              {
+                "index": "aboleth",
+                "monster_name": "Aboleth"
+              }
+            ]
+          },
+          {
+            "encounter_id": 5,
+            "encounter_name": "Get 'Em",
+            "party_size": "5",
+            "party_level": "6",
+            "summary": "I'mma kill all these fools",
+            "description": "It's gonna get ugly. There will be tears.",
+            "treasure": "5000GP",
+            "encounter_monsters": [
+              {
+                "index": "ancient-black-dragon",
+                "monster_name": "Ancient Black Dragon"
+              },
+              {
+                "index": "beholder",
+                "monster_name": "Beholder"
+              },
+              {
+                "index": "aboleth",
+                "monster_name": "Aboleth"
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }
