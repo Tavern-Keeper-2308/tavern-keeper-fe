@@ -12,7 +12,7 @@
   color: #BCBEF0;
   font-family: 'Merienda', cursive;
   font-size: xx-large;
-  padding: 5%;
+  margin-top: 10%;
 }
 
 .login-container {
@@ -50,5 +50,19 @@
 
 /* DESKTOP VIEW */
 @media only screen and (min-width: 1024px) {
-  
+  .Login {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+
+  .greeting {
+    flex-basis: auto;
+    margin-top: 25%;
+  }
+
+  .login-container {
+    flex-basis: auto;
+    margin-top: 10%;
+  }
 }
