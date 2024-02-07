@@ -9,9 +9,9 @@ const Login = () => {
         Welcome Traveler...
       </h2>
       <div className='login-container'>
-        <button className='login-button'>user1</button>
-        <button className='login-button'>user2</button>
-        <button className='login-button'>user3</button>
+        <button className='login-button'>DEMO - No Encounters</button>
+        <button className='login-button'>DEMO - One Encounter</button>
+        <button className='login-button'>DEMO - Many Encounters</button>
       </div>
     </div>
   );
