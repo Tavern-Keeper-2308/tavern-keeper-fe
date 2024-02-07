@@ -5,7 +5,7 @@ import './Login.css';
 const Login = () => {
   return (
     <div className='Login'>
-      Login Placeholder
+      
     </div>
   );
 };
