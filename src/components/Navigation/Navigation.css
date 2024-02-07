@@ -23,6 +23,12 @@
 .LogoutButton:hover {
   background-color: #4AA3FC;
   color: #3D157A;
+  box-shadow:
+    0 0 5px #3D157A,
+    0 0 20px #3D157A,
+    0 0 35px #3D157A,
+    0 0 40px #4AA3FC,
+    0 0 50px #4AA3FC;
 }
 
 /* TABLET VIEW */

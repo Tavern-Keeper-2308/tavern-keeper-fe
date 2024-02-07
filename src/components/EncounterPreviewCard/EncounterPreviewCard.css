@@ -1,7 +1,6 @@
 .EncounterPreviewCard {
   background-color: #131316;
   color: #BCBEF0;
-  /* font-family: 'Crimson Text', serif; */
   font-family: 'Arsenal', sans-serif;
   box-sizing: border-box;
   border: 1px solid #BCBEF0;
@@ -15,8 +14,6 @@
 
 .preview-section-title {
   color: #4AA3FC;
-  /* font-family: 'Merienda', cursive; */
-  /* font-family: 'Crimson Text', serif; */
   font-family: 'Arsenal', sans-serif;
 }
 
