@@ -1,5 +1,6 @@
 details, .damage-mods, .senses, .main-details, .foe-stats, .foe-physical, .foe-speeds, .base-box, .party-stats, .foe-proficiencies, .proficiencies {
   display: flex;
+  box-sizing: border-box;
 }
 
 .main-details {
@@ -7,7 +8,7 @@ details, .damage-mods, .senses, .main-details, .foe-stats, .foe-physical, .foe-s
   max-width: 95vw;
   align-items: flex-start;
   align-content: center;
-  /* margin: 3em; */
+  align-self: center;
 }
 
 .party-stats {
