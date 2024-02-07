@@ -1,10 +1,11 @@
+/* MOBILE-FIRST VIEW */
 .Login {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
   background-color: #3D157A;
-  /* background-image: linear-gradient(to bottom, #3D157A, #131316, #3D157A); */
+  /* background-image: linear-gradient(to bottom, #3D157A, #2D0F57, #3D157A); */
 }
 
 .greeting {
@@ -15,17 +16,14 @@
 }
 
 .login-container {
-  /* display: grid; */
-  /* grid-template-columns: repeat(1, 1fr); */
-  /* grid-gap: 10px; */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 40px;
   background-color: #131316;
   box-sizing: border-box;
   border: 1px solid #BCBEF0;
-  padding: 5%;
-  /* max-width: 80%; */
+  padding: 10%;
 }
 
 .login-button {
@@ -36,5 +34,15 @@
   background-color: #3D157A;
   color: #4AA3FC;
   padding: 5px 15px 5px 15px;
-  max-width: 300px;
+  width: 250px;
+}
+
+/* TABLET VIEW */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  
+}
+
+/* DESKTOP VIEW */
+@media only screen and (min-width: 1024px) {
+  
 }
