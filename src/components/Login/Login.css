@@ -5,6 +5,11 @@
   min-height: 100vh;
   background-color: #3D157A;
   /* background-image: linear-gradient(to bottom, #3D157A, #131316, #3D157A); */
-  
 }
 
+.greeting {
+  color: #BCBEF0;
+  font-family: 'Merienda', cursive;
+  font-size: xx-large;
+  padding: 5%;
+}
