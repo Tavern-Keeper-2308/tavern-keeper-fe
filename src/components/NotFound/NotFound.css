@@ -1,0 +1,31 @@
+/* MOBILE-FIRST VIEW */
+.NotFound {
+  text-align: center;
+  background-image: linear-gradient(to bottom, #3D157A, #2D0F57, #3D157A);
+  height: 100vh;
+}
+
+.error-image {
+  max-width: 80%;
+  max-height: 30%;
+  padding-top: 10%;
+}
+
+.error-message {
+  font-family: 'Merienda', cursive;
+  font-weight: 700;
+  font-size: x-large;
+  color: #BCBEF0;
+  text-shadow: 0 0 5px #EF81E5;
+  padding: 10% 15% 15% 15%;
+}
+
+/* TABLET VIEW */
+/* @media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+} */
+
+/* DESKTOP VIEW */
+/* @media only screen and (min-width: 1024px) {
+
+} */
