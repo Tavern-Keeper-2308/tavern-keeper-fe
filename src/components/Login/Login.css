@@ -13,3 +13,28 @@
   font-size: xx-large;
   padding: 5%;
 }
+
+.login-container {
+  /* display: grid; */
+  /* grid-template-columns: repeat(1, 1fr); */
+  /* grid-gap: 10px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #131316;
+  box-sizing: border-box;
+  border: 1px solid #BCBEF0;
+  padding: 5%;
+  /* max-width: 80%; */
+}
+
+.login-button {
+  font-family: 'Arsenal', sans-serif;
+  font-size: large;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #3D157A;
+  color: #4AA3FC;
+  padding: 5px 15px 5px 15px;
+  max-width: 300px;
+}
