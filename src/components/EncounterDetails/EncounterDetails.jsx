@@ -11,28 +11,28 @@ export default function EncounterDetails({ encounters }) {
       console.log(encounters, "after if")
       const monsters = encounters[0].encounter_monsters.map((monster) => {
         const proficienciesArray = monster.proficiencies.map((prof) => (
-          <div className='purple foe-proficiencies' key={prof.proficiency.name}>
+          <div className='black foe-proficiencies' key={prof.proficiency.name}>
             <h3>{prof.proficiency.name}</h3>
             <p>{prof.value}</p>
           </div>
         ));
 
         const standardActionsArray = monster.actions.map((action) => (
-          <div className='purple foe-standard-actions' key={action.name}>
+          <div className='black foe-standard-actions' key={action.name}>
             <h3>Action: {action.name}</h3>
             <p>{action.desc}</p>
           </div>
         ));
 
         const legendaryActionsArray = monster.legendary_actions.map((action) => (
-          <div className='purple foe-legendary-actions' key={action.name}>
+          <div className='black foe-legendary-actions' key={action.name}>
             <h3>Legendary Action: {action.name}</h3>
             <p>{action.desc}</p>
           </div>
         ));
 
         const specialAbilitiesArray = monster.special_abilities.map((ability) => (
-          <div className='purple foe-special-abilities' key={ability.name}>
+          <div className='black foe-special-abilities' key={ability.name}>
             <h3>Special Ability: {ability.name}</h3>
             <p>{ability.desc}</p>
           </div>
@@ -41,7 +41,7 @@ export default function EncounterDetails({ encounters }) {
         return (
           <details key={monster.name}>
             <summary>{monster.name}</summary>
-            <section className='purple foe-physical'>
+            <section className='black foe-physical'>
               <h3>Size:</h3>
               <p>{monster.size}</p>
               <h3>Armor Class:</h3>
@@ -49,7 +49,7 @@ export default function EncounterDetails({ encounters }) {
               <h3>Hit Points:</h3>
               <p>{monster.hit_points || 0}</p>
             </section>
-            <section className='purple foe-stats'>
+            <section className='black foe-stats'>
               <div className='attributes'>
                 <h3>Strength</h3>
                 <p>{monster.strength || 0}</p>
@@ -75,7 +75,7 @@ export default function EncounterDetails({ encounters }) {
                 <p>{monster.charisma || 0}</p>
               </div>
             </section>
-            <section className='purple foe-speeds'>
+            <section className='black foe-speeds'>
               <div className='attributes'>
                 <h3>Walk Speed:</h3>
                 <p>{monster.speed.walk || "0 ft."}</p>
@@ -93,7 +93,7 @@ export default function EncounterDetails({ encounters }) {
                 <p>{monster.speed.burrow || "0 ft."}</p>
               </div>
             </section>
-            <section className='purple damage-mods'>
+            <section className='black damage-mods'>
               <div>
                 <h3>Vulnerabilities:</h3>
                 <p>{monster.damage_vulnerabilities}</p>
@@ -107,7 +107,7 @@ export default function EncounterDetails({ encounters }) {
                 <p>{monster.damage_immunities}</p>
               </div>
             </section>
-            <section className='purple senses'>
+            <section className='black senses'>
               <div>
                 <h3>Blindsight:</h3>
                 <p>{monster.senses.blindsight || "none"}</p>

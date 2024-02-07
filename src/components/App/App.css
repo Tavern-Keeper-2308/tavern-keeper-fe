@@ -3,6 +3,15 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  background-color: #3D157A;
+}
+
+h2 {
+  font-family: 'Merienda', cursive;
+}
+
+h3, p, summary {
+  font-family: 'Arsenal', sans-serif;
 }
 
 header {
