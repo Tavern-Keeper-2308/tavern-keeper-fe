@@ -45,52 +45,52 @@ export default function EncounterDetails({ encounters }) {
               <h3>Size:</h3>
               <p>{monster.size}</p>
               <h3>Armor Class:</h3>
-              <p>{monster.armor_class.value}</p>
+              <p>{monster.armor_class.value || 0}</p>
               <h3>Hit Points:</h3>
-              <p>{monster.hit_points}</p>
+              <p>{monster.hit_points || 0}</p>
             </section>
             <section className='purple foe-stats'>
               <div className='attributes'>
                 <h3>Strength</h3>
-                <p>{monster.strength}</p>
+                <p>{monster.strength || 0}</p>
               </div>
               <div className='attributes'>
                 <h3>Dexterity</h3>
-                <p>{monster.dexterity}</p>
+                <p>{monster.dexterity || 0}</p>
               </div>
               <div className='attributes'>
                 <h3>Constitution</h3>
-                <p>{monster.constitution}</p>
+                <p>{monster.constitution || 0}</p>
               </div>
               <div className='attributes'>
                 <h3>Intelligence</h3>
-                <p>{monster.intelligence}</p>
+                <p>{monster.intelligence || 0}</p>
               </div>
               <div className='attributes'>
                 <h3>Wisdom</h3>
-                <p></p>
+                <p>{monster.wisdom || 0}</p>
               </div>
               <div className='attributes'>
                 <h3>Charisma</h3>
-                <p>{monster.charisma}</p>
+                <p>{monster.charisma || 0}</p>
               </div>
             </section>
             <section className='purple foe-speeds'>
               <div className='attributes'>
                 <h3>Walk Speed:</h3>
-                <p>{monster.speed.walk}</p>
+                <p>{monster.speed.walk || "0 ft."}</p>
               </div>
               <div className='attributes'>
                 <h3>Swim Speed:</h3>
-                <p>{monster.speed.swim}</p>
+                <p>{monster.speed.swim || "0 ft."}</p>
               </div>
               <div className='attributes'>
                 <h3>Fly Speed:</h3>
-                <p>{monster.speed.fly}</p>
+                <p>{monster.speed.fly || "0 ft."}</p>
               </div>
               <div className='attributes'>
                 <h3>Burrow Speed:</h3>
-                <p>{monster.speed.burrow}</p>
+                <p>{monster.speed.burrow || "0 ft."}</p>
               </div>
             </section>
             <section className='purple damage-mods'>
@@ -103,11 +103,11 @@ export default function EncounterDetails({ encounters }) {
             </section>
             <section className='purple senses'>
               <h3>Blindsight:</h3>
-              <p>{monster.senses.blindsight}</p>
+              <p>{monster.senses.blindsight || "none"}</p>
               <h3>Darkvision:</h3>
-              <p>{monster.senses.darkvision}</p>
+              <p>{monster.senses.darkvision || "none"}</p>
               <h3>Passive Perception:</h3>
-              <p>{monster.senses.passive_perception}</p>
+              <p>{monster.senses.passive_perception || 0}</p>
             </section>
             <section className='proficiencies'>{proficienciesArray}</section>
             <section className='special-abilities'>{specialAbilitiesArray}</section>

@@ -4,8 +4,8 @@ details, .damage-mods, .senses, .main-details, .foe-stats, .foe-physical, .foe-s
 }
 
 .main-details {
-  background-color: #BCBEF0;
-  max-width: 95vw;
+  max-width: 90vw;
+  min-width: 85vw;
   align-items: flex-start;
   align-content: center;
   align-self: center;
@@ -20,6 +20,10 @@ details, .damage-mods, .senses, .main-details, .foe-stats, .foe-physical, .foe-s
   color: #4AA3FC;
   margin-top: 1em;
   box-sizing: border-box;
+  max-width: 95vw;
+  align-self: center;
+  min-width: 85vw;
+  border: solid 10px #BCBEF0;
   /* max-width: 6em; */
   flex-direction: column;
   /* align-items: flex-start; */
