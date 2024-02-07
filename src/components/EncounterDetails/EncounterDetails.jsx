@@ -94,20 +94,32 @@ export default function EncounterDetails({ encounters }) {
               </div>
             </section>
             <section className='purple damage-mods'>
-              <h3>Vulnerabilities:</h3>
-              <p>{monster.damage_vulnerabilities}</p>
-              <h3>Resistances:</h3>
-              <p>{monster.damage_resistances}</p>
-              <h3>Immunities:</h3>
-              <p>{monster.damage_immunities}</p>
+              <div>
+                <h3>Vulnerabilities:</h3>
+                <p>{monster.damage_vulnerabilities}</p>
+              </div>
+              <div>
+                <h3>Resistances:</h3>
+                <p>{monster.damage_resistances}</p>
+              </div>
+              <div>
+                <h3>Immunities:</h3>
+                <p>{monster.damage_immunities}</p>
+              </div>
             </section>
             <section className='purple senses'>
-              <h3>Blindsight:</h3>
-              <p>{monster.senses.blindsight || "none"}</p>
-              <h3>Darkvision:</h3>
-              <p>{monster.senses.darkvision || "none"}</p>
-              <h3>Passive Perception:</h3>
-              <p>{monster.senses.passive_perception || 0}</p>
+              <div>
+                <h3>Blindsight:</h3>
+                <p>{monster.senses.blindsight || "none"}</p>
+              </div>
+              <div>
+                <h3>Darkvision:</h3>
+                <p>{monster.senses.darkvision || "none"}</p>
+              </div>
+              <div>
+                <h3>Passive Perception:</h3>
+                <p>{monster.senses.passive_perception || 0}</p>
+              </div>
             </section>
             <section className='proficiencies'>{proficienciesArray}</section>
             <section className='special-abilities'>{specialAbilitiesArray}</section>

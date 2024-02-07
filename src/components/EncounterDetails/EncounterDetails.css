@@ -41,8 +41,8 @@ p {
   background-color: #BCBEF0;
   color: #3D157A;
   margin: 1em;
-  /* min-width: 5em;
-  min-height: 1.5em; */
+  min-width: 2em;
+  min-height: 1.25em;
   padding: 0.5em;
 }
 
