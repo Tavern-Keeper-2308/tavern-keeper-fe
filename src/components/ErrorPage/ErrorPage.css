@@ -1,5 +1,5 @@
 /* MOBILE-FIRST VIEW */
-.NotFound {
+.ErrorPage {
   text-align: center;
   background-image: linear-gradient(to bottom, #3D157A, #2D0F57, #3D157A);
   height: 100vh;
@@ -16,7 +16,8 @@
   font-weight: 700;
   font-size: x-large;
   color: #BCBEF0;
-  text-shadow: 0 0 5px #EF81E5;
+  text-shadow: 
+    0 0 2px #EF81E5;
   padding: 10% 15% 15% 15%;
 }
 

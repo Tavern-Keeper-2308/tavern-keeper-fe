@@ -6,7 +6,7 @@ import Home from '../Home/Home.jsx';
 import Navigation from '../Navigation/Navigation.jsx';
 import EncounterBuilder from '../EncounterBuilder/EncounterBuilder.jsx';
 import Login from '../Login/Login.jsx';
-import NotFound from '../NotFound/NotFound.jsx';
+import ErrorPage from '../ErrorPage/ErrorPage.jsx';
 import { allEncountersForUser } from '../../mockDataset.js';
 
 export default function App() {
@@ -29,7 +29,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         {/* <Route path="/:id" element={<EncounterDetails />}/> */}
         <Route path="/encounterbuilder" element={<EncounterBuilder />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
   );
