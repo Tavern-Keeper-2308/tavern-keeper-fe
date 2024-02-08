@@ -22,9 +22,11 @@
 }
 
 /* TABLET VIEW */
-/* @media only screen and (min-width: 768px) and (max-width: 1023px) {
-
-} */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .error-message {
+    font-size: xx-large;
+  }
+}
 
 /* DESKTOP VIEW */
 /* @media only screen and (min-width: 1024px) {
