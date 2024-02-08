@@ -1,0 +1,9 @@
+input {
+  background-color: #BCBEF0;
+  border: 1px solid #EF81E5;
+}
+
+input::placeholder {
+  font-family: 'Arsenal', sans-serif;
+  color: #3D157A;
+}
