@@ -3,8 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  background-image: linear-gradient(to bottom, #3D157A, #2D0F57, #3D157A);
+  height: 100vh;
 }
 
 .greeting {
