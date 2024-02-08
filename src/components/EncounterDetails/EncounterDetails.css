@@ -1,3 +1,7 @@
+.EncounterDetails {
+  overflow: auto;
+}
+
 details, .damage-mods, .senses, .main-details, .foe-stats, .foe-physical, .foe-speeds, .base-box, .party-stats, .foe-proficiencies, .proficiencies {
   display: flex;
   box-sizing: border-box;
