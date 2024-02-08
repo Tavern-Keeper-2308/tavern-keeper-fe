@@ -1,8 +1,18 @@
 /* MOBILE-FIRST VIEW */
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
   background-image: linear-gradient(to bottom, #3D157A, #2D0F57, #3D157A);
   height: 100vh;
+}
+
+h2 {
+  font-family: 'Merienda', cursive;
+}
+
+h3, p, summary {
+  font-family: 'Arsenal', sans-serif;
 }
 
 header {
