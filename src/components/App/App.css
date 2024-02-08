@@ -3,7 +3,8 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  background-color: #3D157A;
+  background-image: linear-gradient(to bottom, #3D157A, #2D0F57, #3D157A);
+  height: 100vh;
 }
 
 h2 {
@@ -35,7 +36,12 @@ header {
     0 0 20px #EF81E5,
     0 0 35px #3D157A,
     0 0 40px #4AA3FC,
-    0 0 50px #4AA3FC;
+    0 0 50px #4AA3FC,
+    0 0 60px #4AA3FC,
+    0 0 70px #EF81E5,
+    0 0 80px #EF81E5,
+    0 0 90px #4AA3FC,
+    0 0 100px #4AA3FC;
 }
 
 /* TABLET VIEW */
