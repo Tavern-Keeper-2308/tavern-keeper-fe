@@ -23,12 +23,29 @@
 
 /* TABLET VIEW */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .error-image {
+    max-height: 40%;
+  }
+  
   .error-message {
     font-size: xx-large;
   }
 }
 
 /* DESKTOP VIEW */
-/* @media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) {
+  .ErrorPage {
+    display: flex;
+    flex-direction: row;
+  }
 
-} */
+  .error-image {
+    padding-left: 10%;
+    max-height: 50%;
+  }
+
+  .error-message {
+    font-size: xx-large;
+    padding: 15% 10% 5% 10%;
+  }
+}
