@@ -38,6 +38,24 @@ export default function EncounterDetails({ encounters }) {
           </div>
         ));
 
+        const vulnerabilitiesArray = monster.damage_vulnerabilities.map((vulnerability) => (
+          <div key={vulnerability}>
+            <p>{vulnerability}</p>
+          </div>
+        ));
+
+        const resistancesArray = monster.damage_resistances.map((resistance) => (
+          <div key={resistance}>
+            <p>{resistance}</p>
+          </div>
+        ));
+
+        const immunitiesArray = monster.damage_immunities.map((immunity) => (
+          <div key={immunity}>
+            <p>{immunity}</p>
+          </div>
+        ));
+
         return (
           <details key={monster.name}>
             <summary>{monster.name}</summary>
@@ -96,15 +114,15 @@ export default function EncounterDetails({ encounters }) {
             <section className='black damage-mods'>
               <div>
                 <h3>Vulnerabilities:</h3>
-                <p>{monster.damage_vulnerabilities}</p>
+                {monster.damage_vulnerabilities.length === 0 ? <p>none</p> : vulnerabilitiesArray}
               </div>
               <div>
                 <h3>Resistances:</h3>
-                <p>{monster.damage_resistances}</p>
+                {monster.damage_resistances.length === 0 ? <p>none</p> : resistancesArray}
               </div>
               <div>
                 <h3>Immunities:</h3>
-                <p>{monster.damage_immunities}</p>
+                {monster.damage_immunities.length === 0 ? <p>none</p> : immunitiesArray}
               </div>
             </section>
             <section className='black senses'>
