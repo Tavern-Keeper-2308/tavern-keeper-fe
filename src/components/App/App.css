@@ -5,6 +5,7 @@
   flex-direction: column;
   background-image: linear-gradient(to bottom, #3D157A, #2D0F57, #3D157A);
   height: 100vh;
+  overflow: auto;
 }
 
 h2 {
