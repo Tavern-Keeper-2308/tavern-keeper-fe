@@ -21,13 +21,13 @@ const EncounterBuilder = ({allMonsters}) => {
   const handleInputChangeHP = (e) => { 
     const searchTerm = e.target.value;
 
-    setSearchHP(searchTerm)
+    setSearchHP(parseInt(searchTerm))
     console.log(searchHP, "search HP")
   };
 
   const handleInputChangeAC = (e) => { 
     const searchTerm = e.target.value;
-    setSearchAC(searchTerm)
+    setSearchAC(parseInt(searchTerm))
     console.log(searchAC, "search AC")
   };
 
@@ -60,14 +60,14 @@ const EncounterBuilder = ({allMonsters}) => {
       setFilteredMonsters(filter)
     } else if(selectedFilter === "ac"){
       const filter = allMonsters.filter((monster)=> {
-        return monster.armor_class == searchAC
+        return monster.armorClass === searchAC
       })
       console.log(filter, "filter applied")
       setFilteredMonsters(filter)
     } else if(selectedFilter === "hp") {
       console.log(searchHP, "insife")
       const filter = allMonsters.filter((monster)=> {
-        return monster.hit_points == searchHP
+        return monster.hitPoints === searchHP
       })
       console.log(filter, "filter applied")
       setFilteredMonsters(filter)
