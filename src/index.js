@@ -7,7 +7,7 @@ import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 
 const client = new ApolloClient({
-  uri: 'https://tavern-keeper-be.onrender.com/',
+  uri: 'https://tavern-keeper-be.onrender.com/graphql/',
   cache: new InMemoryCache()
 });
 
