@@ -33,7 +33,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home userName={userName} />} />
         <Route path="/login" element={<Login setUserName={setUserName} />} />
-        <Route path="/details" element={<EncounterDetails encounters={encounters} />} />
+        <Route path="/details/:id" element={<EncounterDetails encounters={encounters} />} />
         <Route path="/encounterbuilder" element={<EncounterBuilder />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
