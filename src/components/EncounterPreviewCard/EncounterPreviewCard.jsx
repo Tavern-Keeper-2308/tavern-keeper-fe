@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
-import { useParams, Link } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 import './EncounterPreviewCard.css';
-import EncounterDetails from '../EncounterDetails/EncounterDetails';
 
 const EncounterPreviewCard = ({ id, name, summary, partySize, partyLevel, monsters, onClick }) => {
   return (

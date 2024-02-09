@@ -2,9 +2,13 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import './LogoutButton.css';
 
-const LogoutButton = () => {
+const LogoutButton = ({ setUserName }) => {
+  const handleLogoutClick = () => {
+    setUserName(null);
+  };
+
   return (
-    <NavLink to={'/login'}>
+    <NavLink to={'/login'} onClick={() => handleLogoutClick()}>
       <button className='LogoutButton'>
         Logout
       </button>

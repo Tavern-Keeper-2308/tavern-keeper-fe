@@ -1,18 +1,18 @@
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Routes, Route, Link } from 'react-router-dom';
-import { useApolloClient, gql } from '@apollo/client';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import Home from '../Home/Home.jsx';
 import Navigation from '../Navigation/Navigation.jsx';
 import EncounterBuilder from '../EncounterBuilder/EncounterBuilder.jsx';
 import EncounterDetails from '../EncounterDetails/EncounterDetails.jsx';
 import Login from '../Login/Login.jsx';
 import ErrorPage from '../ErrorPage/ErrorPage.jsx';
-import { allEncountersForUser } from '../../mockDataset.js';
 
 export default function App() {
   const [encounters, setEncounters] = useState([]);
+  const [userName, setUserName] = useState(null);
+  const location = useLocation();
   const [monster, setMonster] = useState(null);
   const [selectedEncounter, setSelectedEncounter] = useState(null);
 
@@ -150,14 +150,22 @@ export default function App() {
   return (
     <div className="App">
       <header>
-        <Link className='home-button' to={'/'}>
-          <h1 className='app-title'>Tavern Keeper</h1>
-        </Link>
-        <Navigation />
+        {location.pathname !== '/login' ? (
+          <>
+            <Link className='home-button' to={'/'}>
+              <h1 className='app-title'>Tavern Keeper</h1>
+            </Link>
+            <Navigation setUserName={setUserName} />
+          </>
+        ) : (
+          <div className='home-button-disabled'>
+            <h1 className='app-title'>Tavern Keeper</h1>
+          </div>
+        )}
       </header>
       <Routes>
-        <Route path="/" element={<Home encounters={encounters} />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Home userName={userName} />} />
+        <Route path="/login" element={<Login setUserName={setUserName} />} />
         <Route path="/details/:id" element={<EncounterDetails encounters={encounters} />} />
         <Route path="/encounterbuilder" element={<EncounterBuilder />} />
         <Route path="*" element={<ErrorPage />} />
