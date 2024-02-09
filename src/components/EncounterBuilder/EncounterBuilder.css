@@ -4,6 +4,30 @@ input {
 }
 
 input::placeholder {
-  font-family: 'Arsenal', sans-serif;
   color: #3D157A;
+}
+
+label, input::placeholder {
+  font-family: 'Arsenal', sans-serif;
+}
+
+button {
+  width: fit-content;
+  align-self: center;
+}
+
+.monster-checker {
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #901386;
+  max-width: 15em;
+  border: 1px solid #BCBEF0;
+}
+
+.encounter-builder, .monster-checker {
+  display: flex;
+}
+
+.encounter-builder {
+  flex-direction: column;
 }

@@ -110,11 +110,7 @@ export const monsters = {
       "index": "ancient-brass-dragon",
       "name": "Ancient Brass Dragon",
       "size": "Gargantuan",
-      "armor_class": [
-        {
-          "value": 20
-        }
-      ],
+      "armor_class": 20,
       "hit_points": 297,
       "speed": {
         "walk": "40 ft.",
