@@ -9,6 +9,13 @@ const EncounterBuilder = ({allMonsters}) => {
   const [searchSize, setSearchSize] = useState('');
   const [searchName, setSearchName] = useState('');
   const [filteredMonsters, setFilteredMonsters] = useState(allMonsters);
+  const [selectedFilter, setSelectedFilter] = useState('none');
+
+  const handleRadioChange = (e) => {
+    const choice = e.target.value;
+    setSelectedFilter(choice);
+    // console.log(selectedFilter, "filter current")
+  }
 
   const handleInputChangeHP = (e) => { 
     const searchTerm = e.target.value;
@@ -34,11 +41,16 @@ const EncounterBuilder = ({allMonsters}) => {
     setSearchSize(searchTerm)
   };
 
+  function doFilter(selectedFilter) {
+    if(selectedFilter === "none"){
+      setFilteredMonsters(allMonsters);
+    } 
+  }
 
   useEffect(() => {
     if (allMonsters && allMonsters) {
       const monsterNames = allMonsters.map((monster) => {
-        return (<option value={monster.name}>{monster.name}</option>)
+        return (<option key={monster.name} value={monster.name}>{monster.name}</option>)
       })
       setMonsterList(monsterNames)
     }
@@ -48,6 +60,10 @@ const EncounterBuilder = ({allMonsters}) => {
   useEffect(() => {
     console.log(filteredMonsters)
   }, [filteredMonsters])
+
+  useEffect(() => {
+    console.log(selectedFilter, "selectedFilter")
+  }, [selectedFilter])
 
   return (
     <div className='encounter-builder'>
@@ -73,7 +89,9 @@ const EncounterBuilder = ({allMonsters}) => {
           </section>
         </section>
         <section className='encounter-foes base-box'>
+          <h2>Search By:</h2>
           <div className='monster-selection'>
+            <input type='radio' name='filter-select' value='size' onChange={handleRadioChange}></input>
             <label htmlFor="size">Size:</label>
             <select onChange={handleInputChangeSize} id='size'>
               <option value=''></option>
@@ -84,12 +102,15 @@ const EncounterBuilder = ({allMonsters}) => {
               <option value="Huge">Huge</option>
               <option value="Gargantuan">Gargantuan</option>
             </select>
+            <input type='radio' name='filter-select' value='name' onChange={handleRadioChange}></input>
             <label htmlFor="name">Name:</label>
             <select onChange={handleInputChangeName} id='name'>
               <option value=""></option>
               {monsterList}
             </select>
+            <input type='radio' name='filter-select' value='hp' onChange={handleRadioChange}></input>
             <input type="number" aria-label="hit points search" placeholder="Hit Points" onChange={handleInputChangeHP}></input>
+            <input type='radio' name='filter-select' value='ac' onChange={handleRadioChange}></input>
             <input type="number"aria-label="armor class search" placeholder="Armor Class" onChange={handleInputChangeAC}></input>
             <button onClick={() => {}}>Search</button>
           </div>
