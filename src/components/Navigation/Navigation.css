@@ -1,5 +1,6 @@
 /* MOBILE-FIRST VIEW */
-.Navigation {
+.Navigation,
+.navigation-buttons {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,7 +34,9 @@
 
 /* TABLET VIEW */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  .Navigation {
+
+  .Navigation,
+  .navigation-buttons {
     flex-direction: row;
     margin-bottom: 15px;
   }
@@ -47,7 +50,9 @@
 
 /* DESKTOP VIEW */
 @media only screen and (min-width: 1024px) {
-  .Navigation {
+
+  .Navigation,
+  .navigation-buttons {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;

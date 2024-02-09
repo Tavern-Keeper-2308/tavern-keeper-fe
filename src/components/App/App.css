@@ -12,7 +12,9 @@ h2 {
   font-family: 'Merienda', cursive;
 }
 
-h3, p, summary {
+h3,
+p,
+summary {
   font-family: 'Arsenal', sans-serif;
 }
 
@@ -26,7 +28,8 @@ header {
   padding-bottom: 20px;
 }
 
-.home-button {
+.home-button,
+.home-button-disabled {
   text-decoration: none;
   color: #EF81E5;
 }
@@ -60,7 +63,8 @@ header {
     padding-bottom: 5px;
   }
 
-  .home-button {
+  .home-button,
+  .home-button-disabled {
     flex: 1;
     padding-left: 40px;
   }
