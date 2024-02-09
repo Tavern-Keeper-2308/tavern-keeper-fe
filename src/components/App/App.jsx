@@ -37,7 +37,7 @@ export default function App() {
           }
     `,
           variables: {
-            "userName": "demo-many-encounters"
+            "userName": "demo-one-encounter"
           },
         });
         setEncounters(data.encounters);
@@ -59,7 +59,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home encounters={encounters} />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/details" element={<EncounterDetails encounters={encounters} />} />
+        <Route path="/details/:id" element={<EncounterDetails encounters={encounters} />} />
         <Route path="/encounterbuilder" element={<EncounterBuilder />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

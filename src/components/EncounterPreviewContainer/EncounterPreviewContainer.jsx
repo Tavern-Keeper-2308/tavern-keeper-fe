@@ -1,8 +1,15 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import './EncounterPreviewContainer.css';
 import EncounterPreviewCard from '../EncounterPreviewCard/EncounterPreviewCard';
 
 const EncounterPreviewContainer = ({ encounters }) => {
+  const [selectedEncounter, setSelectedEncounter] = useState(null);
+
+  const selectEncounter = (selectedEncounter) => {
+    setSelectedEncounter(selectedEncounter);
+  }
+
   const encounterPreviews = encounters && encounters.map(encounter => (
     <EncounterPreviewCard
       key={encounter.id}
@@ -12,6 +19,10 @@ const EncounterPreviewContainer = ({ encounters }) => {
       partySize={encounter.partySize}
       partyLevel={encounter.partyLevel}
       monsters={encounter.encounterMonsters}
+      onClick={() => {
+        selectEncounter(selectedEncounter);
+        console.log(selectedEncounter);
+      }}
     />
   ));
 

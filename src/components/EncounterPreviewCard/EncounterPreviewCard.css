@@ -7,6 +7,10 @@
   padding: 5%;
 }
 
+.preview-card-link {
+  text-decoration: none;
+}
+
 .preview-encounter-name {
   color: #EF81E5;
   font-family: 'Merienda', cursive;
