@@ -14,6 +14,7 @@ import { allEncountersForUser } from '../../mockDataset.js';
 export default function App() {
   const [encounters, setEncounters] = useState([]);
   const [monster, setMonster] = useState(null);
+  const [selectedEncounter, setSelectedEncounter] = useState(null);
 
   const client = useApolloClient();
 
@@ -44,6 +45,37 @@ export default function App() {
       setEncounters(data.encounters);
     } catch (error) {
       console.error('Error fetching encounters: ', error);
+    }
+  };
+
+  const getSelectedEncounter = async () => {
+    try {
+      const { data } = await client.query({
+        query: gql`
+          query getEncounter($id: ID!) {
+            encounter(id: $id) {
+                id
+                userName
+                encounterName
+                partySize
+                partyLevel
+                summary
+                description
+                treasure
+                encounterMonsters {
+                    monsterName
+                    monsterIndex
+                }
+            }
+          }
+        `,
+        variables: {
+          "id": 2
+        },
+      });
+      setSelectedEncounter(data.encounter);
+    } catch (error) {
+      console.error('Error fetching encounter:', error);
     }
   };
 
@@ -112,6 +144,7 @@ export default function App() {
   useEffect(() => {
     getEncounters();
     // getMonster();
+    // getSelectedEncounter();
   }, [client]);
 
   return (

@@ -9,6 +9,7 @@ export default function EncounterDetails({ selectedEncounter }) {
 
   useEffect(() => {
     if (id) {
+      console.log(selectedEncounter);
     // if (selectedEncounter && selectedEncounter) {
     //   console.log(selectedEncounter);
       // const monsters = encounters[0].encounterMonsters.map((monster) => {
@@ -141,7 +142,7 @@ export default function EncounterDetails({ selectedEncounter }) {
   //               <h3>Passive Perception:</h3>
   //               <p>{monster.senses.passive_perception || 0}</p>
   //             </div>
-  //           </section>
+            // </section>
   //           <section className='proficiencies'>{proficienciesArray}</section>
   //           <section className='special-abilities'>{specialAbilitiesArray}</section>
   //           <section className='standard-actions'>{standardActionsArray}</section>
