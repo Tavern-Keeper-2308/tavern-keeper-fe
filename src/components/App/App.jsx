@@ -37,7 +37,7 @@ export default function App() {
           }
     `,
           variables: {
-            "userName": "demo-one-encounter"
+            "userName": "demo-many-encounters"
           },
         });
         setEncounters(data.encounters);

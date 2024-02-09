@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import './EncounterDetails.css';
 
 export default function EncounterDetails({ selectedEncounter }) {
+  const { id } = useParams();
   const [selectedMonsters, setSelectedMonsters] = useState([]);
 
   useEffect(() => {
-    if (selectedEncounter && selectedEncounter) {
-      console.log(selectedEncounter);
+    if (id) {
+    // if (selectedEncounter && selectedEncounter) {
+    //   console.log(selectedEncounter);
       // const monsters = encounters[0].encounterMonsters.map((monster) => {
 
         // const proficienciesArray = monster.proficiencies.map((prof) => (
