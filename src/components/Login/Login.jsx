@@ -1,25 +1,32 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
-const Login = () => {
+const Login = ({ setUserName }) => {
+  const navigate = useNavigate();
+
+  const handleUserClick = (userName) => {
+    setUserName(userName);
+    navigate('/');
+  };
+
   return (
     <div className='Login'>
       <h2 className='greeting'>
         Welcome Traveler...
       </h2>
       <div className='login-container'>
-        <Link className='login-button-link' to={'/'}>
-          <button className='login-button'>DEMO - No Encounters</button>
-        </Link>
+        <div className='login-button-link'>
+          <button className='login-button' onClick={() => handleUserClick("demo-no-encounters")}>DEMO - No Encounters</button>
+        </div>
 
-        <Link className='login-button-link' to={'/'}>
-          <button className='login-button'>DEMO - One Encounter</button>
-        </Link>
+        <div className='login-button-link'>
+          <button className='login-button' onClick={() => handleUserClick("demo-one-encounter")}>DEMO - One Encounter</button>
+        </div>
 
-        <Link className='login-button-link' to={'/'}>
-          <button className='login-button'>DEMO - Many Encounters</button>
-        </Link>
+        <div className='login-button-link'>
+          <button className='login-button' onClick={() => handleUserClick("demo-many-encounters")} >DEMO - Many Encounters</button>
+        </div>
       </div>
     </div>
   );
