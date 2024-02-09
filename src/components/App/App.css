@@ -66,6 +66,5 @@ header {
   .home-button,
   .home-button-disabled {
     flex: 1;
-    padding-left: 40px;
   }
 }
