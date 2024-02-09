@@ -20,35 +20,64 @@ const EncounterBuilder = ({allMonsters}) => {
 
   const handleInputChangeHP = (e) => { 
     const searchTerm = e.target.value;
-    console.log(searchTerm, "HP")
+
     setSearchHP(searchTerm)
+    console.log(searchHP, "search HP")
   };
 
   const handleInputChangeAC = (e) => { 
     const searchTerm = e.target.value;
-    console.log(searchTerm, "AC")
     setSearchAC(searchTerm)
+    console.log(searchAC, "search AC")
   };
 
   const handleInputChangeName = (event) => { 
     const searchTerm = event.target.value;
-    console.log(searchTerm, "search name")
     setSearchName(searchTerm)
+    console.log(searchName, "search name")
   };
 
   const handleInputChangeSize = (event) => { 
     const searchTerm = event.target.value; 
-    console.log(searchSize, "search size")
     setSearchSize(searchTerm)
+    console.log(searchSize, "search size")
   };
 
   function applyFilter(selectedFilter) {
     if(selectedFilter === "none"){
       setFilteredMonsters(allMonsters);
-    } else {
-      
+    } else if(selectedFilter === "name") {
+      const filter = allMonsters.filter((monster)=> {
+        return monster.name.toLowerCase() == searchName.toLowerCase()
+      })
+      console.log(filter, "filter applied")
+      setFilteredMonsters(filter)
+    } else if(selectedFilter === "size") {
+      const filter = allMonsters.filter((monster)=> {
+        return monster.size.toLowerCase() == searchSize.toLowerCase()
+      })
+      console.log(filter, "filter applied")
+      setFilteredMonsters(filter)
+    } else if(selectedFilter === "ac"){
+      const filter = allMonsters.filter((monster)=> {
+        return monster.armor_class == searchAC
+      })
+      console.log(filter, "filter applied")
+      setFilteredMonsters(filter)
+    } else if(selectedFilter === "hp") {
+      console.log(searchHP, "insife")
+      const filter = allMonsters.filter((monster)=> {
+        return monster.hit_points == searchHP
+      })
+      console.log(filter, "filter applied")
+      setFilteredMonsters(filter)
     }
   }
+
+// array data comes in from allMonsters
+// useEffect waits for allMonsters to fully load, then maps all the names out for the name dropdown search and sets the monsterList state with that array
+// also sets the filteredMonsters to start with all of them
+//
 
   useEffect(() => {
     if (allMonsters && allMonsters) {
@@ -63,7 +92,7 @@ const EncounterBuilder = ({allMonsters}) => {
 
 
   useEffect(() => {
-    console.log(filteredMonsters, "filtered monsetsr")
+    console.log(filteredMonsters, "filtered monster")
     const showList = filteredMonsters.map(monster => {
       return (
         <div className='monster-checker'>
@@ -126,10 +155,10 @@ const EncounterBuilder = ({allMonsters}) => {
             <input type="number" aria-label="hit points search" placeholder="Hit Points" onChange={handleInputChangeHP}></input>
             <input type='radio' name='filter-select' value='ac' onChange={handleRadioChange}></input>
             <input type="number"aria-label="armor class search" placeholder="Armor Class" onChange={handleInputChangeAC}></input>
-            <button onClick={() => {}}>Search</button>
+            <button onClick={() => {applyFilter(selectedFilter)}}>Search</button>
           </div>
           <div className='monster-selection'>
-            <div>{monstersShow}</div>
+           {monstersShow}
           </div>
         </section>
       </section>
