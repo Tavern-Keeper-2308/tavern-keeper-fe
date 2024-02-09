@@ -8,6 +8,7 @@ const EncounterBuilder = ({allMonsters}) => {
   const [searchHP, setSearchHP] = useState(0);
   const [searchSize, setSearchSize] = useState('');
   const [searchName, setSearchName] = useState('');
+  const [monstersShow, setMonstersShow] = useState([]);
   const [filteredMonsters, setFilteredMonsters] = useState(allMonsters);
   const [selectedFilter, setSelectedFilter] = useState('none');
 
@@ -41,24 +42,37 @@ const EncounterBuilder = ({allMonsters}) => {
     setSearchSize(searchTerm)
   };
 
-  function doFilter(selectedFilter) {
+  function applyFilter(selectedFilter) {
     if(selectedFilter === "none"){
       setFilteredMonsters(allMonsters);
-    } 
+    } else {
+      
+    }
   }
 
   useEffect(() => {
     if (allMonsters && allMonsters) {
+      console.log(allMonsters, "allmonsters")
       const monsterNames = allMonsters.map((monster) => {
         return (<option key={monster.name} value={monster.name}>{monster.name}</option>)
       })
       setMonsterList(monsterNames)
+      setFilteredMonsters(allMonsters)
     }
   }, [allMonsters])
 
 
   useEffect(() => {
-    console.log(filteredMonsters)
+    console.log(filteredMonsters, "filtered monsetsr")
+    const showList = filteredMonsters.map(monster => {
+      return (
+        <div className='monster-checker'>
+        <p>{monster.name}</p>
+        <input type="checkbox" id={monster.name} key={monster.name} name="name" value={monster.name}></input>
+      </div>
+      )
+    })
+    setMonstersShow(showList)
   }, [filteredMonsters])
 
   useEffect(() => {
@@ -115,14 +129,7 @@ const EncounterBuilder = ({allMonsters}) => {
             <button onClick={() => {}}>Search</button>
           </div>
           <div className='monster-selection'>
-            <div>{filteredMonsters.map(monster => {
-              return (
-                <div className='monster-checker' key={monster.name}>
-                <p>{monster.name}</p>
-                <input type="checkbox" id={monster.name} name="name" value={monster.name}></input>
-              </div>
-              )
-            })}</div>
+            <div>{monstersShow}</div>
           </div>
         </section>
       </section>
