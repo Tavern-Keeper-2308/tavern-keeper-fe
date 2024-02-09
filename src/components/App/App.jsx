@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import Home from '../Home/Home.jsx';
 import Navigation from '../Navigation/Navigation.jsx';
 import EncounterBuilder from '../EncounterBuilder/EncounterBuilder.jsx';
@@ -12,13 +12,20 @@ import ErrorPage from '../ErrorPage/ErrorPage.jsx';
 export default function App() {
   const [encounters, setEncounters] = useState([]);
   const [userName, setUserName] = useState(null);
+  const location = useLocation();
 
   return (
     <div className="App">
       <header>
-        <Link className='home-button' to={'/'}>
-          <h1 className='app-title'>Tavern Keeper</h1>
-        </Link>
+        {location.pathname !== '/login' ? (
+          <Link className='home-button' to={'/'}>
+            <h1 className='app-title'>Tavern Keeper</h1>
+          </Link>
+        ) : (
+          <div className='home-button-disabled'>
+            <h1 className='app-title'>Tavern Keeper</h1>
+          </div>
+        )}
         <Navigation />
       </header>
       <Routes>
