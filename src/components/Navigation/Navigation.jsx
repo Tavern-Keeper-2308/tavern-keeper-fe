@@ -4,7 +4,7 @@ import './Navigation.css';
 import EncounterBuilderButton from '../EncounterBuilderButton/EncounterBuilderButton';
 import LogoutButton from '../LogoutButton/LogoutButton';
 
-const Navigation = () => {
+const Navigation = ({ setUserName }) => {
   const location = useLocation();
 
   return (
@@ -12,7 +12,7 @@ const Navigation = () => {
       {location.pathname !== '/login' &&
         <div className='navigation-buttons'>
           <EncounterBuilderButton />
-          <LogoutButton />
+          <LogoutButton setUserName={setUserName} />
         </div>}
     </div>
   );

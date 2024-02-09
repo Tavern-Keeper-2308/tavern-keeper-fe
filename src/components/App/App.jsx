@@ -18,15 +18,17 @@ export default function App() {
     <div className="App">
       <header>
         {location.pathname !== '/login' ? (
-          <Link className='home-button' to={'/'}>
-            <h1 className='app-title'>Tavern Keeper</h1>
-          </Link>
+          <>
+            <Link className='home-button' to={'/'}>
+              <h1 className='app-title'>Tavern Keeper</h1>
+            </Link>
+            <Navigation setUserName={setUserName} />
+          </>
         ) : (
           <div className='home-button-disabled'>
             <h1 className='app-title'>Tavern Keeper</h1>
           </div>
         )}
-        <Navigation />
       </header>
       <Routes>
         <Route path="/" element={<Home userName={userName} />} />
