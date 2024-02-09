@@ -1,14 +1,19 @@
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import './Navigation.css';
 import EncounterBuilderButton from '../EncounterBuilderButton/EncounterBuilderButton';
 import LogoutButton from '../LogoutButton/LogoutButton';
 
 const Navigation = () => {
+  const location = useLocation();
+
   return (
     <div className='Navigation'>
-      <EncounterBuilderButton />
-      <LogoutButton />
+      {location.pathname !== '/login' &&
+        <div className='navigation-buttons'>
+          <EncounterBuilderButton />
+          <LogoutButton />
+        </div>}
     </div>
   );
 };
