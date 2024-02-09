@@ -5,7 +5,7 @@ export const monsters = {
       "name": "Adult Black Dragon",
       "size": "HUGE",
       "type": null,
-      "armorClass": "19",
+      "armorClass": 19,
       "speed": {
         "walk": "40 ft.",
         "fly": "80 ft.",
@@ -257,8 +257,7 @@ export const monsters = {
       "index": "aboleth",
       "name": "Aboleth",
       "size": "LARGE",
-      "type": null,
-      "armorClass": "17",
+      "armorClass": 17,
       "speed": {
         "walk": "10 ft.",
         "fly": null,
@@ -274,7 +273,6 @@ export const monsters = {
       "damageVulnerabilities": "[]",
       "damageResistances": "[]",
       "damageImmunities": "[]",
-      "conditionImmunities": [],
       "proficiencyBonus": 4,
       "proficiencies": [
         {
@@ -355,11 +353,7 @@ export const monsters = {
       "index": "ghoul",
       "name": "Ghoul",
       "size": "Medium",
-      "armor_class": [
-        {
-          "value": 12
-        }
-      ],
+      "armor_class": 12,
       "hit_points": 22,
       "speed": {
         "walk": "30 ft."

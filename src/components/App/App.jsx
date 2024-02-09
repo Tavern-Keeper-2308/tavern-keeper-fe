@@ -8,13 +8,15 @@ import EncounterBuilder from '../EncounterBuilder/EncounterBuilder.jsx';
 import EncounterDetails from '../EncounterDetails/EncounterDetails.jsx';
 import Login from '../Login/Login.jsx';
 import ErrorPage from '../ErrorPage/ErrorPage.jsx';
-import { allEncountersForUser } from '../../mockDataset.js';
+import { monsters, allEncountersForUser } from '../../mockDataset.js';
 
 export default function App() {
   const [encounters, setEncounters] = useState([]);
+  const [allMonsters, setAllMonsters] = useState([])
 
   useEffect(() => {
     setEncounters(allEncountersForUser.data.queryUsers[0].encounters);
+    setAllMonsters(monsters.queryMonsters);
   }, []);
 
   return (
@@ -29,7 +31,7 @@ export default function App() {
         <Route path="/" element={<Home encounters={encounters} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/details" element={<EncounterDetails encounters={encounters}/>}/>
-        <Route path="/encounterbuilder" element={<EncounterBuilder />} />
+        <Route path="/encounterbuilder" element={<EncounterBuilder allMonsters={allMonsters}/>} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>

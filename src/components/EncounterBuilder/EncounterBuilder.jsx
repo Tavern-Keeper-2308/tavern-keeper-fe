@@ -1,38 +1,53 @@
 import PropTypes from 'prop-types';
 import './EncounterBuilder.css';
 import React, { useEffect, useState } from 'react';
-import { monsters } from '../../mockDataset';
 
-const EncounterBuilder = () => {
-  const [monsterList, setMonsterList] = useState(monsters.queryMonsters);
-  const [searchAC, setSearchAC] = useState('');
-  const [searchHP, setSearchHP] = useState('');
-  const [filteredMonsters, setFilteredMonsters] = useState(monsters.queryMonsters);
+const EncounterBuilder = ({allMonsters}) => {
+  const [monsterList, setMonsterList] = useState(allMonsters);
+  const [searchAC, setSearchAC] = useState(0);
+  const [searchHP, setSearchHP] = useState(0);
+  const [searchSize, setSearchSize] = useState('');
+  const [searchName, setSearchName] = useState('');
+  const [filteredMonsters, setFilteredMonsters] = useState(allMonsters);
 
-    const handleInputChangeHP = (e) => { 
-      const searchTerm = e.target.value;
-      setSearchHP(searchTerm)
-      const filterMonsters = monsterList.filter((monster) => {
-        return monster.armorClass === searchTerm
-      });
-      setFilteredMonsters(filterMonsters);
-    }
+  const handleInputChangeHP = (e) => { 
+    const searchTerm = e.target.value;
+    console.log(searchTerm, "HP")
+    setSearchHP(searchTerm)
+  };
 
-    const handleInputChangeAC = (e) => { 
-      const searchTerm = e.target.value;
-      setSearchAC(searchTerm)
-      const filterMonsters = monsterList.filter((monster) => {
-        return monster.armorClass === searchTerm
-      });
-      setFilteredMonsters(filterMonsters);
-    }
- 
+  const handleInputChangeAC = (e) => { 
+    const searchTerm = e.target.value;
+    console.log(searchTerm, "AC")
+    setSearchAC(searchTerm)
+  };
+
+  const handleInputChangeName = (event) => { 
+    const searchTerm = event.target.value;
+    console.log(searchTerm, "search name")
+    setSearchName(searchTerm)
+  };
+
+  const handleInputChangeSize = (event) => { 
+    const searchTerm = event.target.value; 
+    console.log(searchSize, "search size")
+    setSearchSize(searchTerm)
+  };
+
 
   useEffect(() => {
-    // placeholder for fetch call/query to get all monsters
-    // setMonsterList(filterMonsters)
+    if (allMonsters && allMonsters) {
+      const monsterNames = allMonsters.map((monster) => {
+        return (<option value={monster.name}>{monster.name}</option>)
+      })
+      setMonsterList(monsterNames)
+    }
+  }, [allMonsters])
 
-  }, [])
+
+  useEffect(() => {
+    console.log(filteredMonsters)
+  }, [filteredMonsters])
 
   return (
     <div className='encounter-builder'>
@@ -60,15 +75,23 @@ const EncounterBuilder = () => {
         <section className='encounter-foes base-box'>
           <div className='monster-selection'>
             <label htmlFor="size">Size:</label>
-            <select id='size'>
-              <option value="size">{}</option>
+            <select onChange={handleInputChangeSize} id='size'>
+              <option value=''></option>
+              <option value="Tiny">Tiny</option>
+              <option value="Small">Small</option>
+              <option value="Medium">Medium</option>
+              <option value="Large">Large</option>
+              <option value="Huge">Huge</option>
+              <option value="Gargantuan">Gargantuan</option>
             </select>
             <label htmlFor="name">Name:</label>
-            <select id='name'>
-              <option value="name">{}</option>
+            <select onChange={handleInputChangeName} id='name'>
+              <option value=""></option>
+              {monsterList}
             </select>
-            <input type="number" value={searchHP} onChange={handleInputChangeHP} aria-label="hit points search" placeholder="Hit Points"></input>
-            <input type="number" value={searchAC} onChange={handleInputChangeAC} aria-label="armor class search" placeholder="Armor Class"></input>
+            <input type="number" aria-label="hit points search" placeholder="Hit Points" onChange={handleInputChangeHP}></input>
+            <input type="number"aria-label="armor class search" placeholder="Armor Class" onChange={handleInputChangeAC}></input>
+            <button onClick={() => {}}>Search</button>
           </div>
           <div className='monster-selection'>
             <div>{filteredMonsters.map(monster => {
@@ -82,7 +105,7 @@ const EncounterBuilder = () => {
           </div>
         </section>
       </section>
-      <button>Submit</button>
+      <button>Create Encounter</button>
     </div>
   );
 };
