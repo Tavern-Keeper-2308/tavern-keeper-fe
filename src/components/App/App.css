@@ -63,7 +63,8 @@ header {
     padding-bottom: 5px;
   }
 
-  .home-button {
+  .home-button,
+  .home-button-disabled {
     flex: 1;
     padding-left: 40px;
   }
