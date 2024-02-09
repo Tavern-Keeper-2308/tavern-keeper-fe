@@ -11,28 +11,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-client
-  .query({
-    query: gql`
-      query getEncounters($userName: String!) {
-        encounters(userName: $userName) {
-            id
-            userName
-            encounterName
-            partySize
-            partyLevel
-            summary
-            description
-            treasure
-            encounterMonsters {
-                monsterName
-            }
-        }
-    }
-    `,
-  })
-  .then((result) => console.log(result));
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>

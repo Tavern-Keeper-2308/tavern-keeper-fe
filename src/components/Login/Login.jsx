@@ -9,9 +9,17 @@ const Login = () => {
         Welcome Traveler...
       </h2>
       <div className='login-container'>
-        <button className='login-button'>DEMO - No Encounters</button>
-        <button className='login-button'>DEMO - One Encounter</button>
-        <button className='login-button'>DEMO - Many Encounters</button>
+        <Link className='login-button-link' to={'/'}>
+          <button className='login-button'>DEMO - No Encounters</button>
+        </Link>
+
+        <Link className='login-button-link' to={'/'}>
+          <button className='login-button'>DEMO - One Encounter</button>
+        </Link>
+
+        <Link className='login-button-link' to={'/'}>
+          <button className='login-button'>DEMO - Many Encounters</button>
+        </Link>
       </div>
     </div>
   );
