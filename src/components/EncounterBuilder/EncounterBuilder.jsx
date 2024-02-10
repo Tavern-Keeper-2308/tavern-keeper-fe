@@ -43,7 +43,7 @@ const EncounterBuilder = ({userName, setEncounterCreated}) => {
   const [selectedSizeFilter, setSelectedSizeFilter] = useState('');
   const [selectedNameFilter, setSelectedNameFilter] = useState('');
   const [selectedArmorClassFilter, setSelectedArmorClassFilter] = useState('');
-  const [selectedHitPointsFilter, setSelectedHitPointsFilter] = useState(0);
+  const [selectedHitPointsFilter, setSelectedHitPointsFilter] = useState('');
   const [filteredMonsters, setFilteredMonsters] = useState([]);
   const [toShow, setToShow] = useState([]);
   const [newEncounter, setNewEncounter] = useState({
@@ -143,9 +143,8 @@ const EncounterBuilder = ({userName, setEncounterCreated}) => {
         const filtered = monsters.filter((monster) => {
           const sizeCondition = !selectedSizeFilter || monster.size === selectedSizeFilter;
           const nameCondition = !selectedNameFilter || monster.monsterName === selectedNameFilter;
-          console.log(nameCondition, "nameCondition")
-          const armorClassCondition = !selectedArmorClassFilter || monster.armorClass === selectedArmorClassFilter;
-          const hitPointsCondition = !selectedHitPointsFilter || monster.hitPoints === selectedHitPointsFilter;
+          const armorClassCondition = !selectedArmorClassFilter || monster.armorClass == selectedArmorClassFilter;
+          const hitPointsCondition = !selectedHitPointsFilter || monster.hitPoints == selectedHitPointsFilter;
           return nameCondition && sizeCondition && hitPointsCondition && armorClassCondition;
           
         });
