@@ -67,6 +67,13 @@ const EncounterBuilder = ({userName, setEncounterCreated}) => {
       description: newEncounter.description,
       treasure: newEncounter.treasure,
       encounterMonsterIndexes: newEncounter.encounterMonsterIndexes,
+    },
+    onCompleted: (data) => {
+      const encounterName = data.createEncounter.encounter;
+      setEncounterCreated(encounterName);
+    },
+    onError: (error) => {
+      console.error("Error creating encounter: ", error);
     }
   },
   );
@@ -185,8 +192,7 @@ const EncounterBuilder = ({userName, setEncounterCreated}) => {
             e.preventDefault();
             console.log(newEncounter, "newEncounter")
             encounterBuilder();
-            setEncounterCreated(true);
-            // setEncounterCreated(false);
+            setEncounterCreated(newEncounter.encounterName);
           }}>
           <section className='base-box'>
             <section className='encounter-header'>
