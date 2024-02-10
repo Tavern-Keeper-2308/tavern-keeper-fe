@@ -15,10 +15,6 @@ details, .damage-mods, .senses, .main-details, .foe-stats, .foe-physical, .foe-s
   align-self: center;
 }
 
-.party-stats {
-  justify-content: center;
-}
-
 .base-box {
   background-color: #131316;
   color: #4AA3FC;

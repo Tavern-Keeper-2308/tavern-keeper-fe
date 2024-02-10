@@ -245,10 +245,10 @@ EncounterBuilder.propTypes = {
   userName: PropTypes.string.isRequired,
   setEncounterCreated: PropTypes.func.isRequired,
   monsterList: PropTypes.array.isRequired,
-  onArmorClassFilterChange: PropTypes.func.isRequired,
-  onHitPointsFilterChange: PropTypes.func.isRequired,
-  onSizeFilterChange: PropTypes.func.isRequired,
-  onNameFilterChange: PropTypes.func.isRequired
+  onArmorClassFilterChange: PropTypes.func,
+  onHitPointsFilterChange: PropTypes.func,
+  onSizeFilterChange: PropTypes.func,
+  onNameFilterChange: PropTypes.func
 };
 
 export default EncounterBuilder;
