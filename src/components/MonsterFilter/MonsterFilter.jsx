@@ -26,12 +26,12 @@ export const MonsterFilter = ({ onSizeFilterChange, onNameFilterChange, onArmorC
           }}
         >
           <option value=''>All Sizes</option>
-          <option value='Tiny'>Tiny</option>
-          <option value='Small'>Small</option>
-          <option value='Medium'>Medium</option>
-          <option value='Large'>Large</option>
-          <option value='Huge'>Huge</option>
-          <option value='Gargantuan'>Gargantuan</option>
+          <option value='TINY'>Tiny</option>
+          <option value='SMALL'>Small</option>
+          <option value='MEDIUM'>Medium</option>
+          <option value='LARGE'>Large</option>
+          <option value='HUGE'>Huge</option>
+          <option value='GARGANTUAN'>Gargantuan</option>
         </select>
       </label>
 
