@@ -4,7 +4,7 @@ import './EncounterBuilderButton.css';
 
 const EncounterBuilderButton = () => {
   return (
-    <NavLink to={'/encounterbuilder'}>
+    <NavLink className='build-new-encounter-link' to={'/encounterbuilder'}>
       <button className='EncounterBuilderButton'>
         Build New Encounter
       </button>

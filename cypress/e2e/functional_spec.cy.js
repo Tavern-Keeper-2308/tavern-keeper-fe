@@ -30,6 +30,22 @@ context('Functional Tests', () => {
     cy.get('.login-button').last().contains('DEMO - Many Encounters');
   });
 
+  it('should render header elements correctly on home page when logging in', () => {
+    cy.visit('/login');
+    cy.get('.login-button').contains('DEMO - No Encounters').click();
+    cy.wait('@gqlGetEncountersQuery')
+      .its('response.body.data.encounters')
+      .should((encounters) => {
+        expect(encounters.length).to.equal(0);
+      });
+    cy.get('.app-title').contains('Tavern Keeper');
+    cy.get('.home-button').should('have.attr', 'href', '/');
+    cy.get('.EncounterBuilderButton').contains('Build New Encounter');
+    cy.get('.build-new-encounter-link').should('have.attr', 'href', '/encounterbuilder');
+    cy.get('.LogoutButton').contains('Logout');
+    cy.get('.logout-link').should('have.attr', 'href', '/login');
+  });
+
   it('should render expected elements correctly on home page when logging in as DEMO - No Encounters', () => {
     cy.visit('/login');
     cy.get('.login-button').contains('DEMO - No Encounters').click();
@@ -38,7 +54,6 @@ context('Functional Tests', () => {
       .should((encounters) => {
         expect(encounters.length).to.equal(0);
       });
-
   });
 
   it.skip('should render expected elements correctly on home page when logging in as DEMO - One Encounter', () => {

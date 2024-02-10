@@ -8,7 +8,7 @@ const LogoutButton = ({ setUserName }) => {
   };
 
   return (
-    <NavLink to={'/login'} onClick={() => handleLogoutClick()}>
+    <NavLink className='logout-link' to={'/login'} onClick={() => handleLogoutClick()}>
       <button className='LogoutButton'>
         Logout
       </button>
