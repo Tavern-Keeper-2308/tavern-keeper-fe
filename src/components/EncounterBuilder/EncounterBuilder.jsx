@@ -14,31 +14,35 @@ const EncounterBuilder = ({allMonsters}) => {
   const [filteredMonsters, setFilteredMonsters] = useState([]);
 
   const handleSizeFilterChange = (sizeFilter) => {
+    // console.log(sizeFilter, "size")
     setSelectedSizeFilter(sizeFilter);
   }
 
   const handleNameFilterChange = (nameFilter) => {
-    console.log(nameFilter, "name")
+    // console.log(nameFilter, "name")
     setSelectedNameFilter(nameFilter);
   }
 
   const handleArmorClassFilterChange = (armorClassFilter) => {
-    console.log(armorClassFilter, "ac")
+    // console.log(armorClassFilter, "ac")
     setSelectedArmorClassFilter(parseInt(armorClassFilter));
   }
 
   const handleHitPointsFilterChange = (hitPointsFilter) => {
+    console.log("hp:", hitPointsFilter)
     setSelectedHitPointsFilter(hitPointsFilter);
   }
 
   useEffect(() => {
     if (selectedSizeFilter || selectedNameFilter || selectedArmorClassFilter || selectedHitPointsFilter) {
       const filtered = monsters.filter((monster) => {
-        const sizeCondition = !selectedSizeFilter || monster.size.toLowerCase() === selectedSizeFilter.toLowerCase();
-        const nameCondition = !selectedNameFilter || monster.name.toLowerCase() === selectedNameFilter.toLowerCase();
-        const armorClassCondition = !selectedArmorClassFilter || monster.armorClass === selectedArmorClassFilter;
+        // const sizeCondition = !selectedSizeFilter || monster.size.toLowerCase() === selectedSizeFilter.toLowerCase();
+        // const nameCondition = !selectedNameFilter || monster.name.toLowerCase() === selectedNameFilter.toLowerCase();
+        // const armorClassCondition = !selectedArmorClassFilter || monster.armorClass === selectedArmorClassFilter;
         const hitPointsCondition = !selectedHitPointsFilter || monster.hitPoints === selectedHitPointsFilter;
-        return sizeCondition && nameCondition && armorClassCondition && hitPointsCondition;
+        return hitPointsCondition;
+        //  sizeCondition && nameCondition && armorClassCondition && 
+        
       });
       setFilteredMonsters(filtered);
     } else {
@@ -57,17 +61,26 @@ const EncounterBuilder = ({allMonsters}) => {
       const monsterNames = allMonsters.map((monster) => {
         return (<option key={monster.name} value={monster.name}>{monster.name}</option>)
       })
-      setMonsterList(monsterNames)
       setFilteredMonsters(allMonsters)
+      setMonsterList(monsterNames)
+      setMonsters(allMonsters)
     }
   }, [allMonsters])
 
 
-  // useEffect(() => {
-  // }, [filteredMonsters])
+  useEffect(() => {
+    const monsterAll = filteredMonsters.map((monster)=> {(
+          <div key={monster.name}>
+            <h3>{monster.name}</h3>
+            <p>{monster.size}</p>
+          </div>
+        )
+      });      
+      console.log(filteredMonsters, "filteredMonsters")
+  }, [filteredMonsters])
 
   return (
-    <div className='encounter-builder'>
+    <div className='EncounterBuilder encounter-builder'>
       <section className='main-details'>
         <section className='base-box'>
           <section className='encounter-header'>
@@ -100,6 +113,9 @@ const EncounterBuilder = ({allMonsters}) => {
             monsterList={monsterList}
           />
             {filteredMonsters.length === 0 && <span className='no-results'>No creatures match your search.</span>}
+            {filteredMonsters && <div>{filteredMonsters.map((monster) => {
+              <p>{monster.name}</p>
+            })}</div>}
           </div>
         </section>
       </section>

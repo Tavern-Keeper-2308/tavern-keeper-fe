@@ -16,7 +16,7 @@ export const MonsterFilter = ({ onSizeFilterChange, onNameFilterChange, onArmorC
   }, [selectSizeFilter, selectNameFilter, selectArmorClassFilter, selectHitPointsFilter, onSizeFilterChange, onNameFilterChange, onArmorClassFilterChange, onHitPointsFilterChange]);
 
   return (
-    <div className=''>
+    <div className='MonsterFilter'>
       <label htmlFor='select-size'>Filter By Size
         <select
           value={selectSizeFilter}
@@ -49,7 +49,7 @@ export const MonsterFilter = ({ onSizeFilterChange, onNameFilterChange, onArmorC
       </label>
 
       <label htmlFor='select-armor-class'>Filter By Armor Class
-        {/* <input 
+        <input 
           type="number" 
           aria-label="armor class search" 
           value={selectArmorClassFilter} 
@@ -57,9 +57,9 @@ export const MonsterFilter = ({ onSizeFilterChange, onNameFilterChange, onArmorC
           onChange={(event) => {
           setSelectArmorClassFilter(event.currentTarget.value)}}
         >
-        </input> */}
+        </input>
 
-        <select
+        {/* <select
           value={selectArmorClassFilter}
           id='select-size'
           onChange={(event) => {
@@ -92,7 +92,7 @@ export const MonsterFilter = ({ onSizeFilterChange, onNameFilterChange, onArmorC
           <option value='23'>23</option>
           <option value='24'>24</option>
           <option value='25'>25</option>
-        </select>
+        </select> */}
       </label>
 
       <label htmlFor='select-hit-points'>Filter By Hit Points
@@ -115,7 +115,6 @@ export const MonsterFilter = ({ onSizeFilterChange, onNameFilterChange, onArmorC
           setSelectHitPointsFilter('')
         }}
       >Reset All Filters</button>
-
     </div>
   );
 };
