@@ -10,9 +10,10 @@ import Login from '../Login/Login.jsx';
 import ErrorPage from '../ErrorPage/ErrorPage.jsx';
 
 export default function App() {
-  const [encounters, setEncounters] = useState([]);
+  // const [encounters, setEncounters] = useState([]);
   const [selectedEncounter, setSelectedEncounter] = useState(null);
   const [userName, setUserName] = useState(null);
+  // const [encounterCreated, setEncounterCreated] = useState({});
   const location = useLocation();
 
   return (
@@ -20,7 +21,7 @@ export default function App() {
       <header>
         {location.pathname !== '/login' ? (
           <>
-            <Link className='home-button' to={'/'}>
+            <Link className='home-button' onClick={console.log(userName, "userName")} to={'/'}>
               <h1 className='app-title'>Tavern Keeper</h1>
             </Link>
             <Navigation setUserName={setUserName} />
@@ -35,7 +36,7 @@ export default function App() {
         <Route path="/" element={<Home userName={userName} setSelectedEncounter={setSelectedEncounter} />} />
         <Route path="/login" element={<Login setUserName={setUserName} />} />
         <Route path="/details/:id" element={<EncounterDetails selectedEncounter={selectedEncounter} />} />
-        <Route path="/encounterbuilder" element={<EncounterBuilder />} />
+        <Route path="/encounterbuilder" element={<EncounterBuilder userName={userName} />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
