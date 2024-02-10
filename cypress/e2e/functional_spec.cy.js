@@ -1,16 +1,22 @@
-import { aliasQuery, aliasMutation } from "../utils/graphql-test-utils";
+import { aliasQuery, aliasMutation, hasOperationName } from "../utils/graphql-test-utils";
 
 context('Functional Tests', () => {
   beforeEach(() => {
     cy.intercept('POST', 'https://tavern-keeper-be.onrender.com/graphql/', (req) => {
       // Queries
-      aliasQuery(req, 'getEncounters')
-      aliasQuery(req, 'getEncounter')
-      aliasQuery(req, 'getMonsters')
-      aliasQuery(req, 'getMonster')
+      aliasQuery(req, 'getEncounters');
+      aliasQuery(req, 'getEncounter');
+      aliasQuery(req, 'getMonsters');
+      aliasQuery(req, 'getMonster');
 
       // Mutations
-      aliasMutation(req, 'createEncounter')
+      aliasMutation(req, 'createEncounter');
+
+      // Check if it's a getEncounters query
+      if (hasOperationName(req, 'getEncounters')) {
+        req.alias = 'gqlGetEncountersQuery';
+        req.reply({ fixture: 'mock_data_getEncounters_none.json' });
+      }
     });
   });
 
@@ -24,7 +30,14 @@ context('Functional Tests', () => {
     cy.get('.login-button').last().contains('DEMO - Many Encounters');
   });
 
-  it.skip('should render expected elements correctly on home page when logging in as DEMO - No Encounters', () => {
+  it('should render expected elements correctly on home page when logging in as DEMO - No Encounters', () => {
+    cy.visit('/login');
+    cy.get('.login-button').contains('DEMO - No Encounters').click();
+    cy.wait('@gqlGetEncountersQuery')
+      .its('response.body.data.encounters')
+      .should((encounters) => {
+        expect(encounters.length).to.equal(0);
+      });
 
   });
 
