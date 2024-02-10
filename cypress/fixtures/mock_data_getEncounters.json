@@ -1,0 +1,141 @@
+{
+  "data": {
+    "encounters": [
+      {
+        "id": "2",
+        "userName": "demo-many-encounters",
+        "encounterName": "A girl just fell from the sky, boss!",
+        "partySize": 2,
+        "partyLevel": 10,
+        "summary": "Oliphaunt",
+        "description": "Ululate daemoniac effulgence unutterable. Accursed iridescence unnamable non-euclidean loathsome. Squamous cyclopean tenebrous shunned non-euclidean iridescence antiquarian ululate.",
+        "treasure": "Ring of the Beast",
+        "encounterMonsters": [
+          {
+            "monsterName": "Giant Shark"
+          },
+          {
+            "monsterName": "Aboleth"
+          },
+          {
+            "monsterName": "Aboleth"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "userName": "demo-many-encounters",
+        "encounterName": "The earth speaks to all of us, and if we listen, we can understand.",
+        "partySize": 1,
+        "partyLevel": 14,
+        "summary": "I sang of leaves, of leaves of gold (Galadriel's Song of Eldamar)",
+        "description": "Swarthy cyclopean squamous indescribable unmentionable antediluvian immemorial stench. Charnel madness immemorial. Gambrel shunned stygian. Swarthy eldritch abnormal.",
+        "treasure": "Amulet of Kynareth",
+        "encounterMonsters": [
+          {
+            "monsterName": "Goblin"
+          },
+          {
+            "monsterName": "Goblin"
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "userName": "demo-many-encounters",
+        "encounterName": "I'm a pig. I don't fight for honor. I fight for a paycheck.",
+        "partySize": 1,
+        "partyLevel": 17,
+        "summary": "Roll-Roll-Roll-Roll",
+        "description": "Daemoniac gibbous decadent. Cyclopean spectral non-euclidean mortal comprehension nameless stygian. Daemoniac nameless madness spectral.",
+        "treasure": "Aetherial Crown",
+        "encounterMonsters": [
+          {
+            "monsterName": "Goblin"
+          },
+          {
+            "monsterName": "Aboleth"
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "userName": "demo-many-encounters",
+        "encounterName": "Maybe I can stay and find some other nice people who will like me and accept me for who I am.",
+        "partySize": 3,
+        "partyLevel": 10,
+        "summary": "Under the mountain dark and tall",
+        "description": "Ululate hideous stench cat. Foetid lurk eldritch. Madness immemorial lurk noisome comprehension gibbering tentacles stygian.",
+        "treasure": "Silver Sapphire Necklace",
+        "encounterMonsters": [
+          {
+            "monsterName": "Goblin"
+          },
+          {
+            "monsterName": "Goblin"
+          },
+          {
+            "monsterName": "Frog"
+          }
+        ]
+      },
+      {
+        "id": "13",
+        "userName": "demo-many-encounters",
+        "encounterName": "We each need to find our own inspiration, Kiki. Sometimes it's not easy.",
+        "partySize": 2,
+        "partyLevel": 12,
+        "summary": "The world was young, the mountains green",
+        "description": "Hideous gibbous decadent noisome manuscript blasphemous. Gibbering furtive stench loathsome fungus. Iridescence abnormal tenebrous. Shunned antediluvian gibbering. Stench cat tenebrous gambrel.",
+        "treasure": "Ahzidal's Ring of Arcana",
+        "encounterMonsters": [
+          {
+            "monsterName": "Kobold"
+          },
+          {
+            "monsterName": "Kobold"
+          },
+          {
+            "monsterName": "Ancient Red Dragon"
+          }
+        ]
+      },
+      {
+        "id": "17",
+        "userName": "demo-many-encounters",
+        "encounterName": "Once you do something, you never forget. Even if you can't remember.",
+        "partySize": 2,
+        "partyLevel": 2,
+        "summary": "When the black breath blows",
+        "description": "Immemorial unmentionable gambrel. Eldritch nameless swarthy. Furtive stygian fainted dank.",
+        "treasure": "Katarina's Ornamental Ring",
+        "encounterMonsters": [
+          {
+            "monsterName": "Gelatinous Cube"
+          },
+          {
+            "monsterName": "Gelatinous Cube"
+          }
+        ]
+      },
+      {
+        "id": "19",
+        "userName": "demo-many-encounters",
+        "encounterName": "A pig that doesn't fly is just a pig.",
+        "partySize": 3,
+        "partyLevel": 3,
+        "summary": "Hey! Now! Come Hoy Now! Whither Do You Wander?",
+        "description": "Cyclopean dank stench singular. Swarthy charnel eldritch madness fainted. Nameless tenebrous gibbering noisome gibbous dank cyclopean. Antediluvian stench accursed gambrel.",
+        "treasure": "Kyne's Token",
+        "encounterMonsters": [
+          {
+            "monsterName": "Acolyte"
+          },
+          {
+            "monsterName": "Ghast"
+          }
+        ]
+      }
+    ]
+  }
+}
