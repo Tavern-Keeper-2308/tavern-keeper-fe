@@ -43,32 +43,34 @@ const EncounterBuilder = () => {
 
   useEffect(() => {
     getMonsters(); //makes call to get monsters data
-    if (filteredMonsters) {
-      const monsterNames = filteredMonsters.map((monster) => {
+    if (monsters) {
+      const monsterNames = monsters.map((monster) => {
         return (
         <option key={monster.monsterIndex} value={monster.monsterName}>{monster.monsterName}</option>
         )
       })
-      const renderMonsters = filteredMonsters.map((monster)=> {(
+      const renderMonsters = monsters.map((monster)=> {
+        return (
         <div key={monster.monsterIndex}>
           <h3>{monster.monsterName}</h3>
           <button>+</button>
         </div>
         )
       }); 
-      // setMonsters()
+      setToShow(filteredMonsters.map((monster)=> {(
+        <div className='add-new' key={monster.monsterIndex}>
+          <h3>{monster.monsterName}</h3>
+          <button>+</button>
+        </div>
+      )}))
+      console.log("renderMonsters: ", renderMonsters)
       setMonsterList(monsterNames) //name filter list
       setToShow(renderMonsters)
     }
-  }, []) //on mount
+  }, [filteredMonsters]) //on mount
 
   useEffect(() => {
-    setToShow(filteredMonsters.map((monster)=> {(
-      <div key={monster.monsterIndex}>
-        <h3>{monster.monsterName}</h3>
-        <button>+</button>
-      </div>
-      )}))
+    
   }, [filteredMonsters]);
 
   useEffect(() => {
@@ -87,8 +89,6 @@ const EncounterBuilder = () => {
         setFilteredMonsters(monsters);
       }
     }, [selectedSizeFilter, selectedNameFilter, selectedArmorClassFilter, selectedHitPointsFilter, filteredMonsters]);
-
-  
 
   const handleSizeFilterChange = (sizeFilter) => {
     // console.log(sizeFilter, "size")
@@ -109,8 +109,6 @@ const EncounterBuilder = () => {
     console.log("hp:", hitPointsFilter)
     setSelectedHitPointsFilter(hitPointsFilter);
   }
-
- 
 
   return (
     <div className='EncounterBuilder encounter-builder'>
