@@ -43,7 +43,6 @@ const EncounterPreviewContainer = ({ encounters, setSelectedEncounter }) => {
   const selectEncounter = (encounter) => {
     const id = encounter.id;
     getIndividualEncounter(id);
-    // setSelectedEncounter(encounter);
   }
 
   const encounterPreviews = encounters && encounters.map(encounter => (
