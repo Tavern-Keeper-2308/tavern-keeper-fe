@@ -123,6 +123,9 @@ export default function EncounterDetails({ selectedEncounter }) {
         //     <p>{immunity}</p>
         //   </div>
         // ));
+        console.log("Monster Indices: ", monster.monsterIndex);
+        setMonsterIndex(monster.monsterIndex);
+        getIndividualMonster(monster.monsterIndex);
 
         return (
           <details key={uuid()} index={monster.monsterIndex}>
@@ -217,7 +220,7 @@ export default function EncounterDetails({ selectedEncounter }) {
       setSelectedMonsters(monsters);
     }; 
     console.log("selectedMonsters: ", selectedMonsters);
-    getIndividualMonster('goblin');
+    // getIndividualMonster(monsterIndex);
     console.log("currentEncounterMonster: ", currentEncounterMonster);
   }, [selectedEncounter, currentEncounterMonster]);
 
