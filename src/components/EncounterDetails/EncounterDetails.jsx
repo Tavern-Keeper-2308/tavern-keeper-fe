@@ -6,7 +6,6 @@ import './EncounterDetails.css';
 
 export default function EncounterDetails({ selectedEncounter }) {
   const [selectedMonsters, setSelectedMonsters] = useState([]);
-  const [currentEncounterMonster, setCurrentEncounterMonster] = useState(null);
   const [monsterIndex, setMonsterIndex] = useState(null);
   const client = useApolloClient();
 
@@ -67,17 +66,122 @@ export default function EncounterDetails({ selectedEncounter }) {
             "index": monsterIndex
           },
         });
-        setCurrentEncounterMonster(data.monster);
+        return data.monster;
       } catch (error) {
         console.error('Error fetching monster details: ', error);
       }
     }
+    return null;
   };
 
   useEffect(() => {
     if (selectedEncounter) {
-      const monsters = selectedEncounter.encounterMonsters.map((monster) => {
+      const fetchMonsterDetails = async () => {
+        // use Promise.all to get all monster details before updating state and store both monster index and details
+        const monsterDetailsArray = await Promise.all(
+          selectedEncounter.encounterMonsters.map(async (monster) => {
+            console.log("Monster Indices: ", monster.monsterIndex);
+            setMonsterIndex(monster.monsterIndex);
+            const individualMonster = await getIndividualMonster(monster.monsterIndex);
+            return {
+              index: monster.monsterIndex,
+              details: individualMonster,
+            };
+          })
+        );
 
+        // Extracting monster details and setting state
+        const monsters = monsterDetailsArray.map((monster) => {
+          return (
+            <details key={uuid()} index={monster.monsterIndex}>
+              <summary>{monster.details.monsterName}</summary>
+              <section className='black foe-physical'>
+                <h3>Size:</h3>
+                <p>{monster.details && monster.details.size}</p>
+                <h3>Armor Class:</h3>
+                <p>{monster.details && monster.details.armorClass}</p>
+                <h3>Hit Points:</h3>
+                <p>{monster.details && monster.details.hitPoints}</p>
+              </section>
+              <section className='black foe-stats'>
+                <div className='attributes'>
+                  <h3>Strength</h3>
+                  <p>{monster.details && monster.details.strength}</p>
+                </div>
+                <div className='attributes'>
+                  <h3>Dexterity</h3>
+                  <p>{monster.details && monster.details.dexterity}</p>
+                </div>
+                <div className='attributes'>
+                  <h3>Constitution</h3>
+                  <p>{monster.details && monster.details.constitution}</p>
+                </div>
+                <div className='attributes'>
+                  <h3>Intelligence</h3>
+                  <p>{monster.details && monster.details.intelligence}</p>
+                </div>
+                <div className='attributes'>
+                  <h3>Wisdom</h3>
+                  <p>{monster.details && monster.details.wisdom}</p>
+                </div>
+                <div className='attributes'>
+                  <h3>Charisma</h3>
+                  <p>{monster.details && monster.details.charisma}</p>
+                </div>
+              </section>
+              <section className='black foe-speeds'>
+                <div className='attributes'>
+                  <h3>Walk Speed:</h3>
+                  <p>{monster.details && monster.details.speed.walk}</p>
+                </div>
+                <div className='attributes'>
+                  <h3>Swim Speed:</h3>
+                  <p>{monster.details && monster.details.speed.swim}</p>
+                </div>
+                <div className='attributes'>
+                  <h3>Fly Speed:</h3>
+                  <p>{monster.details && monster.details.speed.fly}</p>
+                </div>
+                <div className='attributes'>
+                  <h3>Burrow Speed:</h3>
+                  <p>{monster.details && monster.details.speed.burrow}</p>
+                </div>
+              </section>
+              <section className='black damage-mods'>
+                <div>
+                  <h3>Vulnerabilities:</h3>
+                  {/* {monster.details.damage_vulnerabilities.length === 0 ? <p>none</p> : vulnerabilitiesArray} */}
+                </div>
+                <div>
+                  <h3>Resistances:</h3>
+                  {/* {monster.details.damage_resistances.length === 0 ? <p>none</p> : resistancesArray} */}
+                </div>
+                <div>
+                  <h3>Immunities:</h3>
+                  {/* {monster.details.damage_immunities.length === 0 ? <p>none</p> : immunitiesArray} */}
+                </div>
+              </section>
+              <section className='black senses'>
+                <div>
+                  <h3>Blindsight:</h3>
+                  <p>{monster.details && monster.details.senses.blindsight}</p>
+                </div>
+                <div>
+                  <h3>Darkvision:</h3>
+                  <p>{monster.details && monster.details.senses.darkvision}</p>
+                </div>
+                <div>
+                  <h3>Passive Perception:</h3>
+                  <p>{monster.details && monster.details.senses.passive_perception}</p>
+                </div>
+              </section>
+              {/* <section className='proficiencies'>{proficienciesArray}</section>
+            <section className='special-abilities'>{specialAbilitiesArray}</section>
+            <section className='standard-actions'>{standardActionsArray}</section>
+            <section className='legendary-actions'>{legendaryActionsArray}</section> */}
+            </details>
+          );
+        });
         // const proficienciesArray = monster.proficiencies.map((prof) => (
         //   <div className='black foe-proficiencies' key={prof.proficiency.name}>
         //     <h3>{prof.proficiency.name}</h3>
@@ -123,106 +227,15 @@ export default function EncounterDetails({ selectedEncounter }) {
         //     <p>{immunity}</p>
         //   </div>
         // ));
-        console.log("Monster Indices: ", monster.monsterIndex);
-        setMonsterIndex(monster.monsterIndex);
-        getIndividualMonster(monster.monsterIndex);
+        // console.log("Monster Indices: ", monster.monsterIndex);
+        // setMonsterIndex(monster.monsterIndex);
+        // getIndividualMonster(monster.monsterIndex);
 
-        return (
-          <details key={uuid()} index={monster.monsterIndex}>
-            <summary>{monster.monsterName}</summary>
-            <section className='black foe-physical'>
-              <h3>Size:</h3>
-              <p>{currentEncounterMonster && currentEncounterMonster.size}</p>
-              <h3>Armor Class:</h3>
-              <p>{currentEncounterMonster && currentEncounterMonster.armorClass}</p>
-              <h3>Hit Points:</h3>
-              <p>{currentEncounterMonster && currentEncounterMonster.hitPoints}</p>
-            </section>
-            <section className='black foe-stats'>
-              <div className='attributes'>
-                <h3>Strength</h3>
-                <p>{currentEncounterMonster && currentEncounterMonster.strength}</p>
-              </div>
-              <div className='attributes'>
-                <h3>Dexterity</h3>
-                <p>{currentEncounterMonster && currentEncounterMonster.dexterity}</p>
-              </div>
-              <div className='attributes'>
-                <h3>Constitution</h3>
-                <p>{currentEncounterMonster && currentEncounterMonster.constitution}</p>
-              </div>
-              <div className='attributes'>
-                <h3>Intelligence</h3>
-                <p>{currentEncounterMonster && currentEncounterMonster.intelligence}</p>
-              </div>
-              <div className='attributes'>
-                <h3>Wisdom</h3>
-                <p>{currentEncounterMonster && currentEncounterMonster.wisdom}</p>
-              </div>
-              <div className='attributes'>
-                <h3>Charisma</h3>
-                <p>{currentEncounterMonster && currentEncounterMonster.charisma}</p>
-              </div>
-            </section>
-            <section className='black foe-speeds'>
-              <div className='attributes'>
-                <h3>Walk Speed:</h3>
-                <p>{currentEncounterMonster && currentEncounterMonster.speed.walk}</p>
-              </div>
-              <div className='attributes'>
-                <h3>Swim Speed:</h3>
-                <p>{currentEncounterMonster && currentEncounterMonster.speed.swim}</p>
-              </div>
-              <div className='attributes'>
-                <h3>Fly Speed:</h3>
-                <p>{currentEncounterMonster && currentEncounterMonster.speed.fly}</p>
-              </div>
-              <div className='attributes'>
-                <h3>Burrow Speed:</h3>
-                <p>{currentEncounterMonster && currentEncounterMonster.speed.burrow}</p>
-              </div>
-            </section>
-            <section className='black damage-mods'>
-              <div>
-                <h3>Vulnerabilities:</h3>
-                {/* {currentEncounterMonster.damage_vulnerabilities.length === 0 ? <p>none</p> : vulnerabilitiesArray} */}
-              </div>
-              <div>
-                <h3>Resistances:</h3>
-                {/* {currentEncounterMonster.damage_resistances.length === 0 ? <p>none</p> : resistancesArray} */}
-              </div>
-              <div>
-                <h3>Immunities:</h3>
-                {/* {currentEncounterMonster.damage_immunities.length === 0 ? <p>none</p> : immunitiesArray} */}
-              </div>
-            </section>
-            <section className='black senses'>
-              <div>
-                <h3>Blindsight:</h3>
-                <p>{currentEncounterMonster && currentEncounterMonster.senses.blindsight}</p>
-              </div>
-              <div>
-                <h3>Darkvision:</h3>
-                <p>{currentEncounterMonster && currentEncounterMonster.senses.darkvision}</p>
-              </div>
-              <div>
-                <h3>Passive Perception:</h3>
-                <p>{currentEncounterMonster && currentEncounterMonster.senses.passive_perception}</p>
-              </div>
-            </section>
-            {/* <section className='proficiencies'>{proficienciesArray}</section>
-            <section className='special-abilities'>{specialAbilitiesArray}</section>
-            <section className='standard-actions'>{standardActionsArray}</section>
-            <section className='legendary-actions'>{legendaryActionsArray}</section> */}
-          </details>
-        );
-      });
-      setSelectedMonsters(monsters);
-    }; 
-    console.log("selectedMonsters: ", selectedMonsters);
-    // getIndividualMonster(monsterIndex);
-    console.log("currentEncounterMonster: ", currentEncounterMonster);
-  }, [selectedEncounter, currentEncounterMonster]);
+        setSelectedMonsters(monsters);
+      };
+      fetchMonsterDetails();
+    }
+  }, [selectedEncounter]);
 
   return (
     <div className='EncounterDetails'>
