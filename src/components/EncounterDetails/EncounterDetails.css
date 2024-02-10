@@ -78,6 +78,11 @@ details {
   padding: .25em;
 }
 
+.encounter-name {
+  color: #EF81E5;
+  padding: 5%;
+}
+
 @media screen and (min-width: 1101px) {
   .base-box {
     max-width: 45vw;
