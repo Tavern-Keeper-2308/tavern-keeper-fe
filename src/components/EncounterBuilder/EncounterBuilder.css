@@ -1,0 +1,81 @@
+input {
+  background-color: #BCBEF0;
+  border: 1px solid #EF81E5;
+}
+
+input::placeholder {
+  color: #3D157A;
+}
+
+label, input::placeholder {
+  font-family: 'Arsenal', sans-serif;
+}
+
+input {
+  max-width: 70px;
+}
+
+button {
+  width: fit-content;
+  align-self: center;
+}
+
+.EncounterBuilder {
+  overflow: auto;
+}
+
+.party-stats {
+  justify-content: center;
+  box-sizing: border-box;
+  padding: .5em;
+}
+
+.builder-button {
+  font-family: 'Arsenal', sans-serif;
+  font-size: large;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #3D157A;
+  color: #4AA3FC;
+  padding: 5px 15px 5px 15px;
+  max-width: 200px;
+}
+
+.builder-button:hover {
+  background-color: #4AA3FC;
+  color: #3D157A;
+  box-shadow:
+    0 0 5px #3D157A,
+    0 0 20px #3D157A,
+    0 0 35px #3D157A,
+    0 0 40px #4AA3FC,
+    0 0 50px #4AA3FC;
+}
+
+.monster-checker {
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #901386;
+  max-width: 15em;
+  border: 1px solid #BCBEF0;
+}
+
+.encounter-builder, form, .monster-selection, .sideways, .monster-checker {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.monster-selection {
+  align-items: center;
+}
+
+.encounter-builder, .monster-selection {
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1101px) {
+  .encounter-builder, form, .monster-selection, .sideways, .monster-checker {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
