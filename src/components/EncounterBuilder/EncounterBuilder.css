@@ -62,7 +62,7 @@ button {
 
 .encounter-builder, form, .monster-selection, .sideways, .monster-checker {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 
 .monster-selection {
@@ -74,10 +74,9 @@ button {
 }
 
 @media screen and (min-width: 1101px) {
-  .base-box {
-    max-width: 45vw;
-    min-width: 42.5vw;
-    margin: 1em;
+  .encounter-builder, form, .monster-selection, .sideways, .monster-checker {
+    display: flex;
+    flex-wrap: nowrap;
   }
 }
 
