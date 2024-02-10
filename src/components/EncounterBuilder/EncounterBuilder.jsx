@@ -71,9 +71,7 @@ const EncounterBuilder = ({userName, setEncounterCreated}) => {
     onCompleted: (data) => {
       const encounterName = data.createEncounter.encounter;
       console.log(encounterName, "encounterCreated")
-      //clear Apollo cache
       client.resetStore()
-      // setEncounterCreated(encounterName); //may be unnecessary but try it both ways
     },
     onError: (error) => {
       console.error("Error creating encounter: ", error);
@@ -125,7 +123,7 @@ const EncounterBuilder = ({userName, setEncounterCreated}) => {
     if (monsters) {
       const renderMonsters = filteredMonsters.map((monster)=> {
         return (
-        <div key={monster.monsterIndex}>
+        <div className='sideways' key={monster.monsterIndex}>
           <h3>{monster.monsterName}</h3>
           <button onClick={(e) => {
             e.preventDefault();
@@ -137,27 +135,18 @@ const EncounterBuilder = ({userName, setEncounterCreated}) => {
         )
       }); 
       setToShow(renderMonsters);
-      // console.log("renderMonsters: ", renderMonsters)
-      // setToShow(filteredMonsters.map((monster)=> {(
-      //   <div className='add-new' key={monster.monsterIndex}>
-      //     <h3>{monster.monsterName}</h3>
-      //     <button>+</button>
-      //   </div>
-      // )}))
-      // console.log(filteredMonsters, "filteredMonsters")
     }
   }, [filteredMonsters])
 
   useEffect(() => {
       if (selectedSizeFilter || selectedNameFilter || selectedArmorClassFilter || selectedHitPointsFilter) {
         const filtered = monsters.filter((monster) => {
-          // const sizeCondition = !selectedSizeFilter || monster.size === selectedSizeFilter;
+          const sizeCondition = !selectedSizeFilter || monster.size === selectedSizeFilter;
           const nameCondition = !selectedNameFilter || monster.monsterName === selectedNameFilter;
           console.log(nameCondition, "nameCondition")
-          // const armorClassCondition = !selectedArmorClassFilter || monster.armorClass === selectedArmorClassFilter;
-          // const hitPointsCondition = !selectedHitPointsFilter || monster.hitPoints === selectedHitPointsFilter;
-          return nameCondition;
-          //  sizeCondition && hitPointsCondition && armorClassCondition && 
+          const armorClassCondition = !selectedArmorClassFilter || monster.armorClass === selectedArmorClassFilter;
+          const hitPointsCondition = !selectedHitPointsFilter || monster.hitPoints === selectedHitPointsFilter;
+          return nameCondition && sizeCondition && hitPointsCondition && armorClassCondition;
           
         });
         console.log(filtered, "filtered")
@@ -168,22 +157,18 @@ const EncounterBuilder = ({userName, setEncounterCreated}) => {
     }, [selectedSizeFilter, selectedNameFilter, selectedArmorClassFilter, selectedHitPointsFilter, monsters]);
 
   const handleSizeFilterChange = (sizeFilter) => {
-    // console.log(sizeFilter, "size")
     setSelectedSizeFilter(sizeFilter);
   }
 
   const handleNameFilterChange = (nameFilter) => {
-    // console.log(nameFilter, "nameFilter")
     setSelectedNameFilter(nameFilter);
   }
 
   const handleArmorClassFilterChange = (armorClassFilter) => {
-    // console.log(armorClassFilter, "ac")
     setSelectedArmorClassFilter(parseInt(armorClassFilter));
   }
 
   const handleHitPointsFilterChange = (hitPointsFilter) => {
-    // console.log("hp:", hitPointsFilter)
     setSelectedHitPointsFilter(hitPointsFilter);
   }
 
@@ -234,7 +219,7 @@ const EncounterBuilder = ({userName, setEncounterCreated}) => {
                 treasure: e.target.value
               })}} required></input>
             </section>
-            <button type='submit'>Submit New</button>
+            <button className='builder-button' type='submit'>Submit New</button>
           </section>
           <section className='encounter-foes base-box'>
             <h2>Search By:</h2>
@@ -257,7 +242,13 @@ const EncounterBuilder = ({userName, setEncounterCreated}) => {
 };
 
 EncounterBuilder.propTypes = {
-  userName: PropTypes.string,
+  userName: PropTypes.string.isRequired,
+  setEncounterCreated: PropTypes.func.isRequired,
+  monsterList: PropTypes.array.isRequired,
+  onArmorClassFilterChange: PropTypes.func.isRequired,
+  onHitPointsFilterChange: PropTypes.func.isRequired,
+  onSizeFilterChange: PropTypes.func.isRequired,
+  onNameFilterChange: PropTypes.func.isRequired
 };
 
 export default EncounterBuilder;

@@ -16,6 +16,32 @@ button {
   align-self: center;
 }
 
+.EncounterBuilder {
+  overflow: auto;
+}
+
+.builder-button {
+  font-family: 'Arsenal', sans-serif;
+  font-size: large;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #3D157A;
+  color: #4AA3FC;
+  padding: 5px 15px 5px 15px;
+  max-width: 200px;
+}
+
+.builder-button:hover {
+  background-color: #4AA3FC;
+  color: #3D157A;
+  box-shadow:
+    0 0 5px #3D157A,
+    0 0 20px #3D157A,
+    0 0 35px #3D157A,
+    0 0 40px #4AA3FC,
+    0 0 50px #4AA3FC;
+}
+
 .monster-checker {
   flex-wrap: wrap;
   justify-content: center;
@@ -24,10 +50,40 @@ button {
   border: 1px solid #BCBEF0;
 }
 
-.encounter-builder, form, .monster-checker {
+.encounter-builder, form, .monster-selection, .sideways, .monster-checker {
   display: flex;
 }
 
-.encounter-builder {
+.monster-selection {
+  align-items: center;
+}
+
+.encounter-builder, .monster-selection {
   flex-direction: column;
+}
+
+@media screen and (min-width: 1101px) {
+  .base-box {
+    max-width: 45vw;
+    min-width: 42.5vw;
+    margin: 1em;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .main-details, .base-box {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .base-box {
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main-details, .base-box {
+    flex-direction: column;
+    margin: .5em;
+    flex-wrap: wrap;
+  }
 }
