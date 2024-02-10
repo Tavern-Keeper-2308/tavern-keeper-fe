@@ -1,79 +1,51 @@
 import PropTypes from 'prop-types';
 import './EncounterBuilder.css';
 import React, { useEffect, useState } from 'react';
+import {MonsterFilter} from '../MonsterFilter/MonsterFilter'
 
 const EncounterBuilder = ({allMonsters}) => {
+  //data will become a query here rather than a prop passed in
   const [monsterList, setMonsterList] = useState(allMonsters);
-  const [searchAC, setSearchAC] = useState(0);
-  const [searchHP, setSearchHP] = useState(0);
-  const [searchSize, setSearchSize] = useState('');
-  const [searchName, setSearchName] = useState('');
-  const [monstersShow, setMonstersShow] = useState([]);
-  const [filteredMonsters, setFilteredMonsters] = useState(allMonsters);
-  const [selectedFilter, setSelectedFilter] = useState('none');
+  const [monsters, setMonsters] = useState(allMonsters); //replace with api call data
+  const [selectedSizeFilter, setSelectedSizeFilter] = useState('');
+  const [selectedNameFilter, setSelectedNameFilter] = useState('');
+  const [selectedArmorClassFilter, setSelectedArmorClassFilter] = useState('');
+  const [selectedHitPointsFilter, setSelectedHitPointsFilter] = useState('');
+  const [filteredMonsters, setFilteredMonsters] = useState([]);
 
-  const handleRadioChange = (e) => {
-    const choice = e.target.value;
-    setSelectedFilter(choice);
-    // console.log(selectedFilter, "filter current")
+  const handleSizeFilterChange = (sizeFilter) => {
+    setSelectedSizeFilter(sizeFilter);
   }
 
-  const handleInputChangeHP = (e) => { 
-    const searchTerm = e.target.value;
+  const handleNameFilterChange = (nameFilter) => {
+    console.log(nameFilter, "name")
+    setSelectedNameFilter(nameFilter);
+  }
 
-    setSearchHP(parseInt(searchTerm))
-    console.log(searchHP, "search HP")
-  };
+  const handleArmorClassFilterChange = (armorClassFilter) => {
+    console.log(armorClassFilter, "ac")
+    setSelectedArmorClassFilter(parseInt(armorClassFilter));
+  }
 
-  const handleInputChangeAC = (e) => { 
-    const searchTerm = e.target.value;
-    setSearchAC(parseInt(searchTerm))
-    console.log(searchAC, "search AC")
-  };
+  const handleHitPointsFilterChange = (hitPointsFilter) => {
+    setSelectedHitPointsFilter(hitPointsFilter);
+  }
 
-  const handleInputChangeName = (event) => { 
-    const searchTerm = event.target.value;
-    setSearchName(searchTerm)
-    console.log(searchName, "search name")
-  };
-
-  const handleInputChangeSize = (event) => { 
-    const searchTerm = event.target.value; 
-    setSearchSize(searchTerm)
-    console.log(searchSize, "search size")
-  };
-
-  function applyFilter(selectedFilter) {
-    if(selectedFilter === "none"){
-      setFilteredMonsters(allMonsters);
-    } else if(selectedFilter === "name") {
-      const filter = allMonsters.filter((monster)=> {
-        return monster.name.toLowerCase() == searchName.toLowerCase()
-      })
-      console.log(filter, "filter applied")
-      setFilteredMonsters(filter)
-    } else if(selectedFilter === "size") {
-      const filter = allMonsters.filter((monster)=> {
-        return monster.size.toLowerCase() == searchSize.toLowerCase()
-      })
-      console.log(filter, "filter applied")
-      setFilteredMonsters(filter)
-    } else if(selectedFilter === "ac"){
-      const filter = allMonsters.filter((monster)=> {
-        return monster.armorClass === searchAC
-      })
-      console.log(filter, "filter applied")
-      setFilteredMonsters(filter)
-    } else if(selectedFilter === "hp") {
-      console.log(searchHP, "insife")
-      const filter = allMonsters.filter((monster)=> {
-        return monster.hitPoints === searchHP
-      })
-      console.log(filter, "filter applied")
-      setFilteredMonsters(filter)
+  useEffect(() => {
+    if (selectedSizeFilter || selectedNameFilter || selectedArmorClassFilter || selectedHitPointsFilter) {
+      const filtered = monsters.filter((monster) => {
+        const sizeCondition = !selectedSizeFilter || monster.size.toLowerCase() === selectedSizeFilter.toLowerCase();
+        const nameCondition = !selectedNameFilter || monster.name.toLowerCase() === selectedNameFilter.toLowerCase();
+        const armorClassCondition = !selectedArmorClassFilter || monster.armorClass === selectedArmorClassFilter;
+        const hitPointsCondition = !selectedHitPointsFilter || monster.hitPoints === selectedHitPointsFilter;
+        return sizeCondition && nameCondition && armorClassCondition && hitPointsCondition;
+      });
+      setFilteredMonsters(filtered);
+    } else {
+      setFilteredMonsters(monsters);
     }
-  }
-
+  }, [selectedSizeFilter, selectedNameFilter, selectedArmorClassFilter, selectedHitPointsFilter, monsters]);
+  
 // array data comes in from allMonsters
 // useEffect waits for allMonsters to fully load, then maps all the names out for the name dropdown search and sets the monsterList state with that array
 // also sets the filteredMonsters to start with all of them
@@ -91,22 +63,8 @@ const EncounterBuilder = ({allMonsters}) => {
   }, [allMonsters])
 
 
-  useEffect(() => {
-    console.log(filteredMonsters, "filtered monster")
-    const showList = filteredMonsters.map(monster => {
-      return (
-        <div className='monster-checker'>
-        <p>{monster.name}</p>
-        <input type="checkbox" id={monster.name} key={monster.name} name="name" value={monster.name}></input>
-      </div>
-      )
-    })
-    setMonstersShow(showList)
-  }, [filteredMonsters])
-
-  useEffect(() => {
-    console.log(selectedFilter, "selectedFilter")
-  }, [selectedFilter])
+  // useEffect(() => {
+  // }, [filteredMonsters])
 
   return (
     <div className='encounter-builder'>
@@ -134,35 +92,17 @@ const EncounterBuilder = ({allMonsters}) => {
         <section className='encounter-foes base-box'>
           <h2>Search By:</h2>
           <div className='monster-selection'>
-            <input type='radio' name='filter-select' value='size' onChange={handleRadioChange}></input>
-            <label htmlFor="size">Size:</label>
-            <select onChange={handleInputChangeSize} id='size'>
-              <option value=''></option>
-              <option value="Tiny">Tiny</option>
-              <option value="Small">Small</option>
-              <option value="Medium">Medium</option>
-              <option value="Large">Large</option>
-              <option value="Huge">Huge</option>
-              <option value="Gargantuan">Gargantuan</option>
-            </select>
-            <input type='radio' name='filter-select' value='name' onChange={handleRadioChange}></input>
-            <label htmlFor="name">Name:</label>
-            <select onChange={handleInputChangeName} id='name'>
-              <option value=""></option>
-              {monsterList}
-            </select>
-            <input type='radio' name='filter-select' value='hp' onChange={handleRadioChange}></input>
-            <input type="number" aria-label="hit points search" placeholder="Hit Points" onChange={handleInputChangeHP}></input>
-            <input type='radio' name='filter-select' value='ac' onChange={handleRadioChange}></input>
-            <input type="number"aria-label="armor class search" placeholder="Armor Class" onChange={handleInputChangeAC}></input>
-            <button onClick={() => {applyFilter(selectedFilter)}}>Search</button>
-          </div>
-          <div className='monster-selection'>
-           {monstersShow}
+          <MonsterFilter
+            onSizeFilterChange={handleSizeFilterChange}
+            onNameFilterChange={handleNameFilterChange}
+            onArmorClassFilterChange={handleArmorClassFilterChange}
+            onHitPointsFilterChange={handleHitPointsFilterChange}
+            monsterList={monsterList}
+          />
+            {filteredMonsters.length === 0 && <span className='no-results'>No creatures match your search.</span>}
           </div>
         </section>
       </section>
-      <button>Create Encounter</button>
     </div>
   );
 };
