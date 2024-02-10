@@ -76,11 +76,10 @@ export default function EncounterDetails({ selectedEncounter }) {
 
   useEffect(() => {
     if (selectedEncounter) {
+      // use Promise.all to get all monster details before updating state and store both monster index and details
       const fetchMonsterDetails = async () => {
-        // use Promise.all to get all monster details before updating state and store both monster index and details
         const monsterDetailsArray = await Promise.all(
           selectedEncounter.encounterMonsters.map(async (monster) => {
-            console.log("Monster Indices: ", monster.monsterIndex);
             setMonsterIndex(monster.monsterIndex);
             const individualMonster = await getIndividualMonster(monster.monsterIndex);
             return {
@@ -92,6 +91,59 @@ export default function EncounterDetails({ selectedEncounter }) {
 
         // Extracting monster details and setting state
         const monsters = monsterDetailsArray.map((monster) => {
+
+          const damageVulnerabilitiesArray = monster.details.damageVulnerabilities.map((vulnerability) => (
+            <div key={vulnerability}>
+              <p>{vulnerability}</p>
+            </div>
+          ));
+
+          const damageResistancesArray = monster.details.damageResistances.map((resistance) => (
+            <div key={resistance}>
+              <p>{resistance}</p>
+            </div>
+          ));
+
+          const damageImmunitiesArray = monster.details.damageImmunities.map((immunity) => (
+            <div key={immunity}>
+              <p>{immunity}</p>
+            </div>
+          ));
+
+          const conditionImmunitiesArray = monster.details.damageImmunities.map((immunity) => (
+            <div key={immunity}>
+              <p>{immunity}</p>
+            </div>
+          ));
+
+          const proficienciesArray = monster.details.proficiencies && monster.details.proficiencies.map((prof) => (
+            <div className='black foe-proficiencies' key={prof?.name}>
+              <h3>{prof?.name}</h3>
+              <p>{prof?.value}</p>
+            </div>
+          ));
+
+          const specialAbilitiesArray = monster.details.specialAbilities && monster.details.specialAbilities.map((ability) => (
+            <div className='black foe-special-abilities' key={ability?.name}>
+              <h3>Special Ability: {ability?.name}</h3>
+              <p>{ability?.desc}</p>
+            </div>
+          ));
+
+          const standardActionsArray = monster.details.actions && monster.details.actions.map((action) => (
+            <div className='black foe-standard-actions' key={action?.name}>
+              <h3>Action: {action?.name}</h3>
+              <p>{action?.desc}</p>
+            </div>
+          ));
+
+          const legendaryActionsArray = monster.details.legendaryActions && monster.details.legendaryActions.map((action) => (
+            <div className='black foe-legendary-actions' key={action?.name}>
+              <h3>Legendary Action: {action?.name}</h3>
+              <p>{action?.desc}</p>
+            </div>
+          ));
+
           return (
             <details key={uuid()} index={monster.monsterIndex}>
               <summary>{monster.details.monsterName}</summary>
@@ -128,6 +180,10 @@ export default function EncounterDetails({ selectedEncounter }) {
                   <h3>Charisma</h3>
                   <p>{monster.details && monster.details.charisma}</p>
                 </div>
+                <div className='attributes'>
+                  <h3>Proficiency Bonus</h3>
+                  <p>{monster.details && monster.details.proficiencyBonus}</p>
+                </div>
               </section>
               <section className='black foe-speeds'>
                 <div className='attributes'>
@@ -149,16 +205,20 @@ export default function EncounterDetails({ selectedEncounter }) {
               </section>
               <section className='black damage-mods'>
                 <div>
-                  <h3>Vulnerabilities:</h3>
-                  {/* {monster.details.damage_vulnerabilities.length === 0 ? <p>none</p> : vulnerabilitiesArray} */}
+                  <h3>Damage Vulnerabilities:</h3>
+                  {monster.details.damageVulnerabilities.length === 0 ? <p>none</p> : damageVulnerabilitiesArray}
                 </div>
                 <div>
-                  <h3>Resistances:</h3>
-                  {/* {monster.details.damage_resistances.length === 0 ? <p>none</p> : resistancesArray} */}
+                  <h3>Damage Resistances:</h3>
+                  {monster.details.damageResistances.length === 0 ? <p>none</p> : damageResistancesArray}
                 </div>
                 <div>
-                  <h3>Immunities:</h3>
-                  {/* {monster.details.damage_immunities.length === 0 ? <p>none</p> : immunitiesArray} */}
+                  <h3>Damage Immunities:</h3>
+                  {monster.details.damageImmunities.length === 0 ? <p>none</p> : damageImmunitiesArray}
+                </div>
+                <div>
+                  <h3>Condition Immunities:</h3>
+                  {monster.details.conditionImmunities.length === 0 ? <p>none</p> : conditionImmunitiesArray}
                 </div>
               </section>
               <section className='black senses'>
@@ -175,61 +235,13 @@ export default function EncounterDetails({ selectedEncounter }) {
                   <p>{monster.details && monster.details.senses.passive_perception}</p>
                 </div>
               </section>
-              {/* <section className='proficiencies'>{proficienciesArray}</section>
-            <section className='special-abilities'>{specialAbilitiesArray}</section>
-            <section className='standard-actions'>{standardActionsArray}</section>
-            <section className='legendary-actions'>{legendaryActionsArray}</section> */}
+              <section className='proficiencies'>{proficienciesArray}</section>
+              <section className='special-abilities'>{specialAbilitiesArray}</section>
+              <section className='standard-actions'>{standardActionsArray}</section>
+              <section className='legendary-actions'>{legendaryActionsArray}</section>
             </details>
           );
         });
-        // const proficienciesArray = monster.proficiencies.map((prof) => (
-        //   <div className='black foe-proficiencies' key={prof.proficiency.name}>
-        //     <h3>{prof.proficiency.name}</h3>
-        //     <p>{prof.value}</p>
-        //   </div>
-        // ));
-
-        // const standardActionsArray = monster.actions.map((action) => (
-        //   <div className='black foe-standard-actions' key={action.name}>
-        //     <h3>Action: {action.name}</h3>
-        //     <p>{action.desc}</p>
-        //   </div>
-        // ));
-
-        // const legendaryActionsArray = monster.legendary_actions.map((action) => (
-        //   <div className='black foe-legendary-actions' key={action.name}>
-        //     <h3>Legendary Action: {action.name}</h3>
-        //     <p>{action.desc}</p>
-        //   </div>
-        // ));
-
-        // const specialAbilitiesArray = monster.special_abilities.map((ability) => (
-        //   <div className='black foe-special-abilities' key={ability.name}>
-        //     <h3>Special Ability: {ability.name}</h3>
-        //     <p>{ability.desc}</p>
-        //   </div>
-        // ));
-
-        // const vulnerabilitiesArray = monster.damage_vulnerabilities.map((vulnerability) => (
-        //   <div key={vulnerability}>
-        //     <p>{vulnerability}</p>
-        //   </div>
-        // ));
-
-        // const resistancesArray = monster.damage_resistances.map((resistance) => (
-        //   <div key={resistance}>
-        //     <p>{resistance}</p>
-        //   </div>
-        // ));
-
-        // const immunitiesArray = monster.damage_immunities.map((immunity) => (
-        //   <div key={immunity}>
-        //     <p>{immunity}</p>
-        //   </div>
-        // ));
-        // console.log("Monster Indices: ", monster.monsterIndex);
-        // setMonsterIndex(monster.monsterIndex);
-        // getIndividualMonster(monster.monsterIndex);
 
         setSelectedMonsters(monsters);
       };
