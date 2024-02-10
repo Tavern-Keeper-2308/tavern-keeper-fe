@@ -4,7 +4,7 @@ import { useApolloClient, gql } from '@apollo/client';
 import './EncounterPreviewContainer.css';
 import EncounterPreviewCard from '../EncounterPreviewCard/EncounterPreviewCard';
 
-const EncounterPreviewContainer = ({ encounters, setSelectedEncounter, encounterCreated }) => {
+const EncounterPreviewContainer = ({ encounters, setSelectedEncounter }) => {
   const client = useApolloClient();
   const [toRender, setToRender] = useState([]);
   useEffect(()=>{
@@ -23,7 +23,7 @@ const EncounterPreviewContainer = ({ encounters, setSelectedEncounter, encounter
       ));
       setToRender(encounterPreviews);
     }
-  }, [encounterCreated, encounters])
+  }, [encounters])
 
   const getIndividualEncounter = async (id) => {
     if (id) {

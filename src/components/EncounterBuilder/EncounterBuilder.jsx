@@ -37,7 +37,7 @@ const ENCOUNTER_BUILDER_MUTATION = gql`
 }
 `;
 
-const EncounterBuilder = ({userName, setEncounterCreated}) => {
+const EncounterBuilder = ({userName}) => {
   const [monsterList, setMonsterList] = useState([]);
   const [monsters, setMonsters] = useState([]);
   const [selectedSizeFilter, setSelectedSizeFilter] = useState('');
@@ -69,8 +69,6 @@ const EncounterBuilder = ({userName, setEncounterCreated}) => {
       encounterMonsterIndexes: newEncounter.encounterMonsterIndexes,
     },
     onCompleted: (data) => {
-      const encounterName = data.createEncounter.encounter;
-      console.log(encounterName, "encounterCreated")
       client.resetStore()
     },
     onError: (error) => {
@@ -179,7 +177,7 @@ const EncounterBuilder = ({userName, setEncounterCreated}) => {
             e.preventDefault();
             console.log(newEncounter, "newEncounter")
             encounterBuilder();
-            setEncounterCreated(newEncounter.encounterName);
+            // setEncounterCreated(newEncounter.encounterName);
           }}>
           <section className='base-box'>
             <section className='encounter-header'>
@@ -241,8 +239,7 @@ const EncounterBuilder = ({userName, setEncounterCreated}) => {
 };
 
 EncounterBuilder.propTypes = {
-  userName: PropTypes.string,
-  setEncounterCreated: PropTypes.func.isRequired
+  userName: PropTypes.string
 };
 
 export default EncounterBuilder;

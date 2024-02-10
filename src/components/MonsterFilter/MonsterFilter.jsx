@@ -78,11 +78,12 @@ export const MonsterFilter = ({ onSizeFilterChange, onNameFilterChange, onArmorC
       <button
         id='reset-filters-button'
         className='builder-button'
-        onClick={() => {
-          setSelectSizeFilter('')
-          setSelectNameFilter('')
-          setSelectArmorClassFilter('')
-          setSelectHitPointsFilter('')
+        onClick={(e) => {
+          e.preventDefault();
+          setSelectSizeFilter('');
+          setSelectNameFilter('');
+          setSelectArmorClassFilter('');
+          setSelectHitPointsFilter('');
         }}
       >Reset All Filters</button>
     </div>
