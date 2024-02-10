@@ -41,7 +41,6 @@ const EncounterPreviewContainer = ({ encounters, setSelectedEncounter }) => {
   };
 
   const selectEncounter = (encounter) => {
-    console.log("encounter id: ", encounter.id);
     const id = encounter.id;
     getIndividualEncounter(id);
     // setSelectedEncounter(encounter);

@@ -7,6 +7,7 @@ import './EncounterDetails.css';
 export default function EncounterDetails({ selectedEncounter }) {
   const [selectedMonsters, setSelectedMonsters] = useState([]);
   const [monsterIndex, setMonsterIndex] = useState(null);
+  const [loading, setLoading] = useState(true);
   const client = useApolloClient();
 
   const getIndividualMonster = async (monsterIndex) => {
@@ -76,6 +77,7 @@ export default function EncounterDetails({ selectedEncounter }) {
 
   useEffect(() => {
     if (selectedEncounter) {
+      setLoading(true);
       // use Promise.all to get all monster details before updating state and store both monster index and details
       const fetchMonsterDetails = async () => {
         const monsterDetailsArray = await Promise.all(
@@ -244,7 +246,8 @@ export default function EncounterDetails({ selectedEncounter }) {
         });
 
         setSelectedMonsters(monsters);
-      };
+        setLoading(false);
+      } 
       fetchMonsterDetails();
     }
   }, [selectedEncounter]);
@@ -274,7 +277,11 @@ export default function EncounterDetails({ selectedEncounter }) {
           </section>
           <section className='base-box encounter-foes'>
             <h2>Your Enemies</h2>
-            {selectedMonsters}
+            {loading ? (
+              <p className='loading-message'>Loading...</p>
+            ) : (
+              selectedMonsters
+            )}  
           </section>
         </section>
       ) : (
