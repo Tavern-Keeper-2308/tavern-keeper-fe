@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
-import { useParams, Link } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 import './EncounterPreviewCard.css';
-import EncounterDetails from '../EncounterDetails/EncounterDetails';
 
 const EncounterPreviewCard = ({ id, name, summary, partySize, partyLevel, monsters }) => {
   return (
@@ -13,7 +11,7 @@ const EncounterPreviewCard = ({ id, name, summary, partySize, partyLevel, monste
       <h3 className='preview-section-title'>Monster(s)</h3>
       <ul className='preview-monster-list'>
         {monsters && monsters.map(monster => (
-          <li className='preview-monster-name' key={uuid()}>{monster.monster_name}</li>
+          <li className='preview-monster-name' key={uuid()}>{monster.monsterName}</li>
         ))}
       </ul>
       <div className='preview-small-stat'>

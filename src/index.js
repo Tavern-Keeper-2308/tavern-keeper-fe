@@ -1,18 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { ApolloProvider, ApolloClient, InMemoryCache, gql } from '@apollo/client';
 import './index.css';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 
+const client = new ApolloClient({
+  uri: 'https://tavern-keeper-be.onrender.com/graphql/',
+  cache: new InMemoryCache()
+});
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
-    <BrowserRouter>
+  <BrowserRouter>
+    <ApolloProvider client={client}>
       <React.StrictMode>
         <App />
       </React.StrictMode>
-    </BrowserRouter>
+    </ApolloProvider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
