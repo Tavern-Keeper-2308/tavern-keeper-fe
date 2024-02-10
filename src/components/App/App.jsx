@@ -11,6 +11,7 @@ import ErrorPage from '../ErrorPage/ErrorPage.jsx';
 
 export default function App() {
   const [encounters, setEncounters] = useState([]);
+  const [selectedEncounter, setSelectedEncounter] = useState(null);
   const [userName, setUserName] = useState(null);
   const location = useLocation();
 
@@ -31,9 +32,9 @@ export default function App() {
         )}
       </header>
       <Routes>
-        <Route path="/" element={<Home userName={userName} />} />
+        <Route path="/" element={<Home userName={userName} setSelectedEncounter={setSelectedEncounter} />} />
         <Route path="/login" element={<Login setUserName={setUserName} />} />
-        <Route path="/details/:id" element={<EncounterDetails encounters={encounters} />} />
+        <Route path="/details/:id" element={<EncounterDetails selectedEncounter={selectedEncounter} />} />
         <Route path="/encounterbuilder" element={<EncounterBuilder />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

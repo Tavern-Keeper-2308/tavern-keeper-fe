@@ -3,11 +3,10 @@ import { useState } from 'react';
 import './EncounterPreviewContainer.css';
 import EncounterPreviewCard from '../EncounterPreviewCard/EncounterPreviewCard';
 
-const EncounterPreviewContainer = ({ encounters }) => {
-  const [selectedEncounter, setSelectedEncounter] = useState(null);
+const EncounterPreviewContainer = ({ encounters, setSelectedEncounter }) => {
 
-  const selectEncounter = (selectedEncounter) => {
-    setSelectedEncounter(selectedEncounter);
+  const selectEncounter = (encounter) => {
+    setSelectedEncounter(encounter);
   }
 
   const encounterPreviews = encounters && encounters.map(encounter => (
@@ -19,7 +18,7 @@ const EncounterPreviewContainer = ({ encounters }) => {
       partySize={encounter.partySize}
       partyLevel={encounter.partyLevel}
       monsters={encounter.encounterMonsters}
-      onClick={() => selectEncounter(selectedEncounter)}
+      onClick={() => selectEncounter(encounter)}
     />
   ));
 

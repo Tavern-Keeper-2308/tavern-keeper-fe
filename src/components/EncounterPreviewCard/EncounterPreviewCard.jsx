@@ -5,7 +5,7 @@ import './EncounterPreviewCard.css';
 
 const EncounterPreviewCard = ({ id, name, summary, partySize, partyLevel, monsters, onClick }) => {
   return (
-    <Link className='preview-card-link' to={`/details/${id}`}>
+    <Link className='preview-card-link' to={`/details/${id}`} onClick={onClick}>
       <div className='EncounterPreviewCard'>
         <h2 className='preview-encounter-name'>{name}</h2>
         <h3 className='preview-section-title'>Encounter Summary</h3>
