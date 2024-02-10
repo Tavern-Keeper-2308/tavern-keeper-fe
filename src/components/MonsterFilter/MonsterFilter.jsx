@@ -69,7 +69,7 @@ export const MonsterFilter = ({ onSizeFilterChange, onNameFilterChange, onArmorC
           name="hit points search"
           aria-label="hit points search" 
           placeholder="Hit Points" 
-          onChange={(event)=> {setSelectHitPointsFilter(event.target.value)}}
+          onChange={(event)=> {setSelectHitPointsFilter(parseInt(event.target.value))}}
         >
         </input>
       </label>

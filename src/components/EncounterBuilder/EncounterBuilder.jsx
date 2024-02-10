@@ -43,7 +43,7 @@ const EncounterBuilder = ({userName, setEncounterCreated}) => {
   const [selectedSizeFilter, setSelectedSizeFilter] = useState('');
   const [selectedNameFilter, setSelectedNameFilter] = useState('');
   const [selectedArmorClassFilter, setSelectedArmorClassFilter] = useState('');
-  const [selectedHitPointsFilter, setSelectedHitPointsFilter] = useState('');
+  const [selectedHitPointsFilter, setSelectedHitPointsFilter] = useState(0);
   const [filteredMonsters, setFilteredMonsters] = useState([]);
   const [toShow, setToShow] = useState([]);
   const [newEncounter, setNewEncounter] = useState({
@@ -242,13 +242,8 @@ const EncounterBuilder = ({userName, setEncounterCreated}) => {
 };
 
 EncounterBuilder.propTypes = {
-  userName: PropTypes.string.isRequired,
-  setEncounterCreated: PropTypes.func.isRequired,
-  monsterList: PropTypes.array.isRequired,
-  onArmorClassFilterChange: PropTypes.func,
-  onHitPointsFilterChange: PropTypes.func,
-  onSizeFilterChange: PropTypes.func,
-  onNameFilterChange: PropTypes.func
+  userName: PropTypes.string,
+  setEncounterCreated: PropTypes.func.isRequired
 };
 
 export default EncounterBuilder;
