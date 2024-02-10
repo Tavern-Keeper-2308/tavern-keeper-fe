@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import './EncounterBuilder.css';
 import React, { useEffect, useState } from 'react';
 import { useApolloClient, useMutation, gql } from '@apollo/client';
-import {MonsterFilter} from '../MonsterFilter/MonsterFilter'
+import {MonsterFilter} from '../MonsterFilter/MonsterFilter';
 
 const ENCOUNTER_BUILDER_MUTATION = gql`
   mutation CreateEncounter(
@@ -37,7 +37,7 @@ const ENCOUNTER_BUILDER_MUTATION = gql`
 }
 `;
 
-const EncounterBuilder = ({userName}) => {
+const EncounterBuilder = ({userName, setEncounterCreated}) => {
   const [monsterList, setMonsterList] = useState([]);
   const [monsters, setMonsters] = useState([]);
   const [selectedSizeFilter, setSelectedSizeFilter] = useState('');
@@ -68,7 +68,8 @@ const EncounterBuilder = ({userName}) => {
       treasure: newEncounter.treasure,
       encounterMonsterIndexes: newEncounter.encounterMonsterIndexes,
     }
-  });
+  },
+  );
   const client = useApolloClient();
 
   const getMonsters = async () => {
@@ -110,7 +111,7 @@ const EncounterBuilder = ({userName}) => {
       }
   }, [monsters])
 
-  useEffect((newEncounter) => {
+  useEffect(() => {
     if (monsters) {
       const renderMonsters = filteredMonsters.map((monster)=> {
         return (
@@ -184,6 +185,8 @@ const EncounterBuilder = ({userName}) => {
             e.preventDefault();
             console.log(newEncounter, "newEncounter")
             encounterBuilder();
+            setEncounterCreated(true);
+            // setEncounterCreated(false);
           }}>
           <section className='base-box'>
             <section className='encounter-header'>
@@ -245,6 +248,7 @@ const EncounterBuilder = ({userName}) => {
 };
 
 EncounterBuilder.propTypes = {
+  userName: PropTypes.string,
 };
 
 export default EncounterBuilder;

@@ -13,6 +13,7 @@ export default function App() {
   const [encounters, setEncounters] = useState([]);
   const [selectedEncounter, setSelectedEncounter] = useState(null);
   const [userName, setUserName] = useState(null);
+  const [encounterCreated, setEncounterCreated] = useState(false);
   const location = useLocation();
 
   return (
@@ -32,10 +33,10 @@ export default function App() {
         )}
       </header>
       <Routes>
-        <Route path="/" element={<Home userName={userName} setSelectedEncounter={setSelectedEncounter} />} />
+        <Route path="/" element={<Home userName={userName} encounterCreated={encounterCreated} setSelectedEncounter={setSelectedEncounter} />} />
         <Route path="/login" element={<Login setUserName={setUserName} />} />
         <Route path="/details/:id" element={<EncounterDetails selectedEncounter={selectedEncounter} />} />
-        <Route path="/encounterbuilder" element={<EncounterBuilder userName={userName}/>} />
+        <Route path="/encounterbuilder" element={<EncounterBuilder userName={userName} setEncounterCreated={setEncounterCreated} />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>

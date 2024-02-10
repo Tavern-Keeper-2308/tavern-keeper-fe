@@ -4,7 +4,7 @@ import { useApolloClient, gql } from '@apollo/client';
 import './Home.css';
 import EncounterPreviewContainer from '../EncounterPreviewContainer/EncounterPreviewContainer';
 
-export default function Home({ userName, setSelectedEncounter }) {
+export default function Home({ userName, setSelectedEncounter, encounterCreated }) {
   const [encounters, setEncounters] = useState([]);
   const client = useApolloClient();
 
@@ -41,7 +41,7 @@ export default function Home({ userName, setSelectedEncounter }) {
       }
     };
     getEncounters(userName);
-  }, [userName, client]);
+  }, [userName, client, encounterCreated]);
 
   return (
     <div className='Home'>
