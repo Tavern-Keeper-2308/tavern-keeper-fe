@@ -23,4 +23,17 @@ context('Functional Tests', () => {
     cy.get('.login-button').eq(1).contains('DEMO - One Encounter');
     cy.get('.login-button').last().contains('DEMO - Many Encounters');
   });
+
+  it.skip('should render expected elements correctly on home page when logging in as DEMO - No Encounters', () => {
+
+  });
+
+  it.skip('should render expected elements correctly on home page when logging in as DEMO - One Encounter', () => {
+
+  });
+
+  it.skip('should render expected elements correctly on home page when logging in as DEMO - Many Encounters', () => {
+
+  });
+
 });
