@@ -51,6 +51,7 @@ export const MonsterFilter = ({ onSizeFilterChange, onNameFilterChange, onArmorC
       <label htmlFor='select-armor-class'>Filter By Armor Class
         <input 
           type="number" 
+          name="armor class search"
           aria-label="armor class search" 
           value={selectArmorClassFilter} 
           placeholder="Armor Class" 
@@ -98,6 +99,7 @@ export const MonsterFilter = ({ onSizeFilterChange, onNameFilterChange, onArmorC
       <label htmlFor='select-hit-points'>Filter By Hit Points
         <input 
           type="number" 
+          name="hit points search"
           aria-label="hit points search" 
           placeholder="Hit Points" 
           onChange={(event)=> {setSelectHitPointsFilter(event.target.value)}}

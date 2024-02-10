@@ -24,7 +24,7 @@ button {
   border: 1px solid #BCBEF0;
 }
 
-.encounter-builder, .monster-checker {
+.encounter-builder, form, .monster-checker {
   display: flex;
 }
 

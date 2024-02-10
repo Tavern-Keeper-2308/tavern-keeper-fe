@@ -6,7 +6,7 @@ import {MonsterFilter} from '../MonsterFilter/MonsterFilter'
 
 const ENCOUNTER_BUILDER_MUTATION = gql`
   mutation CreateEncounter(
-    $userName: String!, $encounterName: String!, $partySize: Int!, $partyLevel: Int!, $summary: String!, $description: String!, $treasure: String!, $encounterIndexes: [String!]!
+    $userName: String!, $encounterName: String!, $partySize: Int!, $partyLevel: Int!, $summary: String!, $description: String!, $treasure: String!, $encounterMonsterIndexes: [String!]!
     ) {
     createEncounter(input: {
       userName: $userName,
@@ -16,7 +16,7 @@ const ENCOUNTER_BUILDER_MUTATION = gql`
       summary: $summary,
       description: $description,
       treasure: $treasure,
-      encounterIndexes: $encounterIndexes
+      encounterMonsterIndexes: $encounterMonsterIndexes
     }) {
       encounter {
         userName
@@ -47,14 +47,14 @@ const EncounterBuilder = ({userName}) => {
   const [filteredMonsters, setFilteredMonsters] = useState([]);
   const [toShow, setToShow] = useState([]);
   const [newEncounter, setNewEncounter] = useState({
-    userName: 'userName',
+    userName: userName,
     encounterName: '',
     partySize: 0,
     partyLevel: 0,
     summary: '',
     description: '',
     treasure: '',
-    encounterIndexes: [],
+    encounterMonsterIndexes: [],
   })
 
   const [encounterBuilder] = useMutation(ENCOUNTER_BUILDER_MUTATION, {
@@ -66,7 +66,7 @@ const EncounterBuilder = ({userName}) => {
       summary: newEncounter.summary,
       description: newEncounter.description,
       treasure: newEncounter.treasure,
-      encounterIndexes: newEncounter.encounterIndexes,
+      encounterMonsterIndexes: newEncounter.encounterMonsterIndexes,
     }
   });
   const client = useApolloClient();
@@ -110,28 +110,30 @@ const EncounterBuilder = ({userName}) => {
       }
   }, [monsters])
 
-  useEffect(() => {
+  useEffect((newEncounter) => {
     if (monsters) {
-      const renderMonsters = monsters.map((monster)=> {
+      const renderMonsters = filteredMonsters.map((monster)=> {
         return (
         <div key={monster.monsterIndex}>
           <h3>{monster.monsterName}</h3>
-          <button onClick={()=>{(e) => {setNewEncounter({
+          <button onClick={(e) => {
+            e.preventDefault();
+            setNewEncounter(newEncounter => ({
             ...newEncounter,
-            encounterIndexes: [...encounterIndexes, monster.monsterIndex]
-          })}}}>+</button>
+            encounterMonsterIndexes: [...newEncounter.encounterMonsterIndexes, monster.monsterIndex]
+          }))}}>+</button>
         </div>
         )
       }); 
       setToShow(renderMonsters);
-      console.log("renderMonsters: ", renderMonsters)
+      // console.log("renderMonsters: ", renderMonsters)
       // setToShow(filteredMonsters.map((monster)=> {(
       //   <div className='add-new' key={monster.monsterIndex}>
       //     <h3>{monster.monsterName}</h3>
       //     <button>+</button>
       //   </div>
       // )}))
-      console.log(filteredMonsters, "filteredMonsters")
+      // console.log(filteredMonsters, "filteredMonsters")
     }
   }, [filteredMonsters])
 
@@ -160,7 +162,7 @@ const EncounterBuilder = ({userName}) => {
   }
 
   const handleNameFilterChange = (nameFilter) => {
-    console.log(nameFilter, "nameFilter")
+    // console.log(nameFilter, "nameFilter")
     setSelectedNameFilter(nameFilter);
   }
 
@@ -177,42 +179,66 @@ const EncounterBuilder = ({userName}) => {
   return (
     <div className='EncounterBuilder encounter-builder'>
       <section className='main-details'>
-        <section className='base-box'>
-          <section className='encounter-header'>
-            <h3>Encounter Name:</h3>
-            <input type="text" aria-label="encounter name input" required></input>
-            <div className='party-stats'>
-              <h3>Party Size:</h3>
-              <input type="number" aria-label="party size input" placeholder="" required></input>
-              <h3>Party Level:</h3>
-              <input type="number" aria-label="party level input" placeholder="" required></input>
+        <form name='encounter-builder-form'
+          onSubmit={(e)=> {
+            e.preventDefault();
+            console.log(newEncounter, "newEncounter")
+            encounterBuilder();
+          }}>
+          <section className='base-box'>
+            <section className='encounter-header'>
+              <h3>Encounter Name:</h3>
+              <input type="text" name="encounter-name" aria-label="encounter name input" onChange={(e) => {setNewEncounter({
+                ...newEncounter,
+                encounterName: e.target.value
+              })}} required></input>
+              <div className='party-stats'>
+                <h3>Party Size:</h3>
+                <input type="number" name="encounter-size" aria-label="party size input" onChange={(e) => {setNewEncounter({
+                  ...newEncounter,
+                  partySize: parseInt(e.target.value)
+                })}} required></input>
+                <h3>Party Level:</h3>
+                <input type="number" name="encounter-level" aria-label="party level input" onChange={(e) => {setNewEncounter({
+                  ...newEncounter,
+                  partyLevel: parseInt(e.target.value)
+                })}} required></input>
+              </div>
+            </section>
+            <section className='encounter-desc'>
+              <h3>Short Summary:</h3>
+              <input type="text" name="encounter-summary" aria-label="summary input" onChange={(e) => {setNewEncounter({
+                ...newEncounter,
+                summary: e.target.value
+              })}} required></input>
+              <h3>Encounter Description:</h3>
+              <input type="text" name='encounter-description' aria-label="description input" onChange={(e) => {setNewEncounter({
+                ...newEncounter,
+                description: e.target.value
+              })}} required></input>
+              <h3>Treasure and Rewards:</h3>
+              <input type="text" name="encounter-loot" aria-label="loot input" onChange={(e) => {setNewEncounter({
+                ...newEncounter,
+                treasure: e.target.value
+              })}} required></input>
+            </section>
+            <button type='submit'>Submit New</button>
+          </section>
+          <section className='encounter-foes base-box'>
+            <h2>Search By:</h2>
+            <div className='monster-selection'>
+            <MonsterFilter
+              onSizeFilterChange={handleSizeFilterChange}
+              onNameFilterChange={handleNameFilterChange}
+              onArmorClassFilterChange={handleArmorClassFilterChange}
+              onHitPointsFilterChange={handleHitPointsFilterChange}
+              monsterList={monsterList}
+            />
+              {toShow}
+              {filteredMonsters.length === 0 && <span className='no-results'>No creatures match your search.</span>}
             </div>
           </section>
-          <section className='encounter-desc'>
-            <h3>Short Summary:</h3>
-            <input type="text" aria-label="summary input" placeholder="" required></input>
-            <h3>Encounter Description:</h3>
-            <input type="text" aria-label="description input" placeholder="" required></input>
-            <h3>Treasure and Rewards:</h3>
-            <input type="text" aria-label="loot input" placeholder="" required></input>
-          </section>
-          <button onClick={()=>{encounterBuilder();}}>Submit New</button>
-        </section>
-        <section className='encounter-foes base-box'>
-          <h2>Search By:</h2>
-          <div className='monster-selection'>
-          <MonsterFilter
-            onSizeFilterChange={handleSizeFilterChange}
-            onNameFilterChange={handleNameFilterChange}
-            onArmorClassFilterChange={handleArmorClassFilterChange}
-            onHitPointsFilterChange={handleHitPointsFilterChange}
-            monsterList={monsterList}
-          />
-            {toShow}
-            {filteredMonsters.length === 0 && <span className='no-results'>No creatures match your search.</span>}
-           
-          </div>
-        </section>
+        </form>
       </section>
     </div>
   );
