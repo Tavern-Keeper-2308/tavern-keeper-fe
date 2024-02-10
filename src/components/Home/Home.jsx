@@ -9,7 +9,9 @@ export default function Home({ userName, setSelectedEncounter, encounterCreated 
   const client = useApolloClient();
 
   useEffect(() => {
+    console.log("fetch encounters list")
     const getEncounters = async (userName) => {
+      console.log("inside async request")
       if (userName) {
         try {
           const { data } = await client.query({
@@ -35,6 +37,8 @@ export default function Home({ userName, setSelectedEncounter, encounterCreated 
             },
           });
           setEncounters(data.encounters);
+          console.log(data.encounters, "data.encounters")
+          console.log(encounters, "encounters state inside useEffect")
         } catch (error) {
           console.error('Error fetching encounters: ', error);
         }
@@ -43,9 +47,11 @@ export default function Home({ userName, setSelectedEncounter, encounterCreated 
     getEncounters(userName);
   }, [userName, client, encounterCreated]);
 
+  console.log(encounters, "encounters state oustdie useEffect")
+
   return (
     <div className='Home'>
-      <EncounterPreviewContainer encounters={encounters} setSelectedEncounter={setSelectedEncounter} />
+      <EncounterPreviewContainer encounters={encounters} setSelectedEncounter={setSelectedEncounter} encounterCreated={encounterCreated} />
     </div>
   );
 };

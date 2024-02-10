@@ -70,7 +70,10 @@ const EncounterBuilder = ({userName, setEncounterCreated}) => {
     },
     onCompleted: (data) => {
       const encounterName = data.createEncounter.encounter;
-      setEncounterCreated(encounterName);
+      console.log(encounterName, "encounterCreated")
+      //clear Apollo cache
+      client.resetStore()
+      // setEncounterCreated(encounterName); //may be unnecessary but try it both ways
     },
     onError: (error) => {
       console.error("Error creating encounter: ", error);

@@ -1,11 +1,29 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useApolloClient, gql } from '@apollo/client';
 import './EncounterPreviewContainer.css';
 import EncounterPreviewCard from '../EncounterPreviewCard/EncounterPreviewCard';
 
-const EncounterPreviewContainer = ({ encounters, setSelectedEncounter }) => {
+const EncounterPreviewContainer = ({ encounters, setSelectedEncounter, encounterCreated }) => {
   const client = useApolloClient();
+  const [toRender, setToRender] = useState([]);
+  useEffect(()=>{
+    if(encounters) {
+      const encounterPreviews = encounters && encounters.map(encounter => (
+        <EncounterPreviewCard
+          key={encounter.id}
+          id={encounter.id}
+          name={encounter.encounterName}
+          summary={encounter.summary}
+          partySize={encounter.partySize}
+          partyLevel={encounter.partyLevel}
+          monsters={encounter.encounterMonsters}
+          onClick={() => selectEncounter(encounter)}
+        />
+      ));
+      setToRender(encounterPreviews);
+    }
+  }, [encounterCreated, encounters])
 
   const getIndividualEncounter = async (id) => {
     if (id) {
@@ -45,22 +63,9 @@ const EncounterPreviewContainer = ({ encounters, setSelectedEncounter }) => {
     getIndividualEncounter(id);
   }
 
-  const encounterPreviews = encounters && encounters.map(encounter => (
-    <EncounterPreviewCard
-      key={encounter.id}
-      id={encounter.id}
-      name={encounter.encounterName}
-      summary={encounter.summary}
-      partySize={encounter.partySize}
-      partyLevel={encounter.partyLevel}
-      monsters={encounter.encounterMonsters}
-      onClick={() => selectEncounter(encounter)}
-    />
-  ));
-
   return (
     <div className='EncounterPreviewContainer'>
-      {encounterPreviews}
+      {toRender}
     </div>
   );
 };
