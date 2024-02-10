@@ -1,3 +1,7 @@
+.preview-card-link {
+  text-decoration: none;
+}
+
 .EncounterPreviewCard {
   background-color: #131316;
   color: #BCBEF0;
