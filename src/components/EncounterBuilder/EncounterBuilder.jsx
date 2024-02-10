@@ -1,17 +1,94 @@
 import PropTypes from 'prop-types';
 import './EncounterBuilder.css';
 import React, { useEffect, useState } from 'react';
+import { useApolloClient, gql } from '@apollo/client';
 import {MonsterFilter} from '../MonsterFilter/MonsterFilter'
+import { renderHook } from '@testing-library/react';
 
-const EncounterBuilder = ({allMonsters}) => {
-  //data will become a query here rather than a prop passed in
-  const [monsterList, setMonsterList] = useState(allMonsters);
-  const [monsters, setMonsters] = useState(allMonsters); //replace with api call data
+const EncounterBuilder = () => {
+  const [monsterList, setMonsterList] = useState([]);
+  const [monsters, setMonsters] = useState([]);
   const [selectedSizeFilter, setSelectedSizeFilter] = useState('');
   const [selectedNameFilter, setSelectedNameFilter] = useState('');
   const [selectedArmorClassFilter, setSelectedArmorClassFilter] = useState('');
   const [selectedHitPointsFilter, setSelectedHitPointsFilter] = useState('');
   const [filteredMonsters, setFilteredMonsters] = useState([]);
+  const [toShow, setToShow] = useState([]);
+
+  const client = useApolloClient();
+
+  const getMonsters = async () => {
+    try {
+      const {data} = await 
+        client.query({
+          query: gql`
+            query getMonsters {
+            monsters {
+              monsterIndex
+              monsterName
+              size
+              hitPoints
+              armorClass
+              type
+            }
+          }
+          `, 
+        });
+      setMonsters(data.monsters);
+      setFilteredMonsters(data.monsters);
+    } catch(error) {
+      console.error("Error fetching monsters: ", error);
+    }
+  }
+
+  useEffect(() => {
+    getMonsters(); //makes call to get monsters data
+    if (filteredMonsters) {
+      const monsterNames = filteredMonsters.map((monster) => {
+        return (
+        <option key={monster.monsterIndex} value={monster.monsterName}>{monster.monsterName}</option>
+        )
+      })
+      const renderMonsters = filteredMonsters.map((monster)=> {(
+        <div key={monster.monsterIndex}>
+          <h3>{monster.monsterName}</h3>
+          <button>+</button>
+        </div>
+        )
+      }); 
+      // setMonsters()
+      setMonsterList(monsterNames) //name filter list
+      setToShow(renderMonsters)
+    }
+  }, []) //on mount
+
+  useEffect(() => {
+    setToShow(filteredMonsters.map((monster)=> {(
+      <div key={monster.monsterIndex}>
+        <h3>{monster.monsterName}</h3>
+        <button>+</button>
+      </div>
+      )}))
+  }, [filteredMonsters]);
+
+  useEffect(() => {
+      if (selectedSizeFilter || selectedNameFilter || selectedArmorClassFilter || selectedHitPointsFilter) {
+        const filtered = monsters.filter((monster) => {
+          // const sizeCondition = !selectedSizeFilter || monster.size.toLowerCase() === selectedSizeFilter.toLowerCase();
+          // const nameCondition = !selectedNameFilter || monster.name.toLowerCase() === selectedNameFilter.toLowerCase();
+          // const armorClassCondition = !selectedArmorClassFilter || monster.armorClass === selectedArmorClassFilter;
+          const hitPointsCondition = !selectedHitPointsFilter || monster.hitPoints === selectedHitPointsFilter;
+          return hitPointsCondition;
+          //  sizeCondition && nameCondition && armorClassCondition && 
+          
+        });
+        setFilteredMonsters(filtered);
+      } else {
+        setFilteredMonsters(monsters);
+      }
+    }, [selectedSizeFilter, selectedNameFilter, selectedArmorClassFilter, selectedHitPointsFilter, filteredMonsters]);
+
+  
 
   const handleSizeFilterChange = (sizeFilter) => {
     // console.log(sizeFilter, "size")
@@ -33,51 +110,7 @@ const EncounterBuilder = ({allMonsters}) => {
     setSelectedHitPointsFilter(hitPointsFilter);
   }
 
-  useEffect(() => {
-    if (selectedSizeFilter || selectedNameFilter || selectedArmorClassFilter || selectedHitPointsFilter) {
-      const filtered = monsters.filter((monster) => {
-        // const sizeCondition = !selectedSizeFilter || monster.size.toLowerCase() === selectedSizeFilter.toLowerCase();
-        // const nameCondition = !selectedNameFilter || monster.name.toLowerCase() === selectedNameFilter.toLowerCase();
-        // const armorClassCondition = !selectedArmorClassFilter || monster.armorClass === selectedArmorClassFilter;
-        const hitPointsCondition = !selectedHitPointsFilter || monster.hitPoints === selectedHitPointsFilter;
-        return hitPointsCondition;
-        //  sizeCondition && nameCondition && armorClassCondition && 
-        
-      });
-      setFilteredMonsters(filtered);
-    } else {
-      setFilteredMonsters(monsters);
-    }
-  }, [selectedSizeFilter, selectedNameFilter, selectedArmorClassFilter, selectedHitPointsFilter, monsters]);
-  
-// array data comes in from allMonsters
-// useEffect waits for allMonsters to fully load, then maps all the names out for the name dropdown search and sets the monsterList state with that array
-// also sets the filteredMonsters to start with all of them
-//
-
-  useEffect(() => {
-    if (allMonsters && allMonsters) {
-      console.log(allMonsters, "allmonsters")
-      const monsterNames = allMonsters.map((monster) => {
-        return (<option key={monster.name} value={monster.name}>{monster.name}</option>)
-      })
-      setFilteredMonsters(allMonsters)
-      setMonsterList(monsterNames)
-      setMonsters(allMonsters)
-    }
-  }, [allMonsters])
-
-
-  useEffect(() => {
-    const monsterAll = filteredMonsters.map((monster)=> {(
-          <div key={monster.name}>
-            <h3>{monster.name}</h3>
-            <p>{monster.size}</p>
-          </div>
-        )
-      });      
-      console.log(filteredMonsters, "filteredMonsters")
-  }, [filteredMonsters])
+ 
 
   return (
     <div className='EncounterBuilder encounter-builder'>
@@ -113,9 +146,7 @@ const EncounterBuilder = ({allMonsters}) => {
             monsterList={monsterList}
           />
             {filteredMonsters.length === 0 && <span className='no-results'>No creatures match your search.</span>}
-            {filteredMonsters && <div>{filteredMonsters.map((monster) => {
-              <p>{monster.name}</p>
-            })}</div>}
+            {toShow}
           </div>
         </section>
       </section>
