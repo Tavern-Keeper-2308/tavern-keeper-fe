@@ -1,0 +1,35 @@
+{
+  "data": {
+      "createEncounter": {
+          "encounter": {
+              "userName": "WhoAmI",
+              "id": "666",
+              "encounterName": "Party Wipe",
+              "partySize": 4,
+              "partyLevel": 3,
+              "summary": "I hope this works",
+              "description": "Why does it have to be a string",
+              "treasure": "We not deserve anything",
+              "encounterMonsters": [
+                  {
+                      "monsterIndex": "beholder",
+                      "monsterName": "Beholder"
+                  },
+                  {
+                      "monsterIndex": "goblin",
+                      "monsterName": "Goblin"
+                  },
+                  {
+                      "monsterIndex": "goblin",
+                      "monsterName": "Goblin"
+                  },
+                  {
+                      "monsterIndex": "adult-black-dragon",
+                      "monsterName": "Adult Black Dragon"
+                  }
+              ]
+          },
+          "errors": []
+      }
+  }
+}

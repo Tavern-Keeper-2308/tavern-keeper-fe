@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@apollo/client": "^3.9.4",
+    "cypress": "^13.6.4",
     "graphql": "^16.8.1"
   }
 }
