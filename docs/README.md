@@ -67,7 +67,7 @@ This application was built as the group capstone project of Turing School of Sof
 
 # 🎬 Preview
 <details>
-<h2  id="preview"> 🎥 Desktop Preview 📱 </h2>
+<h2  id="preview"> 💻 Desktop Preview </h2>
 <h3>MacBook</h3>
 ![macbook preview](macbook-preview-tk.gif)
 
