@@ -26,9 +26,38 @@ context('Functional Tests', () => {
           req.reply({ fixture: 'mock_data_getEncounters_many.json' });
         }
       }
+
+      // Check if it's a getEncounter query
+      if (hasOperationName(req, 'getEncounter')) {
+        // Check scenario and set appropriate fixture
+        if (req.body.variables.id === 13) {
+          req.alias = 'gqlGetEncounterQuery';
+          req.reply({ fixture: 'mock_data_getEncounter.json' });
+        } 
+      }
+
+      // Check if it's a getMonsters query
+      if (hasOperationName(req, 'getMonsters')) {
+        // Check scenario and set appropriate fixture
+        if (req) {
+          req.alias = 'gqlGetMonstersQuery';
+          req.reply({ fixture: 'mock_data_getMonsters.json' });
+        } 
+      }
+
+      // Check if it's a getMonster query
+      if (hasOperationName(req, 'getMonster')) {
+        // Check scenario and set appropriate fixture
+        if (req.body.variables.index === 'ancient-red-dragon') {
+          req.alias = 'gqlGetMonsterQuery';
+          req.reply({ fixture: 'mock_data_getMonster.json' });
+        } 
+      }
     });
   });
 
+
+  ///////* Login Page *///////
   it('should render elements correctly on login page', () => {
     cy.visit('/login');
     cy.get('.app-title').contains('Tavern Keeper');
@@ -39,6 +68,8 @@ context('Functional Tests', () => {
     cy.get('.login-button').last().contains('DEMO - Many Encounters');
   });
 
+
+  ///////* Home Page *///////
   it('should render header elements correctly on home page when logging in', () => {
     cy.visit('/login');
     cy.get('.login-button').contains('DEMO - No Encounters').click();
@@ -157,5 +188,9 @@ context('Functional Tests', () => {
       });
     });
   });
+
+
+  ///////* Detail Page *///////
+
 
 });
