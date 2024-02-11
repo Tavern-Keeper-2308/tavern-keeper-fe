@@ -15,15 +15,15 @@
 ![GraphQL](https://img.shields.io/badge/GraphQl-E10098?style=for-the-badge&logo=graphql&logoColor=white)
 ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
 
+
 ### Testing
 ![Cypress](https://img.shields.io/badge/Cypress-17202C?logo=cypress&logoColor=fff&style=for-the-badge)
+
 
 ### Planning, Design, Organization
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 [![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/file/onraXBNfP8PeeiThF8Bla0/Tavern-Keeper-FE?type=design&node-id=13-2&mode=design&t=JJGPVCZ9i5aa8wde-0)
-
-
 
 
 # 🧠 Contributors
@@ -60,16 +60,25 @@ Kevin Zolman
 # 💭 Abstract
 This application is a Dungeons and Dragons Encounter Builder, with the intended user being a Dungeon Master. It allows the user to fill out a form to add encounter details including encounter name, party size, party level, summary, description, treasure & rewards, and monsters. Monsters from the D&D 5e compendium can be filtered and added based on size, name, hit points, and armor class attributes. Users can also see previews of the encounters they've built and click on the preview to view the full details of the corresponding encounter.
 
+
 # 📝 Context
 This application was built as the group capstone project of Turing School of Software and Design's Front End Web Development program, Mod 4. We were given 2 weeks from kick-off to complete and submit the project for evaluation. This repo houses the FE contribution to the project; the BE repo and installation instructions can be found here: [Tavern Keeper BE Repo][backend-repo-url]. The deployed API can be found here: [Tavern Keeper BE Deployment][backend-deployment-url].
+
 
 # 🎬 Preview
 <details>
 <h2  id="preview"> 🎥 Desktop Preview 📱 </h2>
+<h3>MacBook</h3>
+![macbooktk](https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/assets/139941423/83ab5706-193f-4ee9-a16a-ed9b0c105de5)
 
 <h2  id="preview"> 📱 Mobile and Tablet Views </h2>
+<h3>iPad</h3>
+![ipadtk](https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/assets/139941423/7311f5eb-fdae-408e-b75c-66390a7dae8c)
 
+<h3>iPhone</h3>
+![iphonetk](https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/assets/139941423/5b0aacce-ac4b-4b3e-81bf-0fcc05b0aad6)
 </details>
+
 
 # 🔧 Installation Instructions
 1. Clone this client repository to your local machine
@@ -84,6 +93,7 @@ This application was built as the group capstone project of Turing School of Sof
     npm start
     ```
 5. On your web browser, navigate to http://localhost:3000/
+
 
 # 🕵️ Testing Instructions
 After completing installation of the app...
@@ -103,6 +113,7 @@ After completing installation of the app...
     - The `errorhandling_spec.cy.js` script will test API error handling, as well as the handling of navigating to a non-existent path
     - The `functional_spec.cy.js` script will test all functional elements of the application, across all pages
 
+
 # 💡 Learning Goals
 - Demonstrate knowledge you’ve gained throughout Turing
 - Use an agile process to turn well defined requirements into deployed and production ready software
@@ -114,11 +125,13 @@ After completing installation of the app...
 - Build applications that execute in development, test, CI, and production environments
 - Focus on communication between front-end and back-end teams in order to complete and deploy features that have been outlined by the project spec
 
+
 # Challenges & Wins
 ## 🚧 Challenges
 - Learning GraphQL while working on our first full-stack team project 
 - Work-life balance
 - Minimizing scope creep 
+
 
 ## 🌟 Wins
 - Excellent team collaboration and communication
@@ -138,7 +151,6 @@ After completing installation of the app...
 [issues-url]: https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/issues
 [license-shield]: https://img.shields.io/github/license/Tavern-Keeper-2308/tavern-keeper-fe.svg?style=for-the-badge
 [license-url]: https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/blob/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
 [backend-repo-url]: https://github.com/Tavern-Keeper-2308/tavern_keeper_be
 [backend-deployment-url]: https://tavern-keeper-be.onrender.com/graphql/
 
