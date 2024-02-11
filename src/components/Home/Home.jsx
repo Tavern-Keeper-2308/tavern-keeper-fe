@@ -9,36 +9,32 @@ export default function Home({ userName, setSelectedEncounter }) {
   const client = useApolloClient();
 
   useEffect(() => {
-    console.log("fetch encounters list")
     const getEncounters = async (userName) => {
-      console.log("inside async request")
       if (userName) {
         try {
           const { data } = await client.query({
             query: gql`
               query getEncounters($userName: String!) {
                 encounters(userName: $userName) {
-                    id
-                    userName
-                    encounterName
-                    partySize
-                    partyLevel
-                    summary
-                    description
-                    treasure
-                    encounterMonsters {
-                        monsterName
-                    }
+                  id
+                  userName
+                  encounterName
+                  partySize
+                  partyLevel
+                  summary
+                  description
+                  treasure
+                  encounterMonsters {
+                    monsterName
+                  }
                 }
-            }
-      `,
+              }
+            `,
             variables: {
               "userName": userName
             },
           });
           setEncounters(data.encounters);
-          console.log(data.encounters, "data.encounters")
-          console.log(encounters, "encounters state inside useEffect")
         } catch (error) {
           console.error('Error fetching encounters: ', error);
         }
@@ -46,8 +42,6 @@ export default function Home({ userName, setSelectedEncounter }) {
     };
     getEncounters(userName);
   }, [userName, client]);
-
-  console.log(encounters, "encounters state oustdie useEffect")
 
   return (
     <div className='Home'>
@@ -57,4 +51,6 @@ export default function Home({ userName, setSelectedEncounter }) {
 };
 
 Home.propTypes = {
+  userName: PropTypes.string,
+  setSelectedEncounter: PropTypes.func.isRequired
 };
