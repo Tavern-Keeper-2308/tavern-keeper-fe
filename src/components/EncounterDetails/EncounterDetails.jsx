@@ -292,4 +292,5 @@ export default function EncounterDetails({ selectedEncounter }) {
 };
 
 EncounterDetails.propTypes = {
+  selectedEncounter: PropTypes.object
 };
