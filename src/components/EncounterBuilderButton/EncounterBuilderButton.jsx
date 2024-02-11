@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import './EncounterBuilderButton.css';
 
@@ -10,9 +9,6 @@ const EncounterBuilderButton = () => {
       </button>
     </NavLink>
   );
-};
-
-EncounterBuilderButton.propTypes = {
 };
 
 export default EncounterBuilderButton;
