@@ -247,7 +247,7 @@ export default function EncounterDetails({ selectedEncounter }) {
 
         setSelectedMonsters(monsters);
         setLoading(false);
-      } 
+      }
       fetchMonsterDetails();
     }
   }, [selectedEncounter]);
@@ -281,7 +281,7 @@ export default function EncounterDetails({ selectedEncounter }) {
               <p className='loading-message'>Loading...</p>
             ) : (
               selectedMonsters
-            )}  
+            )}
           </section>
         </section>
       ) : (

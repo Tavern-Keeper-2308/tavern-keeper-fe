@@ -314,10 +314,98 @@ context('Functional Tests', () => {
           cy.get('.section-heading').contains('Action: Sling');
           cy.get('.standard-action-value').contains("Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 4 (1d4 + 2) bludgeoning damage.");
         });
+      });
 
-      })
+      cy.get('.monster-details').last().within(() => {
+        cy.get('.monster-name').contains('Ancient Red Dragon');
 
-    })
+        cy.get('.foe-physical').within(() => {
+          cy.get('.section-heading').contains('Size:');
+          cy.get('.size-value').contains('GARGANTUAN');
+          cy.get('.section-heading').contains('Armor Class:');
+          cy.get('.ac-value').contains('22');
+          cy.get('.section-heading').contains('Hit Points:');
+          cy.get('.hp-value').contains('546');
+        });
+
+        cy.get('.foe-stats').within(() => {
+          cy.get('.section-heading').contains('Strength');
+          cy.get('.strength-value').contains('30');
+          cy.get('.section-heading').contains('Dexterity');
+          cy.get('.dexterity-value').contains('10');
+          cy.get('.section-heading').contains('Constitution');
+          cy.get('.constitution-value').contains('29');
+          cy.get('.section-heading').contains('Intelligence');
+          cy.get('.intelligence-value').contains('18');
+          cy.get('.section-heading').contains('Wisdom');
+          cy.get('.wisdom-value').contains('15');
+          cy.get('.section-heading').contains('Charisma');
+          cy.get('.charisma-value').contains('23');
+          cy.get('.section-heading').contains('Proficiency Bonus');
+          cy.get('.pb-value').contains('7');
+        });
+
+        cy.get('.foe-speeds').within(() => {
+          cy.get('.section-heading').contains('Walk Speed:');
+          cy.get('.walk-speed-value').contains('40 ft.');
+          cy.get('.section-heading').contains('Swim Speed:');
+          cy.get('.swim-speed-value').should('be.empty');
+          cy.get('.section-heading').contains('Fly Speed:');
+          cy.get('.fly-speed-value').contains('80 ft.');
+          cy.get('.section-heading').contains('Burrow Speed:');
+          cy.get('.burrow-speed-value').should('be.empty');
+        });
+
+        cy.get('.damage-mods').within(() => {
+          cy.get('.section-heading').contains('Damage Vulnerabilities:');
+          cy.get('.dmg-vulnerability-value').contains('none');
+          cy.get('.section-heading').contains('Damage Resistances:');
+          cy.get('.dmg-resistance-value').contains('none');
+          cy.get('.section-heading').contains('Damage Immunities:');
+          cy.get('.dmg-immunity-value').contains('fire');
+          cy.get('.section-heading').contains('Condition Immunities:');
+          cy.get('.condition-immunity-value').contains('none');
+        });
+
+        cy.get('.senses').within(() => {
+          cy.get('.section-heading').contains('Blindsight:');
+          cy.get('.blindsight-value').contains('60 ft.');
+          cy.get('.section-heading').contains('Darkvision:');
+          cy.get('.darkvision-value').contains('120 ft.');
+          cy.get('.section-heading').contains('Passive Perception:');
+          cy.get('.passive-perception-value').contains('26');
+        });
+
+        cy.get('.special-abilities').within(() => {
+          cy.get('.section-heading').contains('Special Ability: Legendary Resistance');
+          cy.get('.special-ability-value').contains("If the dragon fails a saving throw, it can choose to succeed instead.");
+        });
+
+        cy.get('.standard-actions').within(() => {
+          cy.get('.section-heading').contains('Action: Multiattack');
+          cy.get('.standard-action-value').contains("The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.");
+          cy.get('.section-heading').contains('Action: Bite');
+          cy.get('.standard-action-value').contains("Melee Weapon Attack: +17 to hit, reach 15 ft., one target. Hit: 21 (2d10 + 10) piercing damage plus 14 (4d6) fire damage.");
+          cy.get('.section-heading').contains('Action: Claw');
+          cy.get('.standard-action-value').contains("Melee Weapon Attack: +17 to hit, reach 10 ft., one target. Hit: 17 (2d6 + 10) slashing damage.");
+          cy.get('.section-heading').contains('Action: Tail');
+          cy.get('.standard-action-value').contains("Melee Weapon Attack: +17 to hit, reach 20 ft., one target. Hit: 19 (2d8 + 10) bludgeoning damage.");
+          cy.get('.section-heading').contains('Action: Frightful Presence');
+          cy.get('.standard-action-value').contains("Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 21 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.");
+          cy.get('.section-heading').contains('Action: Fire Breath');
+          cy.get('.standard-action-value').contains("The dragon exhales fire in a 90-foot cone. Each creature in that area must make a DC 24 Dexterity saving throw, taking 91 (26d6) fire damage on a failed save, or half as much damage on a successful one.");
+        });
+
+        cy.get('.legendary-actions').within(() => {
+          cy.get('.section-heading').contains('Legendary Action: Detect');
+          cy.get('.legendary-action-value').contains("The dragon makes a Wisdom (Perception) check.");
+          cy.get('.section-heading').contains('Legendary Action: Tail Attack');
+          cy.get('.legendary-action-value').contains("The dragon makes a tail attack.");
+          cy.get('.section-heading').contains('Legendary Action: Wing Attack (Costs 2 Actions)');
+          cy.get('.legendary-action-value').contains("The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 25 Dexterity saving throw or take 17 (2d6 + 10) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.");
+        });
+      });
+    });
 
 
   });
