@@ -71,6 +71,8 @@ const EncounterPreviewContainer = ({ encounters, setSelectedEncounter }) => {
 };
 
 EncounterPreviewContainer.propTypes = {
+  encounters: PropTypes.array,
+  setSelectedEncounter: PropTypes.func.isRequired
 };
 
 export default EncounterPreviewContainer;

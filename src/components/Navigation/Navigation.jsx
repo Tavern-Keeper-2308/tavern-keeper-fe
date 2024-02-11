@@ -19,6 +19,7 @@ const Navigation = ({ setUserName }) => {
 };
 
 Navigation.propTypes = {
+  setUserName: PropTypes.func.isRequired
 };
 
 export default Navigation;

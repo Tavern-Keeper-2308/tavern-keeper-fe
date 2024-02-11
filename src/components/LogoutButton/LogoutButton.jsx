@@ -17,6 +17,7 @@ const LogoutButton = ({ setUserName }) => {
 };
 
 LogoutButton.propTypes = {
+  setUserName: PropTypes.func.isRequired
 };
 
 export default LogoutButton;

@@ -32,6 +32,13 @@ const EncounterPreviewCard = ({ id, name, summary, partySize, partyLevel, monste
 };
 
 EncounterPreviewCard.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  summary: PropTypes.string.isRequired,
+  partySize: PropTypes.number.isRequired,
+  partyLevel: PropTypes.number.isRequired,
+  monsters: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired
 };
 
 export default EncounterPreviewCard;
