@@ -17,13 +17,11 @@
 
 ### Testing
 ![Cypress](https://img.shields.io/badge/Cypress-17202C?logo=cypress&logoColor=fff&style=for-the-badge)
-![Mocha](https://img.shields.io/badge/mocha.js-323330?style=for-the-badge&logo=mocha&logoColor=Brown)
-![Chai](https://img.shields.io/badge/chai.js-323330?style=for-the-badge&logo=chai&logoColor=red)
 
 ### Planning, Design, Organization
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
-![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+[![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/file/onraXBNfP8PeeiThF8Bla0/Tavern-Keeper-FE?type=design&node-id=13-2&mode=design&t=JJGPVCZ9i5aa8wde-0)
 
 
 
@@ -60,10 +58,10 @@ Kevin Zolman
 
 
 # 💭 Abstract
-This application is a Dungeons and Dragons Encounter Builder, with the intended user being a Dungeon Master. It allows the user to fill out a form to add encounter details including encounter name, party size, party level, summary, description, treasure & rewards, and monsters. Monsters from the D&D 5e compendium can be filtered and added based on size, name, hit points, and armor class attributes. 
+This application is a Dungeons and Dragons Encounter Builder, with the intended user being a Dungeon Master. It allows the user to fill out a form to add encounter details including encounter name, party size, party level, summary, description, treasure & rewards, and monsters. Monsters from the D&D 5e compendium can be filtered and added based on size, name, hit points, and armor class attributes. Users can also see previews of the encounters they've built and click on the preview to view the full details of the corresponding encounter.
 
 # 📝 Context
-This application was built as the group capstone project of Turing School of Software and Design's Front End Web Development program, Mod 4. We were given 2 weeks, from kick-off, to complete and submit the project for evaluation. This repo houses the FE contribution to the project; the BE repo can be found here: [Tavern Keeper BE Repo][backend-repo-url]. The deployed API can be found here: [Tavern Keeper BE Deployment][backend-deployment-url].
+This application was built as the group capstone project of Turing School of Software and Design's Front End Web Development program, Mod 4. We were given 2 weeks from kick-off to complete and submit the project for evaluation. This repo houses the FE contribution to the project; the BE repo and installation instructions can be found here: [Tavern Keeper BE Repo][backend-repo-url]. The deployed API can be found here: [Tavern Keeper BE Deployment][backend-deployment-url].
 
 # 🎬 Preview
 <details>
@@ -118,14 +116,15 @@ After completing installation of the app...
 
 # Challenges & Wins
 ## 🚧 Challenges
-- New technology combined with new vocabulary and concepts 
+- Learning GraphQL while working on our first full-stack team project 
 - Work-life balance
 - Minimizing scope creep 
 
 ## 🌟 Wins
-- Learning how to talk to a back end team to reach a common goal
+- Excellent team collaboration and communication
 - Working with content that interests us
 - Further practice with consulting documentation
+- Successful implementation of GraphQL in both testing and deployment
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
