@@ -10,10 +10,8 @@ import Login from '../Login/Login.jsx';
 import ErrorPage from '../ErrorPage/ErrorPage.jsx';
 
 export default function App() {
-  // const [encounters, setEncounters] = useState([]);
   const [selectedEncounter, setSelectedEncounter] = useState(null);
   const [userName, setUserName] = useState(null);
-  // const [encounterCreated, setEncounterCreated] = useState({});
   const location = useLocation();
 
   return (
@@ -41,7 +39,4 @@ export default function App() {
       </Routes>
     </div>
   );
-};
-
-App.propTypes = {
 };

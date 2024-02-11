@@ -94,5 +94,6 @@ MonsterFilter.propTypes = {
   onArmorClassFilterChange: PropTypes.func.isRequired,
   onHitPointsFilterChange: PropTypes.func.isRequired,
   onSizeFilterChange: PropTypes.func.isRequired,
-  onNameFilterChange: PropTypes.func.isRequired
+  onNameFilterChange: PropTypes.func.isRequired,
+  monsterList: PropTypes.array
 }
