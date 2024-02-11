@@ -79,6 +79,7 @@ context('Functional Tests', () => {
       cy.get('.preview-section-title').contains('Encounter Summary');
       cy.get('.preview-encounter-summary').contains('The world was young, the mountains green');
       cy.get('.preview-section-title').contains('Monster(s)');
+      cy.get('.preview-monster-list').children().should('have.length', 3);
       cy.get('.preview-monster-list').children().first().contains('Kobold');
       cy.get('.preview-monster-list').children().eq(1).contains('Kobold');
       cy.get('.preview-monster-list').children().last().contains('Ancient Red Dragon');
@@ -96,6 +97,7 @@ context('Functional Tests', () => {
       cy.get('.preview-section-title').contains('Encounter Summary');
       cy.get('.preview-encounter-summary').contains('The world was young, the mountains green');
       cy.get('.preview-section-title').contains('Monster(s)');
+      cy.get('.preview-monster-list').children().should('have.length', 3);
       cy.get('.preview-monster-list').children().first().contains('Kobold');
       cy.get('.preview-monster-list').children().eq(1).contains('Kobold');
       cy.get('.preview-monster-list').children().last().contains('Ancient Red Dragon');
@@ -110,8 +112,50 @@ context('Functional Tests', () => {
     });
   });
 
-  it.skip('should render expected elements correctly on home page when logging in as DEMO - Many Encounters', () => {
-
+  it('should render expected elements correctly on home page when logging in as DEMO - Many Encounters', () => {
+    cy.visit('/login');
+    cy.get('.login-button').contains('DEMO - Many Encounters').click();
+    cy.wait('@gqlGetEncountersQueryManyEncounters')
+      .its('response.body.data.encounters')
+      .should((encounters) => {
+        expect(encounters.length).to.equal(7);
+      });
+    cy.get('.EncounterPreviewContainer').children().should('have.length', 7);
+    cy.get('.EncounterPreviewCard').first().within(() => {
+      cy.get('.preview-encounter-name').contains("A girl just fell from the sky, boss!");
+      cy.get('.preview-section-title').contains('Encounter Summary');
+      cy.get('.preview-encounter-summary').contains('Oliphaunt');
+      cy.get('.preview-section-title').contains('Monster(s)');
+      cy.get('.preview-monster-list').children().should('have.length', 3);
+      cy.get('.preview-monster-list').children().first().contains('Giant Shark');
+      cy.get('.preview-monster-list').children().eq(1).contains('Aboleth');
+      cy.get('.preview-monster-list').children().last().contains('Aboleth');
+      cy.get('.preview-party-size').within(() => {
+        cy.get('.preview-section-title').contains('Party Size');
+        cy.get('.preview-party-size-value').contains('2');
+      });
+      cy.get('.preview-party-level').within(() => {
+        cy.get('.preview-section-title').contains('Party Level');
+        cy.get('.preview-party-level-value').contains('10');
+      });
+    });
+    cy.get('.EncounterPreviewCard').last().within(() => {
+      cy.get('.preview-encounter-name').contains("A pig that doesn't fly is just a pig.");
+      cy.get('.preview-section-title').contains('Encounter Summary');
+      cy.get('.preview-encounter-summary').contains('Hey! Now! Come Hoy Now! Whither Do You Wander?');
+      cy.get('.preview-section-title').contains('Monster(s)');
+      cy.get('.preview-monster-list').children().should('have.length', 2);
+      cy.get('.preview-monster-list').children().first().contains('Acolyte');
+      cy.get('.preview-monster-list').children().last().contains('Ghast');
+      cy.get('.preview-party-size').within(() => {
+        cy.get('.preview-section-title').contains('Party Size');
+        cy.get('.preview-party-size-value').contains('3');
+      });
+      cy.get('.preview-party-level').within(() => {
+        cy.get('.preview-section-title').contains('Party Level');
+        cy.get('.preview-party-level-value').contains('3');
+      });
+    });
   });
 
 });
