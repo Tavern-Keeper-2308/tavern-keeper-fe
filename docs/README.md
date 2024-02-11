@@ -60,13 +60,18 @@ Kevin Zolman
 
 
 # 💭 Abstract
-<!-- TBD -->
+This application is a Dungeons and Dragons Encounter Builder, with the intended user being a Dungeon Master. It allows the user to fill out a form to add encounter details including encounter name, party size, party level, summary, description, treasure & rewards, and monsters. Monsters from the D&D 5e compendium can be filtered and added based on size, name, hit points, and armor class attributes. 
 
 # 📝 Context
 This application was built as the group capstone project of Turing School of Software and Design's Front End Web Development program, Mod 4. We were given 2 weeks, from kick-off, to complete and submit the project for evaluation. This repo houses the FE contribution to the project; the BE repo can be found here: [Tavern Keeper BE Repo][backend-repo-url]. The deployed API can be found here: [Tavern Keeper BE Deployment][backend-deployment-url].
 
 # 🎬 Preview
-<!-- TBD -->
+<details>
+<h2  id="preview"> 🎥 Desktop Preview 📱 </h2>
+
+<h2  id="preview"> 📱 Mobile and Tablet Views </h2>
+
+</details>
 
 # 🔧 Installation Instructions
 1. Clone this client repository to your local machine
@@ -113,10 +118,14 @@ After completing installation of the app...
 
 # Challenges & Wins
 ## 🚧 Challenges
-
+- New technology combined with new vocabulary and concepts 
+- Work-life balance
+- Minimizing scope creep 
 
 ## 🌟 Wins
-
+- Learning how to talk to a back end team to reach a common goal
+- Working with content that interests us
+- Further practice with consulting documentation
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
