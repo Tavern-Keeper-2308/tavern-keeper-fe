@@ -67,16 +67,16 @@ This application was built as the group capstone project of Turing School of Sof
 
 # 🎬 Preview
 <details>
-<h2  id="preview"> 🎥 Desktop Preview 📱 </h2>
+<h2  id="preview"> 💻 Desktop Preview </h2>
 <h3>MacBook</h3>
-![macbooktk](https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/assets/139941423/83ab5706-193f-4ee9-a16a-ed9b0c105de5)
+![macbooktk](https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/assets/139941423/b93d6145-28f9-440d-adbb-c8779278cb32)
 
 <h2  id="preview"> 📱 Mobile and Tablet Views </h2>
 <h3>iPad</h3>
-![ipadtk](https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/assets/139941423/7311f5eb-fdae-408e-b75c-66390a7dae8c)
+![ipadtk](https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/assets/139941423/184242e1-78b5-489c-9039-7f75c6e15d98)
 
 <h3>iPhone</h3>
-![iphonetk](https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/assets/139941423/5b0aacce-ac4b-4b3e-81bf-0fcc05b0aad6)
+![iphonetk](https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/assets/139941423/b69dd092-aec6-4b4f-af38-19b269c320db)
 </details>
 
 
