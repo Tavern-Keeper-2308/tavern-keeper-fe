@@ -66,22 +66,30 @@ This application was built as the group capstone project of Turing School of Sof
 
 
 # 🎬 Preview
-<details>
-<h2  id="preview"> 💻 Desktop Preview </h2>
+
+<h2  id="preview"> 🖥️ Desktop Preview </h2>
 <h3>MacBook</h3>
-![macbook details preview](details-macbook-tk.gif)
-![macbook builder preview](builder-macbook-tk.gif)
+<details>
+
+![macbooktk](https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/assets/139941423/83ab5706-193f-4ee9-a16a-ed9b0c105de5)
+
+</details>
 
 <h2  id="preview"> 📱 Mobile and Tablet Views </h2>
 <h3>iPad</h3>
-![ipad details preview](details-ipad-tk.gif)
-![ipad builder preview](builder-ipad-tk.gif)
+<details>
 
-<h3>iPhone</h3>
-![iphone details preview](details-iphone-tk.gif)
-![iphone builder preview](builder-iphone-tk.gif)
+![ipadtk](https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/assets/139941423/7311f5eb-fdae-408e-b75c-66390a7dae8c)
+
 </details>
 
+<h3>iPhone</h3>
+<details>
+
+![iphonetk](https://github.com/Tavern-Keeper-2308/tavern-keeper-fe/assets/139941423/5b0aacce-ac4b-4b3e-81bf-0fcc05b0aad6)
+
+</details>
+<br />
 
 # 🔧 Installation Instructions
 1. Clone this client repository to your local machine
