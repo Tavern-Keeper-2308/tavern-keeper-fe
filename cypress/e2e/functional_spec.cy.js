@@ -10,7 +10,7 @@ context('Functional Tests', () => {
       aliasQuery(req, 'getMonster');
 
       // Mutations
-      aliasMutation(req, 'createEncounter');
+      aliasMutation(req, 'CreateEncounter');
 
       // Check if it's a getEncounters query
       if (hasOperationName(req, 'getEncounters')) {
@@ -21,7 +21,7 @@ context('Functional Tests', () => {
         } else if (req.body.variables.userName === 'demo-one-encounter') {
           req.alias = 'gqlGetEncountersQueryOneEncounter';
           req.reply({ fixture: 'mock_data_getEncounters_one.json' });
-        } else {
+        } else if (req.body.variables.userName === 'demo-many-encounters') {
           req.alias = 'gqlGetEncountersQueryManyEncounters';
           req.reply({ fixture: 'mock_data_getEncounters_many.json' });
         }
@@ -54,6 +54,19 @@ context('Functional Tests', () => {
         } else if (req.body.variables.index === 'kobold') {
           req.alias = 'gqlGetMonsterQueryKobold';
           req.reply({ fixture: 'mock_data_getMonster_kobold.json' });
+        }
+      }
+
+      // Check if it's a createEncounter mutation
+      if (hasOperationName(req, 'CreateEncounter')) {
+        // Check scenario and set appropriate fixture
+        const expectedData = {
+          encounterName: 'Goopy Throw-Down',
+        };
+
+        if (req) {
+          req.alias = 'gqlCreateEncounterMutation';
+          req.reply({ fixture: 'mock_data_createEncounter.json' });
         }
       }
     });
@@ -410,4 +423,188 @@ context('Functional Tests', () => {
 
   });
 
+
+  ///////* Builder Page *///////
+  it('should be able to build and submit a new encounter on the encounter builder page', () => {
+    cy.visit('/login');
+
+    cy.get('.login-button').contains('DEMO - Many Encounters').click();
+    cy.wait('@gqlGetEncountersQueryManyEncounters')
+      .its('response.body.data.encounters')
+      .should((encounters) => {
+        expect(encounters.length).to.equal(7);
+      });
+
+    cy.get('.EncounterBuilderButton').contains('Build New Encounter').click();
+    cy.wait('@gqlGetMonstersQuery')
+      .its('response.body.data.monsters')
+      .should((monsters) => {
+        expect(monsters.length).to.equal(37);
+      });
+
+    cy.get('.encounter-header').within(() => {
+      cy.get('.section-heading').contains('Encounter Name:');
+      cy.get('input[name="encounter-name"]')
+        .should('be.empty')
+        .type('Goopy Throw-Down')
+        .should('have.value', 'Goopy Throw-Down');
+    });
+
+    cy.get('.party-stats').within(() => {
+      cy.get('.section-heading').contains('Party Size:');
+      cy.get('input[name="encounter-size"]')
+        .should('be.empty')
+        .type('5')
+        .should('have.value', '5');
+      cy.get('.section-heading').contains('Party Level:');
+      cy.get('input[name="encounter-level"]')
+        .should('be.empty')
+        .type('6')
+        .should('have.value', '6');
+    });
+
+    cy.get('.encounter-desc').within(() => {
+      cy.get('.section-heading').contains('Short Summary:');
+      cy.get('input[name="encounter-summary"]')
+        .should('be.empty')
+        .type('The gang fights pudding.')
+        .should('have.value', 'The gang fights pudding.');
+      cy.get('.section-heading').contains('Encounter Description:');
+      cy.get('input[name="encounter-description"]')
+        .should('be.empty')
+        .type('The gang runs into some goopy monsters. They will have to be clever. In the end, they will be rewarded with a flute that plays the brown note.')
+        .should('have.value', 'The gang runs into some goopy monsters. They will have to be clever. In the end, they will be rewarded with a flute that plays the brown note.');
+      cy.get('.section-heading').contains('Treasure and Rewards:');
+      cy.get('input[name="encounter-loot"]')
+        .should('be.empty')
+        .type('Pipes of Haunting, 1500GP')
+        .should('have.value', 'Pipes of Haunting, 1500GP');
+    });
+
+    cy.get('.encounter-foes').within(() => {
+      cy.get('.search-heading').contains('Search By:');
+      cy.get('.monster-name').should('have.length', 37);
+      cy.get('.monster-name').first().contains('Aboleth');
+      cy.get('.monster-name').last().contains('Solar');
+      cy.get('.monster-selection').within(() => {
+        cy.get('.MonsterFilter').within(() => {
+          cy.get('.select-size').contains('Filter By Size');
+          cy.get('.select-name').contains('Filter By Name');
+          cy.get('.select-armor-class').contains('Filter By Armor Class');
+          cy.get('.select-hit-points').contains('Filter By Hit Points');
+        });
+
+        cy.get('#select-size')
+          .invoke('val')
+          .should('eq', '');
+        cy.get('#select-size')
+          .select('Medium')
+          .invoke('val')
+          .should('eq', 'MEDIUM');
+
+        cy.get('.monster-name').should('have.length', 13);
+        cy.get('.monster-name').first().contains('Black Dragon Wyrmling');
+        cy.get('.monster-name').last().contains('Sea Hag');
+
+        cy.get('#select-name')
+          .invoke('val')
+          .should('eq', '');
+        cy.get('#select-name')
+          .select('Sea Hag')
+          .invoke('val')
+          .should('eq', 'Sea Hag');
+
+        cy.get('.add-monster').last().click();
+
+        cy.get('#reset-filters-button').click();
+        cy.get('.monster-name').first().contains('Aboleth');
+        cy.get('.monster-name').last().contains('Solar');
+
+        cy.get('input[id="select-armor-class"]')
+          .should('be.empty')
+          .type('7')
+          .should('have.value', '7');
+
+        cy.get('.monster-name').first().contains('Black Pudding');
+        cy.get('.monster-name').last().contains('Black Pudding');
+
+        cy.get('.add-monster').click();
+
+        cy.get('#reset-filters-button').click();
+        cy.get('.monster-name').first().contains('Aboleth');
+        cy.get('.monster-name').last().contains('Solar');
+
+        cy.get('input[id="select-hit-points"]')
+          .should('be.empty')
+          .type('4')
+          .should('have.value', '4');
+
+        cy.get('.monster-name').first().contains('Giant Centipede');
+        cy.get('.monster-name').last().contains('Giant Fire Beetle');
+
+        cy.get('.add-monster').first().click();
+        cy.get('.add-monster').first().click();
+      });
+    });
+
+    cy.get('#submitButton').click();
+
+    cy.wait('@gqlCreateEncounterMutation')
+      .its('response.body.data.createEncounter.encounter.encounterName')
+      .should('exist')
+      .and('eq', 'Goopy Throw-Down');
+
+    cy.intercept('POST', 'https://tavern-keeper-be.onrender.com/graphql/', (req) => {
+      if (hasOperationName(req, 'getEncounters')) {
+        req.alias = 'gqlGetEncountersQueryManyEncountersNewData';
+        req.reply({ fixture: 'mock_data_getEncounters_new_data.json' });
+      }
+    });
+
+    cy.get('.home-button').contains('Tavern Keeper').click();
+    cy.wait('@gqlGetEncountersQueryManyEncountersNewData')
+      .its('response.body.data.encounters')
+      .should((encounters) => {
+        expect(encounters.length).to.equal(8);
+      });
+
+    cy.get('.EncounterPreviewContainer').children().should('have.length', 8);
+    cy.get('.EncounterPreviewCard').first().within(() => {
+      cy.get('.preview-encounter-name').contains("A girl just fell from the sky, boss!");
+      cy.get('.preview-section-title').contains('Encounter Summary');
+      cy.get('.preview-encounter-summary').contains('Oliphaunt');
+      cy.get('.preview-section-title').contains('Monster(s)');
+      cy.get('.preview-monster-list').children().should('have.length', 3);
+      cy.get('.preview-monster-list').children().first().contains('Giant Shark');
+      cy.get('.preview-monster-list').children().eq(1).contains('Aboleth');
+      cy.get('.preview-monster-list').children().last().contains('Aboleth');
+      cy.get('.preview-party-size').within(() => {
+        cy.get('.preview-section-title').contains('Party Size');
+        cy.get('.preview-party-size-value').contains('2');
+      });
+      cy.get('.preview-party-level').within(() => {
+        cy.get('.preview-section-title').contains('Party Level');
+        cy.get('.preview-party-level-value').contains('10');
+      });
+    });
+    cy.get('.EncounterPreviewCard').last().within(() => {
+      cy.get('.preview-encounter-name').contains("Goopy Throw-Down");
+      cy.get('.preview-section-title').contains('Encounter Summary');
+      cy.get('.preview-encounter-summary').contains('The gang fights pudding.');
+      cy.get('.preview-section-title').contains('Monster(s)');
+      cy.get('.preview-monster-list').children().should('have.length', 4);
+      cy.get('.preview-monster-list').children().first().contains('Black Pudding');
+      cy.get('.preview-monster-list').children().eq(1).contains('Giant Centipede');
+      cy.get('.preview-monster-list').children().eq(2).contains('Giant Centipede');
+      cy.get('.preview-monster-list').children().last().contains('Sea Hag');
+      cy.get('.preview-party-size').within(() => {
+        cy.get('.preview-section-title').contains('Party Size');
+        cy.get('.preview-party-size-value').contains('5');
+      });
+      cy.get('.preview-party-level').within(() => {
+        cy.get('.preview-section-title').contains('Party Level');
+        cy.get('.preview-party-level-value').contains('6');
+      });
+    });
+  });
 });

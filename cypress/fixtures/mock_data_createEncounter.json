@@ -1,35 +1,35 @@
 {
   "data": {
-      "createEncounter": {
-          "encounter": {
-              "userName": "WhoAmI",
-              "id": "666",
-              "encounterName": "Party Wipe",
-              "partySize": 4,
-              "partyLevel": 3,
-              "summary": "I hope this works",
-              "description": "Why does it have to be a string",
-              "treasure": "We not deserve anything",
-              "encounterMonsters": [
-                  {
-                      "monsterIndex": "beholder",
-                      "monsterName": "Beholder"
-                  },
-                  {
-                      "monsterIndex": "goblin",
-                      "monsterName": "Goblin"
-                  },
-                  {
-                      "monsterIndex": "goblin",
-                      "monsterName": "Goblin"
-                  },
-                  {
-                      "monsterIndex": "adult-black-dragon",
-                      "monsterName": "Adult Black Dragon"
-                  }
-              ]
+    "createEncounter": {
+      "encounter": {
+        "userName": "demo-many-encounters",
+        "id": "666",
+        "encounterName": "Goopy Throw-Down",
+        "partySize": 5,
+        "partyLevel": 6,
+        "summary": "The gang fights pudding.",
+        "description": "The gang runs into some goopy monsters. They will have to be clever. In the end, they will be rewarded with a flute that plays the brown note.",
+        "treasure": "Pipes of Haunting, 1500GP",
+        "encounterMonsters": [
+          {
+            "monsterIndex": "black-pudding",
+            "monsterName": "Black Pudding"
           },
-          "errors": []
-      }
+          {
+            "monsterIndex": "giant-centipede",
+            "monsterName": "Giant Centipede"
+          },
+          {
+            "monsterIndex": "giant-centipede",
+            "monsterName": "Giant Centipede"
+          },
+          {
+            "monsterIndex": "sea-hag",
+            "monsterName": "Sea Hag"
+          }
+        ]
+      },
+      "errors": []
+    }
   }
 }

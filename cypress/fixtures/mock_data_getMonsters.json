@@ -1,1006 +1,376 @@
 {
   "data": {
-      "monsters": [
-          {
-              "monsterIndex": "aboleth",
-              "monsterName": "Aboleth",
-              "size": "LARGE",
-              "hitPoints": 135,
-              "armorClass": 17,
-              "type": "ABERRATION",
-              "alignment": "lawful evil",
-              "challengeRating": "10"
-          },
-          {
-              "monsterIndex": "acolyte",
-              "monsterName": "Acolyte",
-              "size": "MEDIUM",
-              "hitPoints": 9,
-              "armorClass": 10,
-              "type": "HUMANOID",
-              "alignment": "any alignment",
-              "challengeRating": "0.25"
-          },
-          {
-              "monsterIndex": "adult-bronze-dragon",
-              "monsterName": "Adult Bronze Dragon",
-              "size": "HUGE",
-              "hitPoints": 212,
-              "armorClass": 19,
-              "type": "DRAGON",
-              "alignment": "lawful good",
-              "challengeRating": "15"
-          },
-          {
-              "monsterIndex": "adult-copper-dragon",
-              "monsterName": "Adult Copper Dragon",
-              "size": "HUGE",
-              "hitPoints": 184,
-              "armorClass": 18,
-              "type": "DRAGON",
-              "alignment": "chaotic good",
-              "challengeRating": "14"
-          },
-          {
-              "monsterIndex": "adult-red-dragon",
-              "monsterName": "Adult Red Dragon",
-              "size": "HUGE",
-              "hitPoints": 256,
-              "armorClass": 19,
-              "type": "DRAGON",
-              "alignment": "chaotic evil",
-              "challengeRating": "17"
-          },
-          {
-              "monsterIndex": "ancient-blue-dragon",
-              "monsterName": "Ancient Blue Dragon",
-              "size": "GARGANTUAN",
-              "hitPoints": 481,
-              "armorClass": 22,
-              "type": "DRAGON",
-              "alignment": "lawful evil",
-              "challengeRating": "23"
-          },
-          {
-              "monsterIndex": "ancient-bronze-dragon",
-              "monsterName": "Ancient Bronze Dragon",
-              "size": "GARGANTUAN",
-              "hitPoints": 444,
-              "armorClass": 22,
-              "type": "DRAGON",
-              "alignment": "lawful good",
-              "challengeRating": "22"
-          },
-          {
-              "monsterIndex": "ancient-white-dragon",
-              "monsterName": "Ancient White Dragon",
-              "size": "GARGANTUAN",
-              "hitPoints": 333,
-              "armorClass": 20,
-              "type": "DRAGON",
-              "alignment": "chaotic evil",
-              "challengeRating": "20"
-          },
-          {
-              "monsterIndex": "ancient-silver-dragon",
-              "monsterName": "Ancient Silver Dragon",
-              "size": "GARGANTUAN",
-              "hitPoints": 487,
-              "armorClass": 22,
-              "type": "DRAGON",
-              "alignment": "lawful good",
-              "challengeRating": "23"
-          },
-          {
-              "monsterIndex": "ankheg",
-              "monsterName": "Ankheg",
-              "size": "LARGE",
-              "hitPoints": 39,
-              "armorClass": 14,
-              "type": "MONSTROSITY",
-              "alignment": "unaligned",
-              "challengeRating": "2"
-          },
-          {
-              "monsterIndex": "bandit",
-              "monsterName": "Bandit",
-              "size": "MEDIUM",
-              "hitPoints": 11,
-              "armorClass": 12,
-              "type": "HUMANOID",
-              "alignment": "any non-lawful alignment",
-              "challengeRating": "0.125"
-          },
-          {
-              "monsterIndex": "balor",
-              "monsterName": "Balor",
-              "size": "HUGE",
-              "hitPoints": 262,
-              "armorClass": 19,
-              "type": "FIEND",
-              "alignment": "chaotic evil",
-              "challengeRating": "19"
-          },
-          {
-              "monsterIndex": "berserker",
-              "monsterName": "Berserker",
-              "size": "MEDIUM",
-              "hitPoints": 67,
-              "armorClass": 13,
-              "type": "HUMANOID",
-              "alignment": "any chaotic alignment",
-              "challengeRating": "2"
-          },
-          {
-              "monsterIndex": "black-pudding",
-              "monsterName": "Black Pudding",
-              "size": "LARGE",
-              "hitPoints": 85,
-              "armorClass": 7,
-              "type": "OOZE",
-              "alignment": "unaligned",
-              "challengeRating": "4"
-          },
-          {
-              "monsterIndex": "black-dragon-wyrmling",
-              "monsterName": "Black Dragon Wyrmling",
-              "size": "MEDIUM",
-              "hitPoints": 33,
-              "armorClass": 17,
-              "type": "DRAGON",
-              "alignment": "chaotic evil",
-              "challengeRating": "2"
-          },
-          {
-              "monsterIndex": "blue-dragon-wyrmling",
-              "monsterName": "Blue Dragon Wyrmling",
-              "size": "MEDIUM",
-              "hitPoints": 52,
-              "armorClass": 17,
-              "type": "DRAGON",
-              "alignment": "lawful evil",
-              "challengeRating": "3"
-          },
-          {
-              "monsterIndex": "cloaker",
-              "monsterName": "Cloaker",
-              "size": "LARGE",
-              "hitPoints": 78,
-              "armorClass": 14,
-              "type": "ABERRATION",
-              "alignment": "chaotic neutral",
-              "challengeRating": "8"
-          },
-          {
-              "monsterIndex": "cloud-giant",
-              "monsterName": "Cloud Giant",
-              "size": "HUGE",
-              "hitPoints": 200,
-              "armorClass": 14,
-              "type": "GIANT",
-              "alignment": "neutral good (50%) or neutral evil (50%)",
-              "challengeRating": "9"
-          },
-          {
-              "monsterIndex": "crocodile",
-              "monsterName": "Crocodile",
-              "size": "LARGE",
-              "hitPoints": 19,
-              "armorClass": 12,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0.5"
-          },
-          {
-              "monsterIndex": "death-dog",
-              "monsterName": "Death Dog",
-              "size": "MEDIUM",
-              "hitPoints": 39,
-              "armorClass": 12,
-              "type": "MONSTROSITY",
-              "alignment": "neutral evil",
-              "challengeRating": "1"
-          },
-          {
-              "monsterIndex": "draft-horse",
-              "monsterName": "Draft Horse",
-              "size": "LARGE",
-              "hitPoints": 19,
-              "armorClass": 10,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0.25"
-          },
-          {
-              "monsterIndex": "dretch",
-              "monsterName": "Dretch",
-              "size": "SMALL",
-              "hitPoints": 18,
-              "armorClass": 11,
-              "type": "FIEND",
-              "alignment": "chaotic evil",
-              "challengeRating": "0.25"
-          },
-          {
-              "monsterIndex": "dryad",
-              "monsterName": "Dryad",
-              "size": "MEDIUM",
-              "hitPoints": 22,
-              "armorClass": 11,
-              "type": "FEY",
-              "alignment": "neutral",
-              "challengeRating": "1"
-          },
-          {
-              "monsterIndex": "dust-mephit",
-              "monsterName": "Dust Mephit",
-              "size": "SMALL",
-              "hitPoints": 17,
-              "armorClass": 12,
-              "type": "ELEMENTAL",
-              "alignment": "neutral evil",
-              "challengeRating": "0.5"
-          },
-          {
-              "monsterIndex": "ettercap",
-              "monsterName": "Ettercap",
-              "size": "MEDIUM",
-              "hitPoints": 44,
-              "armorClass": 13,
-              "type": "MONSTROSITY",
-              "alignment": "neutral evil",
-              "challengeRating": "2"
-          },
-          {
-              "monsterIndex": "ghast",
-              "monsterName": "Ghast",
-              "size": "MEDIUM",
-              "hitPoints": 36,
-              "armorClass": 13,
-              "type": "UNDEAD",
-              "alignment": "chaotic evil",
-              "challengeRating": "2"
-          },
-          {
-              "monsterIndex": "giant-ape",
-              "monsterName": "Giant Ape",
-              "size": "HUGE",
-              "hitPoints": 157,
-              "armorClass": 12,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "7"
-          },
-          {
-              "monsterIndex": "ancient-black-dragon",
-              "monsterName": "Ancient Black Dragon",
-              "size": "GARGANTUAN",
-              "hitPoints": 367,
-              "armorClass": 22,
-              "type": "DRAGON",
-              "alignment": "chaotic evil",
-              "challengeRating": "21"
-          },
-          {
-              "monsterIndex": "giant-badger",
-              "monsterName": "Giant Badger",
-              "size": "MEDIUM",
-              "hitPoints": 13,
-              "armorClass": 10,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0.25"
-          },
-          {
-              "monsterIndex": "giant-boar",
-              "monsterName": "Giant Boar",
-              "size": "LARGE",
-              "hitPoints": 42,
-              "armorClass": 12,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "2"
-          },
-          {
-              "monsterIndex": "giant-centipede",
-              "monsterName": "Giant Centipede",
-              "size": "SMALL",
-              "hitPoints": 4,
-              "armorClass": 13,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0.25"
-          },
-          {
-              "monsterIndex": "ancient-copper-dragon",
-              "monsterName": "Ancient Copper Dragon",
-              "size": "GARGANTUAN",
-              "hitPoints": 350,
-              "armorClass": 21,
-              "type": "DRAGON",
-              "alignment": "chaotic good",
-              "challengeRating": "21"
-          },
-          {
-              "monsterIndex": "giant-constrictor-snake",
-              "monsterName": "Giant Constrictor Snake",
-              "size": "HUGE",
-              "hitPoints": 60,
-              "armorClass": 12,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "2"
-          },
-          {
-              "monsterIndex": "ape",
-              "monsterName": "Ape",
-              "size": "MEDIUM",
-              "hitPoints": 19,
-              "armorClass": 12,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0.5"
-          },
-          {
-              "monsterIndex": "giant-eagle",
-              "monsterName": "Giant Eagle",
-              "size": "LARGE",
-              "hitPoints": 26,
-              "armorClass": 13,
-              "type": "BEAST",
-              "alignment": "neutral good",
-              "challengeRating": "1"
-          },
-          {
-              "monsterIndex": "awakened-shrub",
-              "monsterName": "Awakened Shrub",
-              "size": "SMALL",
-              "hitPoints": 10,
-              "armorClass": 9,
-              "type": "PLANT",
-              "alignment": "unaligned",
-              "challengeRating": "0"
-          },
-          {
-              "monsterIndex": "assassin",
-              "monsterName": "Assassin",
-              "size": "MEDIUM",
-              "hitPoints": 78,
-              "armorClass": 15,
-              "type": "HUMANOID",
-              "alignment": "any non-good alignment",
-              "challengeRating": "8"
-          },
-          {
-              "monsterIndex": "giant-fire-beetle",
-              "monsterName": "Giant Fire Beetle",
-              "size": "SMALL",
-              "hitPoints": 4,
-              "armorClass": 13,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0"
-          },
-          {
-              "monsterIndex": "giant-lizard",
-              "monsterName": "Giant Lizard",
-              "size": "LARGE",
-              "hitPoints": 19,
-              "armorClass": 12,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0.25"
-          },
-          {
-              "monsterIndex": "barbed-devil",
-              "monsterName": "Barbed Devil",
-              "size": "MEDIUM",
-              "hitPoints": 110,
-              "armorClass": 15,
-              "type": "FIEND",
-              "alignment": "lawful evil",
-              "challengeRating": "5"
-          },
-          {
-              "monsterIndex": "bearded-devil",
-              "monsterName": "Bearded Devil",
-              "size": "MEDIUM",
-              "hitPoints": 52,
-              "armorClass": 13,
-              "type": "FIEND",
-              "alignment": "lawful evil",
-              "challengeRating": "3"
-          },
-          {
-              "monsterIndex": "giant-sea-horse",
-              "monsterName": "Giant Sea Horse",
-              "size": "LARGE",
-              "hitPoints": 16,
-              "armorClass": 13,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0.5"
-          },
-          {
-              "monsterIndex": "giant-shark",
-              "monsterName": "Giant Shark",
-              "size": "HUGE",
-              "hitPoints": 126,
-              "armorClass": 13,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "5"
-          },
-          {
-              "monsterIndex": "blood-hawk",
-              "monsterName": "Blood Hawk",
-              "size": "SMALL",
-              "hitPoints": 7,
-              "armorClass": 12,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0.125"
-          },
-          {
-              "monsterIndex": "boar",
-              "monsterName": "Boar",
-              "size": "MEDIUM",
-              "hitPoints": 11,
-              "armorClass": 11,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0.25"
-          },
-          {
-              "monsterIndex": "giant-vulture",
-              "monsterName": "Giant Vulture",
-              "size": "LARGE",
-              "hitPoints": 22,
-              "armorClass": 10,
-              "type": "BEAST",
-              "alignment": "neutral evil",
-              "challengeRating": "1"
-          },
-          {
-              "monsterIndex": "gnoll",
-              "monsterName": "Gnoll",
-              "size": "MEDIUM",
-              "hitPoints": 22,
-              "armorClass": 15,
-              "type": "HUMANOID",
-              "alignment": "chaotic evil",
-              "challengeRating": "0.5"
-          },
-          {
-              "monsterIndex": "bone-devil",
-              "monsterName": "Bone Devil",
-              "size": "LARGE",
-              "hitPoints": 142,
-              "armorClass": 19,
-              "type": "FIEND",
-              "alignment": "lawful evil",
-              "challengeRating": "9"
-          },
-          {
-              "monsterIndex": "camel",
-              "monsterName": "Camel",
-              "size": "LARGE",
-              "hitPoints": 15,
-              "armorClass": 9,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0.125"
-          },
-          {
-              "monsterIndex": "hippogriff",
-              "monsterName": "Hippogriff",
-              "size": "LARGE",
-              "hitPoints": 19,
-              "armorClass": 11,
-              "type": "MONSTROSITY",
-              "alignment": "unaligned",
-              "challengeRating": "1"
-          },
-          {
-              "monsterIndex": "hunter-shark",
-              "monsterName": "Hunter Shark",
-              "size": "LARGE",
-              "hitPoints": 45,
-              "armorClass": 12,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "2"
-          },
-          {
-              "monsterIndex": "chain-devil",
-              "monsterName": "Chain Devil",
-              "size": "MEDIUM",
-              "hitPoints": 85,
-              "armorClass": 16,
-              "type": "FIEND",
-              "alignment": "lawful evil",
-              "challengeRating": "8"
-          },
-          {
-              "monsterIndex": "iron-golem",
-              "monsterName": "Iron Golem",
-              "size": "LARGE",
-              "hitPoints": 210,
-              "armorClass": 20,
-              "type": "CONSTRUCT",
-              "alignment": "unaligned",
-              "challengeRating": "16"
-          },
-          {
-              "monsterIndex": "chuul",
-              "monsterName": "Chuul",
-              "size": "LARGE",
-              "hitPoints": 93,
-              "armorClass": 16,
-              "type": "ABERRATION",
-              "alignment": "chaotic evil",
-              "challengeRating": "4"
-          },
-          {
-              "monsterIndex": "clay-golem",
-              "monsterName": "Clay Golem",
-              "size": "LARGE",
-              "hitPoints": 133,
-              "armorClass": 14,
-              "type": "CONSTRUCT",
-              "alignment": "unaligned",
-              "challengeRating": "9"
-          },
-          {
-              "monsterIndex": "lizardfolk",
-              "monsterName": "Lizardfolk",
-              "size": "MEDIUM",
-              "hitPoints": 22,
-              "armorClass": 13,
-              "type": "HUMANOID",
-              "alignment": "neutral",
-              "challengeRating": "0.5"
-          },
-          {
-              "monsterIndex": "manticore",
-              "monsterName": "Manticore",
-              "size": "LARGE",
-              "hitPoints": 68,
-              "armorClass": 14,
-              "type": "MONSTROSITY",
-              "alignment": "lawful evil",
-              "challengeRating": "3"
-          },
-          {
-              "monsterIndex": "cockatrice",
-              "monsterName": "Cockatrice",
-              "size": "SMALL",
-              "hitPoints": 27,
-              "armorClass": 11,
-              "type": "MONSTROSITY",
-              "alignment": "unaligned",
-              "challengeRating": "0.5"
-          },
-          {
-              "monsterIndex": "chimera",
-              "monsterName": "Chimera",
-              "size": "LARGE",
-              "hitPoints": 114,
-              "armorClass": 14,
-              "type": "MONSTROSITY",
-              "alignment": "chaotic evil",
-              "challengeRating": "6"
-          },
-          {
-              "monsterIndex": "medusa",
-              "monsterName": "Medusa",
-              "size": "MEDIUM",
-              "hitPoints": 127,
-              "armorClass": 15,
-              "type": "MONSTROSITY",
-              "alignment": "lawful evil",
-              "challengeRating": "6"
-          },
-          {
-              "monsterIndex": "merrow",
-              "monsterName": "Merrow",
-              "size": "LARGE",
-              "hitPoints": 45,
-              "armorClass": 13,
-              "type": "MONSTROSITY",
-              "alignment": "chaotic evil",
-              "challengeRating": "2"
-          },
-          {
-              "monsterIndex": "cultist",
-              "monsterName": "Cultist",
-              "size": "MEDIUM",
-              "hitPoints": 9,
-              "armorClass": 12,
-              "type": "HUMANOID",
-              "alignment": "any non-good alignment",
-              "challengeRating": "0.125"
-          },
-          {
-              "monsterIndex": "cult-fanatic",
-              "monsterName": "Cult Fanatic",
-              "size": "MEDIUM",
-              "hitPoints": 22,
-              "armorClass": 13,
-              "type": "HUMANOID",
-              "alignment": "any non-good alignment",
-              "challengeRating": "2"
-          },
-          {
-              "monsterIndex": "mummy",
-              "monsterName": "Mummy",
-              "size": "MEDIUM",
-              "hitPoints": 58,
-              "armorClass": 11,
-              "type": "UNDEAD",
-              "alignment": "lawful evil",
-              "challengeRating": "3"
-          },
-          {
-              "monsterIndex": "merfolk",
-              "monsterName": "Merfolk",
-              "size": "MEDIUM",
-              "hitPoints": 11,
-              "armorClass": 11,
-              "type": "HUMANOID",
-              "alignment": "neutral",
-              "challengeRating": "0.125"
-          },
-          {
-              "monsterIndex": "deva",
-              "monsterName": "Deva",
-              "size": "MEDIUM",
-              "hitPoints": 136,
-              "armorClass": 17,
-              "type": "CELESTIAL",
-              "alignment": "lawful good",
-              "challengeRating": "10"
-          },
-          {
-              "monsterIndex": "druid",
-              "monsterName": "Druid",
-              "size": "MEDIUM",
-              "hitPoints": 27,
-              "armorClass": 11,
-              "type": "HUMANOID",
-              "alignment": "any alignment",
-              "challengeRating": "2"
-          },
-          {
-              "monsterIndex": "ogre-zombie",
-              "monsterName": "Ogre Zombie",
-              "size": "LARGE",
-              "hitPoints": 85,
-              "armorClass": 8,
-              "type": "UNDEAD",
-              "alignment": "neutral evil",
-              "challengeRating": "2"
-          },
-          {
-              "monsterIndex": "owl",
-              "monsterName": "Owl",
-              "size": "TINY",
-              "hitPoints": 1,
-              "armorClass": 11,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0"
-          },
-          {
-              "monsterIndex": "djinni",
-              "monsterName": "Djinni",
-              "size": "LARGE",
-              "hitPoints": 161,
-              "armorClass": 17,
-              "type": "ELEMENTAL",
-              "alignment": "chaotic good",
-              "challengeRating": "11"
-          },
-          {
-              "monsterIndex": "elk",
-              "monsterName": "Elk",
-              "size": "LARGE",
-              "hitPoints": 13,
-              "armorClass": 10,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0.25"
-          },
-          {
-              "monsterIndex": "otyugh",
-              "monsterName": "Otyugh",
-              "size": "LARGE",
-              "hitPoints": 114,
-              "armorClass": 14,
-              "type": "ABERRATION",
-              "alignment": "neutral",
-              "challengeRating": "5"
-          },
-          {
-              "monsterIndex": "pegasus",
-              "monsterName": "Pegasus",
-              "size": "LARGE",
-              "hitPoints": 59,
-              "armorClass": 12,
-              "type": "CELESTIAL",
-              "alignment": "chaotic good",
-              "challengeRating": "2"
-          },
-          {
-              "monsterIndex": "efreeti",
-              "monsterName": "Efreeti",
-              "size": "LARGE",
-              "hitPoints": 200,
-              "armorClass": 17,
-              "type": "ELEMENTAL",
-              "alignment": "lawful evil",
-              "challengeRating": "11"
-          },
-          {
-              "monsterIndex": "ettin",
-              "monsterName": "Ettin",
-              "size": "LARGE",
-              "hitPoints": 85,
-              "armorClass": 12,
-              "type": "GIANT",
-              "alignment": "chaotic evil",
-              "challengeRating": "4"
-          },
-          {
-              "monsterIndex": "oni",
-              "monsterName": "Oni",
-              "size": "LARGE",
-              "hitPoints": 110,
-              "armorClass": 16,
-              "type": "GIANT",
-              "alignment": "lawful evil",
-              "challengeRating": "7"
-          },
-          {
-              "monsterIndex": "pit-fiend",
-              "monsterName": "Pit Fiend",
-              "size": "LARGE",
-              "hitPoints": 300,
-              "armorClass": 19,
-              "type": "FIEND",
-              "alignment": "lawful evil",
-              "challengeRating": "20"
-          },
-          {
-              "monsterIndex": "flying-snake",
-              "monsterName": "Flying Snake",
-              "size": "TINY",
-              "hitPoints": 5,
-              "armorClass": 14,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0.125"
-          },
-          {
-              "monsterIndex": "erinyes",
-              "monsterName": "Erinyes",
-              "size": "MEDIUM",
-              "hitPoints": 153,
-              "armorClass": 18,
-              "type": "FIEND",
-              "alignment": "lawful evil",
-              "challengeRating": "12"
-          },
-          {
-              "monsterIndex": "priest",
-              "monsterName": "Priest",
-              "size": "MEDIUM",
-              "hitPoints": 27,
-              "armorClass": 13,
-              "type": "HUMANOID",
-              "alignment": "any alignment",
-              "challengeRating": "2"
-          },
-          {
-              "monsterIndex": "quipper",
-              "monsterName": "Quipper",
-              "size": "TINY",
-              "hitPoints": 1,
-              "armorClass": 13,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0"
-          },
-          {
-              "monsterIndex": "ghoul",
-              "monsterName": "Ghoul",
-              "size": "MEDIUM",
-              "hitPoints": 22,
-              "armorClass": 12,
-              "type": "UNDEAD",
-              "alignment": "chaotic evil",
-              "challengeRating": "1"
-          },
-          {
-              "monsterIndex": "ghost",
-              "monsterName": "Ghost",
-              "size": "MEDIUM",
-              "hitPoints": 45,
-              "armorClass": 11,
-              "type": "UNDEAD",
-              "alignment": "any alignment",
-              "challengeRating": "4"
-          },
-          {
-              "monsterIndex": "rhinoceros",
-              "monsterName": "Rhinoceros",
-              "size": "LARGE",
-              "hitPoints": 45,
-              "armorClass": 11,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "2"
-          },
-          {
-              "monsterIndex": "reef-shark",
-              "monsterName": "Reef Shark",
-              "size": "MEDIUM",
-              "hitPoints": 22,
-              "armorClass": 12,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0.5"
-          },
-          {
-              "monsterIndex": "giant-crocodile",
-              "monsterName": "Giant Crocodile",
-              "size": "HUGE",
-              "hitPoints": 85,
-              "armorClass": 14,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "5"
-          },
-          {
-              "monsterIndex": "giant-elk",
-              "monsterName": "Giant Elk",
-              "size": "HUGE",
-              "hitPoints": 42,
-              "armorClass": 14,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "2"
-          },
-          {
-              "monsterIndex": "roc",
-              "monsterName": "Roc",
-              "size": "GARGANTUAN",
-              "hitPoints": 248,
-              "armorClass": 15,
-              "type": "MONSTROSITY",
-              "alignment": "unaligned",
-              "challengeRating": "11"
-          },
-          {
-              "monsterIndex": "rust-monster",
-              "monsterName": "Rust Monster",
-              "size": "MEDIUM",
-              "hitPoints": 27,
-              "armorClass": 14,
-              "type": "MONSTROSITY",
-              "alignment": "unaligned",
-              "challengeRating": "0.5"
-          },
-          {
-              "monsterIndex": "giant-poisonous-snake",
-              "monsterName": "Giant Poisonous Snake",
-              "size": "MEDIUM",
-              "hitPoints": 11,
-              "armorClass": 14,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0.25"
-          },
-          {
-              "monsterIndex": "giant-scorpion",
-              "monsterName": "Giant Scorpion",
-              "size": "LARGE",
-              "hitPoints": 52,
-              "armorClass": 15,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "3"
-          },
-          {
-              "monsterIndex": "sea-hag",
-              "monsterName": "Sea Hag",
-              "size": "MEDIUM",
-              "hitPoints": 52,
-              "armorClass": 14,
-              "type": "FEY",
-              "alignment": "chaotic evil",
-              "challengeRating": "2"
-          },
-          {
-              "monsterIndex": "spider",
-              "monsterName": "Spider",
-              "size": "TINY",
-              "hitPoints": 1,
-              "armorClass": 12,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0"
-          },
-          {
-              "monsterIndex": "giant-rat",
-              "monsterName": "Giant Rat",
-              "size": "SMALL",
-              "hitPoints": 7,
-              "armorClass": 12,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0.125"
-          },
-          {
-              "monsterIndex": "giant-spider",
-              "monsterName": "Giant Spider",
-              "size": "LARGE",
-              "hitPoints": 26,
-              "armorClass": 14,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "1"
-          },
-          {
-              "monsterIndex": "solar",
-              "monsterName": "Solar",
-              "size": "LARGE",
-              "hitPoints": 243,
-              "armorClass": 21,
-              "type": "CELESTIAL",
-              "alignment": "lawful good",
-              "challengeRating": "21"
-          },
-          {
-              "monsterIndex": "stirge",
-              "monsterName": "Stirge",
-              "size": "TINY",
-              "hitPoints": 2,
-              "armorClass": 14,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "0.125"
-          },
-          {
-              "monsterIndex": "giant-toad",
-              "monsterName": "Giant Toad",
-              "size": "LARGE",
-              "hitPoints": 39,
-              "armorClass": 11,
-              "type": "BEAST",
-              "alignment": "unaligned",
-              "challengeRating": "1"
-          },
-          {
-              "monsterIndex": "gladiator",
-              "monsterName": "Gladiator",
-              "size": "MEDIUM",
-              "hitPoints": 112,
-              "armorClass": 16,
-              "type": "HUMANOID",
-              "alignment": "any alignment",
-              "challengeRating": "5"
-          },
-          {
-              "monsterIndex": "stone-giant",
-              "monsterName": "Stone Giant",
-              "size": "HUGE",
-              "hitPoints": 126,
-              "armorClass": 17,
-              "type": "GIANT",
-              "alignment": "neutral",
-              "challengeRating": "7"
-          }
-      ]
+    "monsters": [
+      {
+        "monsterIndex": "aboleth",
+        "monsterName": "Aboleth",
+        "size": "LARGE",
+        "hitPoints": 135,
+        "armorClass": 17,
+        "type": "ABERRATION",
+        "alignment": "lawful evil",
+        "challengeRating": "10"
+      },
+      {
+        "monsterIndex": "black-pudding",
+        "monsterName": "Black Pudding",
+        "size": "LARGE",
+        "hitPoints": 85,
+        "armorClass": 7,
+        "type": "OOZE",
+        "alignment": "unaligned",
+        "challengeRating": "4"
+      },
+      {
+        "monsterIndex": "black-dragon-wyrmling",
+        "monsterName": "Black Dragon Wyrmling",
+        "size": "MEDIUM",
+        "hitPoints": 33,
+        "armorClass": 17,
+        "type": "DRAGON",
+        "alignment": "chaotic evil",
+        "challengeRating": "2"
+      },
+      {
+        "monsterIndex": "blue-dragon-wyrmling",
+        "monsterName": "Blue Dragon Wyrmling",
+        "size": "MEDIUM",
+        "hitPoints": 52,
+        "armorClass": 17,
+        "type": "DRAGON",
+        "alignment": "lawful evil",
+        "challengeRating": "3"
+      },
+      {
+        "monsterIndex": "cloaker",
+        "monsterName": "Cloaker",
+        "size": "LARGE",
+        "hitPoints": 78,
+        "armorClass": 14,
+        "type": "ABERRATION",
+        "alignment": "chaotic neutral",
+        "challengeRating": "8"
+      },
+      {
+        "monsterIndex": "ghast",
+        "monsterName": "Ghast",
+        "size": "MEDIUM",
+        "hitPoints": 36,
+        "armorClass": 13,
+        "type": "UNDEAD",
+        "alignment": "chaotic evil",
+        "challengeRating": "2"
+      },
+      {
+        "monsterIndex": "giant-ape",
+        "monsterName": "Giant Ape",
+        "size": "HUGE",
+        "hitPoints": 157,
+        "armorClass": 12,
+        "type": "BEAST",
+        "alignment": "unaligned",
+        "challengeRating": "7"
+      },
+      {
+        "monsterIndex": "ancient-black-dragon",
+        "monsterName": "Ancient Black Dragon",
+        "size": "GARGANTUAN",
+        "hitPoints": 367,
+        "armorClass": 22,
+        "type": "DRAGON",
+        "alignment": "chaotic evil",
+        "challengeRating": "21"
+      },
+      {
+        "monsterIndex": "giant-badger",
+        "monsterName": "Giant Badger",
+        "size": "MEDIUM",
+        "hitPoints": 13,
+        "armorClass": 10,
+        "type": "BEAST",
+        "alignment": "unaligned",
+        "challengeRating": "0.25"
+      },
+      {
+        "monsterIndex": "giant-boar",
+        "monsterName": "Giant Boar",
+        "size": "LARGE",
+        "hitPoints": 42,
+        "armorClass": 12,
+        "type": "BEAST",
+        "alignment": "unaligned",
+        "challengeRating": "2"
+      },
+      {
+        "monsterIndex": "giant-centipede",
+        "monsterName": "Giant Centipede",
+        "size": "SMALL",
+        "hitPoints": 4,
+        "armorClass": 13,
+        "type": "BEAST",
+        "alignment": "unaligned",
+        "challengeRating": "0.25"
+      },
+      {
+        "monsterIndex": "ancient-copper-dragon",
+        "monsterName": "Ancient Copper Dragon",
+        "size": "GARGANTUAN",
+        "hitPoints": 350,
+        "armorClass": 21,
+        "type": "DRAGON",
+        "alignment": "chaotic good",
+        "challengeRating": "21"
+      },
+      {
+        "monsterIndex": "assassin",
+        "monsterName": "Assassin",
+        "size": "MEDIUM",
+        "hitPoints": 78,
+        "armorClass": 15,
+        "type": "HUMANOID",
+        "alignment": "any non-good alignment",
+        "challengeRating": "8"
+      },
+      {
+        "monsterIndex": "giant-fire-beetle",
+        "monsterName": "Giant Fire Beetle",
+        "size": "SMALL",
+        "hitPoints": 4,
+        "armorClass": 13,
+        "type": "BEAST",
+        "alignment": "unaligned",
+        "challengeRating": "0"
+      },
+      {
+        "monsterIndex": "gnoll",
+        "monsterName": "Gnoll",
+        "size": "MEDIUM",
+        "hitPoints": 22,
+        "armorClass": 15,
+        "type": "HUMANOID",
+        "alignment": "chaotic evil",
+        "challengeRating": "0.5"
+      },
+      {
+        "monsterIndex": "bone-devil",
+        "monsterName": "Bone Devil",
+        "size": "LARGE",
+        "hitPoints": 142,
+        "armorClass": 19,
+        "type": "FIEND",
+        "alignment": "lawful evil",
+        "challengeRating": "9"
+      },
+      {
+        "monsterIndex": "camel",
+        "monsterName": "Camel",
+        "size": "LARGE",
+        "hitPoints": 15,
+        "armorClass": 9,
+        "type": "BEAST",
+        "alignment": "unaligned",
+        "challengeRating": "0.125"
+      },
+      {
+        "monsterIndex": "hippogriff",
+        "monsterName": "Hippogriff",
+        "size": "LARGE",
+        "hitPoints": 19,
+        "armorClass": 11,
+        "type": "MONSTROSITY",
+        "alignment": "unaligned",
+        "challengeRating": "1"
+      },
+      {
+        "monsterIndex": "chuul",
+        "monsterName": "Chuul",
+        "size": "LARGE",
+        "hitPoints": 93,
+        "armorClass": 16,
+        "type": "ABERRATION",
+        "alignment": "chaotic evil",
+        "challengeRating": "4"
+      },
+      {
+        "monsterIndex": "clay-golem",
+        "monsterName": "Clay Golem",
+        "size": "LARGE",
+        "hitPoints": 133,
+        "armorClass": 14,
+        "type": "CONSTRUCT",
+        "alignment": "unaligned",
+        "challengeRating": "9"
+      },
+      {
+        "monsterIndex": "lizardfolk",
+        "monsterName": "Lizardfolk",
+        "size": "MEDIUM",
+        "hitPoints": 22,
+        "armorClass": 13,
+        "type": "HUMANOID",
+        "alignment": "neutral",
+        "challengeRating": "0.5"
+      },
+      {
+        "monsterIndex": "manticore",
+        "monsterName": "Manticore",
+        "size": "LARGE",
+        "hitPoints": 68,
+        "armorClass": 14,
+        "type": "MONSTROSITY",
+        "alignment": "lawful evil",
+        "challengeRating": "3"
+      },
+      {
+        "monsterIndex": "cockatrice",
+        "monsterName": "Cockatrice",
+        "size": "SMALL",
+        "hitPoints": 27,
+        "armorClass": 11,
+        "type": "MONSTROSITY",
+        "alignment": "unaligned",
+        "challengeRating": "0.5"
+      },
+      {
+        "monsterIndex": "chimera",
+        "monsterName": "Chimera",
+        "size": "LARGE",
+        "hitPoints": 114,
+        "armorClass": 14,
+        "type": "MONSTROSITY",
+        "alignment": "chaotic evil",
+        "challengeRating": "6"
+      },
+      {
+        "monsterIndex": "medusa",
+        "monsterName": "Medusa",
+        "size": "MEDIUM",
+        "hitPoints": 127,
+        "armorClass": 15,
+        "type": "MONSTROSITY",
+        "alignment": "lawful evil",
+        "challengeRating": "6"
+      },
+      {
+        "monsterIndex": "pit-fiend",
+        "monsterName": "Pit Fiend",
+        "size": "LARGE",
+        "hitPoints": 300,
+        "armorClass": 19,
+        "type": "FIEND",
+        "alignment": "lawful evil",
+        "challengeRating": "20"
+      },
+      {
+        "monsterIndex": "flying-snake",
+        "monsterName": "Flying Snake",
+        "size": "TINY",
+        "hitPoints": 5,
+        "armorClass": 14,
+        "type": "BEAST",
+        "alignment": "unaligned",
+        "challengeRating": "0.125"
+      },
+      {
+        "monsterIndex": "erinyes",
+        "monsterName": "Erinyes",
+        "size": "MEDIUM",
+        "hitPoints": 153,
+        "armorClass": 18,
+        "type": "FIEND",
+        "alignment": "lawful evil",
+        "challengeRating": "12"
+      },
+      {
+        "monsterIndex": "priest",
+        "monsterName": "Priest",
+        "size": "MEDIUM",
+        "hitPoints": 27,
+        "armorClass": 13,
+        "type": "HUMANOID",
+        "alignment": "any alignment",
+        "challengeRating": "2"
+      },
+      {
+        "monsterIndex": "quipper",
+        "monsterName": "Quipper",
+        "size": "TINY",
+        "hitPoints": 1,
+        "armorClass": 13,
+        "type": "BEAST",
+        "alignment": "unaligned",
+        "challengeRating": "0"
+      },
+      {
+        "monsterIndex": "ghoul",
+        "monsterName": "Ghoul",
+        "size": "MEDIUM",
+        "hitPoints": 22,
+        "armorClass": 12,
+        "type": "UNDEAD",
+        "alignment": "chaotic evil",
+        "challengeRating": "1"
+      },
+      {
+        "monsterIndex": "ghost",
+        "monsterName": "Ghost",
+        "size": "MEDIUM",
+        "hitPoints": 45,
+        "armorClass": 11,
+        "type": "UNDEAD",
+        "alignment": "any alignment",
+        "challengeRating": "4"
+      },
+      {
+        "monsterIndex": "sea-hag",
+        "monsterName": "Sea Hag",
+        "size": "MEDIUM",
+        "hitPoints": 52,
+        "armorClass": 14,
+        "type": "FEY",
+        "alignment": "chaotic evil",
+        "challengeRating": "2"
+      },
+      {
+        "monsterIndex": "spider",
+        "monsterName": "Spider",
+        "size": "TINY",
+        "hitPoints": 1,
+        "armorClass": 12,
+        "type": "BEAST",
+        "alignment": "unaligned",
+        "challengeRating": "0"
+      },
+      {
+        "monsterIndex": "giant-rat",
+        "monsterName": "Giant Rat",
+        "size": "SMALL",
+        "hitPoints": 7,
+        "armorClass": 12,
+        "type": "BEAST",
+        "alignment": "unaligned",
+        "challengeRating": "0.125"
+      },
+      {
+        "monsterIndex": "giant-spider",
+        "monsterName": "Giant Spider",
+        "size": "LARGE",
+        "hitPoints": 26,
+        "armorClass": 14,
+        "type": "BEAST",
+        "alignment": "unaligned",
+        "challengeRating": "1"
+      },
+      {
+        "monsterIndex": "solar",
+        "monsterName": "Solar",
+        "size": "LARGE",
+        "hitPoints": 243,
+        "armorClass": 21,
+        "type": "CELESTIAL",
+        "alignment": "lawful good",
+        "challengeRating": "21"
+      }
+    ]
   }
 }
