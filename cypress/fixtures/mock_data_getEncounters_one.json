@@ -1,0 +1,27 @@
+{
+  "data": {
+    "encounters": [
+      {
+        "id": "13",
+        "userName": "demo-many-encounters",
+        "encounterName": "We each need to find our own inspiration, Kiki. Sometimes it's not easy.",
+        "partySize": 2,
+        "partyLevel": 12,
+        "summary": "The world was young, the mountains green",
+        "description": "Hideous gibbous decadent noisome manuscript blasphemous. Gibbering furtive stench loathsome fungus. Iridescence abnormal tenebrous. Shunned antediluvian gibbering. Stench cat tenebrous gambrel.",
+        "treasure": "Ahzidal's Ring of Arcana",
+        "encounterMonsters": [
+          {
+            "monsterName": "Kobold"
+          },
+          {
+            "monsterName": "Kobold"
+          },
+          {
+            "monsterName": "Ancient Red Dragon"
+          }
+        ]
+      }
+    ]
+  }
+}
