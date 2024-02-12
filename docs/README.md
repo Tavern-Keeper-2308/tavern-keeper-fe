@@ -69,14 +69,17 @@ This application was built as the group capstone project of Turing School of Sof
 <details>
 <h2  id="preview"> 💻 Desktop Preview </h2>
 <h3>MacBook</h3>
-![macbook preview](macbook-preview-tk.gif)
+![macbook details preview](details-macbook-tk.gif)
+![macbook builder preview](builder-macbook-tk.gif)
 
 <h2  id="preview"> 📱 Mobile and Tablet Views </h2>
 <h3>iPad</h3>
-![ipad preview](ipad-preview-tk.gif)
+![ipad details preview](details-ipad-tk.gif)
+![ipad builder preview](builder-ipad-tk.gif)
 
 <h3>iPhone</h3>
-![iphone preview](iphone-preview-tk.gif)
+![iphone details preview](details-iphone-tk.gif)
+![iphone builder preview](builder-iphone-tk.gif)
 </details>
 
 
