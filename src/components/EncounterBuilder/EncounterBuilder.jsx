@@ -6,10 +6,10 @@ import { MonsterFilter } from '../MonsterFilter/MonsterFilter';
 
 const ENCOUNTER_BUILDER_MUTATION = gql`
   mutation CreateEncounter(
-    $userName: String!, $encounterName: String!, $partySize: Int!, $partyLevel: Int!, $summary: String!, $description: String!, $treasure: String!, $encounterMonsterIndexes: [String!]!
+    $userId: Integer!, $encounterName: String!, $partySize: Int!, $partyLevel: Int!, $summary: String!, $description: String!, $treasure: String!, $encounterMonsterIndexes: [String!]!
     ) {
     createEncounter(input: {
-      userName: $userName,
+      userId: $userId,
       encounterName: $encounterName,
       partySize: $partySize,
       partyLevel: $partyLevel,
@@ -19,7 +19,7 @@ const ENCOUNTER_BUILDER_MUTATION = gql`
       encounterMonsterIndexes: $encounterMonsterIndexes
     }) {
       encounter {
-        userName
+        userId
         id
         encounterName
         partySize
@@ -37,7 +37,7 @@ const ENCOUNTER_BUILDER_MUTATION = gql`
 }
 `;
 
-const EncounterBuilder = ({ userName }) => {
+const EncounterBuilder = ({ userId }) => {
   const [monsterList, setMonsterList] = useState([]);
   const [monsters, setMonsters] = useState([]);
   const [selectedSizeFilter, setSelectedSizeFilter] = useState('');
@@ -47,7 +47,7 @@ const EncounterBuilder = ({ userName }) => {
   const [filteredMonsters, setFilteredMonsters] = useState([]);
   const [toShow, setToShow] = useState([]);
   const [newEncounter, setNewEncounter] = useState({
-    userName: userName,
+    userId: userId,
     encounterName: '',
     partySize: 0,
     partyLevel: 0,
@@ -59,7 +59,7 @@ const EncounterBuilder = ({ userName }) => {
 
   const [encounterBuilder] = useMutation(ENCOUNTER_BUILDER_MUTATION, {
     variables: {
-      userName: newEncounter.userName,
+      userId: newEncounter.userId,
       encounterName: newEncounter.encounterName,
       partySize: newEncounter.partySize,
       partyLevel: newEncounter.partyLevel,
@@ -251,7 +251,7 @@ const EncounterBuilder = ({ userName }) => {
 };
 
 EncounterBuilder.propTypes = {
-  userName: PropTypes.string
+  userId: PropTypes.string
 };
 
 export default EncounterBuilder;

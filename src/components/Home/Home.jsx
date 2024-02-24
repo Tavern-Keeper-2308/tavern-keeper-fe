@@ -4,20 +4,20 @@ import { useApolloClient, gql } from '@apollo/client';
 import './Home.css';
 import EncounterPreviewContainer from '../EncounterPreviewContainer/EncounterPreviewContainer';
 
-export default function Home({ userName, setSelectedEncounter }) {
+export default function Home({ userId, setSelectedEncounter }) {
   const [encounters, setEncounters] = useState([]);
   const client = useApolloClient();
 
   useEffect(() => {
-    const getEncounters = async (userName) => {
-      if (userName) {
+    const getEncounters = async (userId) => {
+      if (userId) {
         try {
           const { data } = await client.query({
             query: gql`
-              query getEncounters($userName: String!) {
-                encounters(userName: $userName) {
+              query getEncounters($userId: Integer!) {
+                encounters(userId: $userId) {
                   id
-                  userName
+                  userId
                   encounterName
                   partySize
                   partyLevel
@@ -31,7 +31,7 @@ export default function Home({ userName, setSelectedEncounter }) {
               }
             `,
             variables: {
-              "userName": userName
+              "userId": userId
             },
           });
           setEncounters(data.encounters);
@@ -40,8 +40,8 @@ export default function Home({ userName, setSelectedEncounter }) {
         }
       }
     };
-    getEncounters(userName);
-  }, [userName, client]);
+    getEncounters(userId);
+  }, [userId, client]);
 
   return (
     <div className='Home'>
@@ -51,6 +51,6 @@ export default function Home({ userName, setSelectedEncounter }) {
 };
 
 Home.propTypes = {
-  userName: PropTypes.string,
+  userId: PropTypes.string,
   setSelectedEncounter: PropTypes.func.isRequired
 };
