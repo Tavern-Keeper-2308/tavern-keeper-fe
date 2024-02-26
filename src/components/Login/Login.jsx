@@ -124,10 +124,11 @@
 
 
 
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useState } from 'react'; // Import useState hook
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
+import SignupButton from '../SignupButton/SignupButton';
 
 const Login = ({ setUserId }) => {
   const navigate = useNavigate();
@@ -187,6 +188,7 @@ const Login = ({ setUserId }) => {
           />
           {error && <div className='error'>{error}</div>}
           <button className='login-button' onClick={handleUserClick}>Login</button>
+          <SignupButton />
         </div>
       </div>
     </div>

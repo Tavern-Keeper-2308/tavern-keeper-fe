@@ -7,6 +7,7 @@ import EncounterBuilder from '../EncounterBuilder/EncounterBuilder.jsx';
 import EncounterDetails from '../EncounterDetails/EncounterDetails.jsx';
 import Login from '../Login/Login.jsx';
 import ErrorPage from '../ErrorPage/ErrorPage.jsx';
+import Signup from '../Signup/Signup.jsx';
 
 export default function App() {
   const [selectedEncounter, setSelectedEncounter] = useState(null);
@@ -31,6 +32,7 @@ export default function App() {
       </header>
       <Routes>
         <Route path="/" element={<Home userId={userId} setSelectedEncounter={setSelectedEncounter} />} />
+        <Route path="/signup" element={<Signup setUserId={setUserId} />} />
         <Route path="/login" element={<Login setUserId={setUserId} />} />
         <Route path="/details/:id" element={<EncounterDetails selectedEncounter={selectedEncounter} />} />
         <Route path="/encounterbuilder" element={<EncounterBuilder userId={userId} />} />
