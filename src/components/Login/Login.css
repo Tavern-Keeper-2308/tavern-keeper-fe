@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  overflow: auto;
 }
 
 .greeting {
@@ -36,6 +37,28 @@
 }
 
 .login-button:hover {
+  background-color: #4AA3FC;
+  color: #3D157A;
+  box-shadow:
+    0 0 5px #3D157A,
+    0 0 20px #3D157A,
+    0 0 35px #3D157A,
+    0 0 40px #4AA3FC,
+    0 0 50px #4AA3FC;
+}
+
+.SignupButton {
+  font-family: 'Arsenal', sans-serif;
+  font-size: large;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #3D157A;
+  color: #4AA3FC;
+  padding: 5px 15px 5px 15px;
+  width: 250px;
+}
+
+.SignupButton:hover {
   background-color: #4AA3FC;
   color: #3D157A;
   box-shadow:

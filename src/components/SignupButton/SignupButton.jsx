@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import './SignupButton.css';
 import { useNavigate } from 'react-router-dom';

@@ -174,22 +174,29 @@ const Login = ({ setUserId }) => {
       </h2>
       <div className='login-container'>
         <div className='login-form'>
+          <div>
           <input
             type='email'
             placeholder='Email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-          />
+            />
+          </div>
+          <div>
           <input
             type='password'
             placeholder='Password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          </div>
           {error && <div className='error'>{error}</div>}
           <button className='login-button' onClick={handleUserClick}>Login</button>
-          <SignupButton />
         </div>
+        <div className='greeting'>
+            A New Face?...
+        </div>
+          <SignupButton />
       </div>
     </div>
   );

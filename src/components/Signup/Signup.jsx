@@ -1,6 +1,7 @@
 import { useState } from 'react'; // Import useState hook
 import { useNavigate } from 'react-router-dom';
 import './Signup.css';
+import LoginButton from '../LoginButton/LoginButton';
 
 const Signup = ({ setUserId }) => {
   const navigate = useNavigate();
@@ -40,27 +41,35 @@ const Signup = ({ setUserId }) => {
   };
 
   return (
-    <div className='Signup'>
+    <div className='signup'>
       <h2 className='greeting'>
         A NEW HAND TOUCHES THE BEACON...
       </h2>
-      <div className='Signup-container'>
-        <div className='Signup-form'>
+      <div className='signup-container'>
+        <div className='signup-form'>
+        <div>
           <input
             type='email'
             placeholder='Email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-          />
+            />
+          </div>
+          <div>
           <input
             type='password'
             placeholder='Password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          </div>
           {error && <div className='error'>{error}</div>}
-          <button className='Signup-button' onClick={handleUserClick}>Signup</button>
+          <button className='signup-button' onClick={handleUserClick}>Signup</button>
         </div>
+          <h3 className='greeting'>
+            NEVER MIND, I KNOW THAT HAND...
+          </h3>
+          <LoginButton/>
       </div>
     </div>
   );

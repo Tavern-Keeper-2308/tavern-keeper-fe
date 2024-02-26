@@ -46,6 +46,28 @@
     0 0 50px #4AA3FC;
 }
 
+.LoginButton {
+  font-family: 'Arsenal', sans-serif;
+  font-size: large;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #3D157A;
+  color: #4AA3FC;
+  padding: 5px 15px 5px 15px;
+  width: 250px;
+}
+
+.LoginButton:hover {
+  background-color: #4AA3FC;
+  color: #3D157A;
+  box-shadow:
+    0 0 5px #3D157A,
+    0 0 20px #3D157A,
+    0 0 35px #3D157A,
+    0 0 40px #4AA3FC,
+    0 0 50px #4AA3FC;
+}
+
 /* TABLET VIEW */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .signup-container {
