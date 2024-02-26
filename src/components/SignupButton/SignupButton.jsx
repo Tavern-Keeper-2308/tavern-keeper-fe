@@ -10,7 +10,7 @@ const SignupButton = () => {
   };
 
   return (
-    <NavLink className='Signup-link' to={'/Signup'} onClick={() => handleSignupClick()}>
+    <NavLink className='signup-link' to={'/signup'} onClick={() => handleSignupClick()}>
       <button className='SignupButton'>
         Signup
       </button>

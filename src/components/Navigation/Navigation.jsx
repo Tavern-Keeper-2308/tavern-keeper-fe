@@ -9,7 +9,7 @@ const Navigation = ({ userId }) => {
 
   return (
     <div className='Navigation'>
-      {location.pathname !== '/login' &&
+      {location.pathname !== '/login' && location.pathname !== '/signup' &&
         <div className='navigation-buttons'>
           <EncounterBuilderButton />
           <LogoutButton userId={userId} />
