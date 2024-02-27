@@ -11,7 +11,7 @@ const Signup = ({ setUserId }) => {
 
   const handleUserClick = async () => {
     try {
-      const response = await fetch('http://localhost:4000/users/tokens/sign_up', {
+      const response = await fetch('https://micro-auth.onrender.com/users/tokens/sign_up', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
