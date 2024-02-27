@@ -67,10 +67,10 @@ const Signup = ({ setUserId }) => {
           <button className='signup-button' onClick={handleUserClick}>Signup</button>
         </div>
           <h3 className='greeting'>
-            NEVER MIND, I KNOW THAT HAND...
+            I KNOW THAT HAND...
           </h3>
           <LoginButton/>
-      </div>
+        </div>
     </div>
   );
 };
