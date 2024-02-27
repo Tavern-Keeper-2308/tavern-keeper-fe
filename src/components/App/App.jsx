@@ -7,10 +7,11 @@ import EncounterBuilder from '../EncounterBuilder/EncounterBuilder.jsx';
 import EncounterDetails from '../EncounterDetails/EncounterDetails.jsx';
 import Login from '../Login/Login.jsx';
 import ErrorPage from '../ErrorPage/ErrorPage.jsx';
+import Signup from '../Signup/Signup.jsx';
 
 export default function App() {
   const [selectedEncounter, setSelectedEncounter] = useState(null);
-  const [userName, setUserName] = useState(null);
+  const [userId, setUserId] = useState(null);
   const location = useLocation();
 
   return (
@@ -18,10 +19,10 @@ export default function App() {
       <header>
         {location.pathname !== '/login' ? (
           <>
-            <Link className='home-button' onClick={console.log(userName, "userName")} to={'/'}>
+            <Link className='home-button' onClick={console.log(userId, "userId")} to={'/'}>
               <h1 className='app-title'>Tavern Keeper</h1>
             </Link>
-            <Navigation setUserName={setUserName} />
+            <Navigation setUserId={setUserId} />
           </>
         ) : (
           <div className='home-button-disabled'>
@@ -30,10 +31,11 @@ export default function App() {
         )}
       </header>
       <Routes>
-        <Route path="/" element={<Home userName={userName} setSelectedEncounter={setSelectedEncounter} />} />
-        <Route path="/login" element={<Login setUserName={setUserName} />} />
+        <Route path="/" element={<Home userId={userId} setSelectedEncounter={setSelectedEncounter} />} />
+        <Route path="/signup" element={<Signup setUserId={setUserId} />} />
+        <Route path="/login" element={<Login setUserId={setUserId} />} />
         <Route path="/details/:id" element={<EncounterDetails selectedEncounter={selectedEncounter} />} />
-        <Route path="/encounterbuilder" element={<EncounterBuilder userName={userName} />} />
+        <Route path="/encounterbuilder" element={<EncounterBuilder userId={userId} />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>

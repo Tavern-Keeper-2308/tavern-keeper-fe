@@ -33,7 +33,7 @@ const EncounterPreviewContainer = ({ encounters, setSelectedEncounter }) => {
             query getEncounter($id: ID!) {
               encounter(id: $id) {
                 id
-                userName
+                userId
                 encounterName
                 partySize
                 partyLevel

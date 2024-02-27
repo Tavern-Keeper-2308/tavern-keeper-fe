@@ -4,22 +4,22 @@ import './Navigation.css';
 import EncounterBuilderButton from '../EncounterBuilderButton/EncounterBuilderButton';
 import LogoutButton from '../LogoutButton/LogoutButton';
 
-const Navigation = ({ setUserName }) => {
+const Navigation = ({ userId }) => {
   const location = useLocation();
 
   return (
     <div className='Navigation'>
-      {location.pathname !== '/login' &&
+      {location.pathname !== '/login' && location.pathname !== '/signup' &&
         <div className='navigation-buttons'>
           <EncounterBuilderButton />
-          <LogoutButton setUserName={setUserName} />
+          <LogoutButton userId={userId} />
         </div>}
     </div>
   );
 };
 
 Navigation.propTypes = {
-  setUserName: PropTypes.func.isRequired
+  userId: PropTypes.func.isRequired
 };
 
 export default Navigation;

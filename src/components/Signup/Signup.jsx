@@ -1,10 +1,9 @@
-// import PropTypes from 'prop-types';
 import { useState } from 'react'; // Import useState hook
 import { useNavigate } from 'react-router-dom';
-import './Login.css';
-import SignupButton from '../SignupButton/SignupButton';
+import './Signup.css';
+import LoginButton from '../LoginButton/LoginButton';
 
-const Login = ({ setUserId }) => {
+const Signup = ({ setUserId }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState(''); // State to store email input
   const [password, setPassword] = useState(''); // State to store password input
@@ -12,7 +11,7 @@ const Login = ({ setUserId }) => {
 
   const handleUserClick = async () => {
     try {
-      const response = await fetch('https://micro-auth.onrender.com/users/tokens/sign_in', {
+      const response = await fetch('https://micro-auth.onrender.com/users/tokens/sign_up', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -36,19 +35,19 @@ const Login = ({ setUserId }) => {
       localStorage.setItem('token', token); // Store token in localStorage
       navigate('/'); // Navigate to home page
     } catch (error) {
-      setError('Failed to log in'); // Set error message
-      console.error('Error logging in:', error.message);
+      setError('Failed to signup'); // Set error message
+      console.error('Error signing up:', error.message);
     }
   };
 
   return (
-    <div className='Login'>
+    <div className='signup'>
       <h2 className='greeting'>
-        Welcome Traveler...
+        A NEW HAND TOUCHES THE BEACON...
       </h2>
-      <div className='login-container'>
-        <div className='login-form'>
-          <div>
+      <div className='signup-container'>
+        <div className='signup-form'>
+        <div>
           <input
             type='email'
             placeholder='Email'
@@ -65,15 +64,15 @@ const Login = ({ setUserId }) => {
           />
           </div>
           {error && <div className='error'>{error}</div>}
-          <button className='login-button' onClick={handleUserClick}>Login</button>
+          <button className='signup-button' onClick={handleUserClick}>Signup</button>
         </div>
-        <div className='greeting'>
-            A New Face?...
+          <h3 className='greeting'>
+            I KNOW THAT HAND...
+          </h3>
+          <LoginButton/>
         </div>
-          <SignupButton />
-      </div>
     </div>
   );
 };
 
-export default Login;
+export default Signup;

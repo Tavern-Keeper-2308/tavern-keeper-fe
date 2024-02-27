@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import './LogoutButton.css';
 
-const LogoutButton = ({ setUserName }) => {
+const LogoutButton = ({ setUserId }) => {
   const handleLogoutClick = () => {
-    setUserName(null);
+    setUserId(null);
   };
 
   return (
@@ -17,7 +17,7 @@ const LogoutButton = ({ setUserName }) => {
 };
 
 LogoutButton.propTypes = {
-  setUserName: PropTypes.func.isRequired
+  setUserId: PropTypes.func.isRequired
 };
 
 export default LogoutButton;
