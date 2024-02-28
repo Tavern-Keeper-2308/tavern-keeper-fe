@@ -6,7 +6,7 @@ import { MonsterFilter } from '../MonsterFilter/MonsterFilter';
 
 const ENCOUNTER_BUILDER_MUTATION = gql`
   mutation CreateEncounter(
-    $userId: Integer!, $encounterName: String!, $partySize: Int!, $partyLevel: Int!, $summary: String!, $description: String!, $treasure: String!, $encounterMonsterIndexes: [String!]!
+    $userId: String!, $encounterName: String!, $partySize: Int!, $partyLevel: Int!, $summary: String!, $description: String!, $treasure: String!, $encounterMonsterIndexes: [String!]!
     ) {
     createEncounter(input: {
       userId: $userId,

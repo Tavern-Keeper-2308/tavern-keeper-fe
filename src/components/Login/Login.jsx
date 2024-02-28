@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { useState } from 'react'; // Import useState hook
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
@@ -29,10 +29,8 @@ const Login = ({ setUserId }) => {
 
       const data = await response.json();
       const token = data.token;
-      const userId = data.resource_owner.id; // Assuming the userId is provided in the response
-
+      const userId = data.resource_owner.id.toString(); // Assuming the userId is provided in the response
       setUserId(userId); // Set the userId
-
       localStorage.setItem('token', token); // Store token in localStorage
       navigate('/'); // Navigate to home page
     } catch (error) {
@@ -76,4 +74,7 @@ const Login = ({ setUserId }) => {
   );
 };
 
+Login.propTypes = {
+  setUserId: PropTypes.func.isRequired
+};
 export default Login;
