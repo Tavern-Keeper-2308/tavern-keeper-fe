@@ -14,7 +14,7 @@ export default function Home({ userId, setSelectedEncounter }) {
         try {
           const { data } = await client.query({
             query: gql`
-              query getEncounters($userId: Integer!) {
+              query getEncounters($userId: String!) {
                 encounters(userId: $userId) {
                   id
                   userId
